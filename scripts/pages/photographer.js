@@ -1,1 +1,8 @@
-//Mettre le code JavaScript lié à la page photographer.html
+async function getPhotographerData() {
+    const photographerData = fetch("../data/photographers.json")
+        .then((res) => res.json())
+        .then((medias) => medias)
+        .catch((err) => console.log("Error" + err));
+
+    return photographerData;
+}
