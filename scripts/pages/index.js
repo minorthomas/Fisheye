@@ -12,8 +12,8 @@ async function displayData(photographers) {
     photographersSection.innerHTML = "";
 
     photographers.forEach((photographer) => {
-        const photographerModel = new AllPhotographers(photographer);
-        photographersSection.innerHTML += photographerModel.templateAllPhotographers();
+        const photographerModel = new Photographers(photographer);
+        photographersSection.innerHTML += photographerModel.templatePhotographerHomePage();
     });
 };
 

@@ -1,8 +1,31 @@
 async function getPhotographerData() {
-    const photographerData = fetch("../data/photographers.json")
+    const photographers = fetch("../data/photographers.json")
         .then((res) => res.json())
-        .then((medias) => medias)
+        .then((photographers) => photographers)
         .catch((err) => console.log("Error" + err));
 
-    return photographerData;
+    return photographers;
 }
+
+async function displayData() {
+    const { photographers, media } = await getPhotographerData(); //get photograph & medias
+
+    const searchUrlParams = window.location.search;
+    const getUrlParams = new URLSearchParams(searchUrlParams);
+    const getIdParam = getUrlParams.get("id");
+
+    const selectedPhotographer = photographers.find(
+        (photographer) => photographer.id == getIdParam
+    );
+
+    const photographerSection = document.querySelector(".photographer_header");
+
+    const photographerModel = new Photographers(selectedPhotographer);
+    photographerSection.innerHTML += photographerModel.templatePhotographerPage();
+};
+
+async function init() {
+    await displayData();
+};
+
+init();

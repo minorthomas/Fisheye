@@ -1,4 +1,4 @@
-class AllPhotographers {
+class Photographers {
     constructor(data) {
         this._name = data.name;
         this._id = data.id;
@@ -21,11 +21,11 @@ class AllPhotographers {
         return `${this._price}€/jour`;
     }
 
-    templateAllPhotographers() {
+    templatePhotographerHomePage() {
         return `
         <a class="photographer_link" href="photographer.html?id=${this._id}">
             <div class="photographer_header">
-                <img src="${this.picture}" alt="${this._name} profile"/>
+                <img class="photographer_picture" src="${this.picture}" alt="${this._name} profile"/>
                 <h2>${this._name}</h2>
             </div>
             <div class="photographer_footer">
@@ -36,4 +36,18 @@ class AllPhotographers {
         </a>
         `
     }
+
+    templatePhotographerPage() {
+        return `
+        <div class="photographer_infos">
+            <h1 class="photographer_name">${this._name}</h1>
+            <p class="photographer_localisation">${this.localisation}</p>
+            <p class="photographer_tagline">${this._tagline}</p>
+        </div>
+        <img class="photographer_picture" src="${this.picture}" alt="${this._name} profile"/>
+        `
+
+    }
+
+
 }
