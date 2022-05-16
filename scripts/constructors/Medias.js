@@ -26,11 +26,12 @@ class Image extends Media {
 
     templateMedia() {
         return `
-            <div class="image_section">
-                <img src="${this.picture}" class="image_link" alt="photographer image"/>
-                <div class="image_infos">
-                    <h2 class="image_title">${this._title}</h2>
-                    <p class="image_like">${this._likes}</p>
+            <div class="media_section">
+                <img src="${this.picture}" class="media_source" alt="photographer image"/>
+                <div class="media_infos">
+                    <h2 class="media_title">${this._title}</h2>
+                    <p class="media_like">${this._likes}</p>
+                    <img class="heart" src="/assets/icons/heart.svg" alt="heart like"/>
                 </div>
             </div>
         `
@@ -49,14 +50,14 @@ class Video extends Media {
 
     templateMedia() {
         return `
-            <div class="video_section">
-                <video class="video_link" width="320" height="240" controls/>
+            <div class="media_section">
+                <video class="media_source" width="320" height="240" controls/>
                     <source src="${this.video}" type="video/mp4"/>
                 </video>
-                <div class="video_infos">
-                    <h2 class="video_title">${this._title}</h2>
-                    <p class="video_like">${this._likes}</p>
-                    <img src="/assets/icons/heart.svg" alt="heart like"/>
+                <div class="media_infos">
+                    <h2 class="media_title">${this._title}</h2>
+                    <p class="media_like">${this._likes}</p>
+                    <img class="heart"src="/assets/icons/heart.svg" alt="heart like"/>
                 </div>
             </div>
         `

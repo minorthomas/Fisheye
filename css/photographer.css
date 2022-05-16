@@ -13,6 +13,11 @@ a {
     margin-left: 100px;
 }
 
+.heart {
+    height: 1em;
+    margin-left: 0.3em;
+}
+
 /************ HEADER ************/
 header {
     margin-top: 2em;
@@ -84,11 +89,6 @@ header {
 
 }
 
-.photographer_total_like img {
-    height: 1em;
-    margin-left: 0.3em;
-}
-
 /************ SORT BY ***************/
 
 .sort_by {
@@ -112,6 +112,21 @@ header {
     border-radius: 0;
 }
 
+/*************MEDIAS****************/
+.medias {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 3em 100px;
+}
+
+.media_source {
+    width: 320px;
+    height: 240px;
+    object-fit: cover;
+    border-radius: 0.3em;
+}
 
 /************ MODAL ***************/
 

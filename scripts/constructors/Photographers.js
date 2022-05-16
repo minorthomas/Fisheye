@@ -54,7 +54,7 @@ class Photographers {
         <div class="photographer_other">
             <div class="photographer_total_like">
                 <p class="photographer_like">280 132</p>
-                <img src="/assets/icons/heart.svg" alt="heart like"/>
+                <img class="heart" src="/assets/icons/heart.svg" alt="heart like"/>
             </div>
             <p class="photographer_other_price">${this.price}</p>
         </div>

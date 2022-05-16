@@ -35,9 +35,7 @@ async function displayPhotographerMedias() { //display les medias photographers 
         (media) => media.photographerId == getIdParam
     );
 
-    console.log(selectedMedia);
-
-    const medias_section = document.querySelector(".medias_section");
+    const medias_section = document.querySelector(".medias");
 
     selectedMedia.forEach((media) => {
         const allMedias = new MediasFactory(media);
