@@ -28,12 +28,27 @@ async function displayPhotographerData() { //display infos photographers
     photographerBottom.innerHTML = photographerModel.templateLikeAndPrice();
 };
 
-async function displayPhotographerCreation() { //display les creations photographers (images, videos)
+async function displayPhotographerMedias() { //display les medias photographers (images, videos)
     const { media } = await getPhotographerData(); //recup photographers et medias
+
+    const selectedMedia = media.filter( //trouve et verifi si id du photographer == id dans l'url
+        (media) => media.photographerId == getIdParam
+    );
+
+    console.log(selectedMedia);
+
+    const medias_section = document.querySelector(".medias_section");
+
+    selectedMedia.forEach((media) => {
+        const allMedias = new MediasFactory(media);
+        medias_section.innerHTML += allMedias.templateMedia();
+    });
+
 }
 
 async function init() {
     await displayPhotographerData();
+    await displayPhotographerMedias();
 };
 
 init();
