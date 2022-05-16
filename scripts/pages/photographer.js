@@ -7,31 +7,33 @@ async function getPhotographerData() {
     return photographers;
 }
 
-async function displayData() {
-    const { photographers, media } = await getPhotographerData(); //get photograph & medias
+const getParams = window.location.search; //recup params dans l'url
+const getUrlParams = new URLSearchParams(getParams);
+const getIdParam = getUrlParams.get("id"); //recup seulement param id de l'url
 
-    const searchUrlParams = window.location.search;
-    const getUrlParams = new URLSearchParams(searchUrlParams);
-    const getIdParam = getUrlParams.get("id");
+async function displayPhotographerData() { //display infos photographers
+    const { photographers } = await getPhotographerData(); //recup photographers et medias
 
-    const selectedPhotographer = photographers.find(
+    const selectedPhotographer = photographers.find( //trouve et verifi si id du photographer == id dans l'url
         (photographer) => photographer.id == getIdParam
     );
 
-    const photographerSection = document.querySelector(".photographer_header");
+    const photographerHeader = document.querySelector(".photographer_header"); //recup element dom (header)
 
-    const photographerModel = new Photographers(selectedPhotographer);
-    photographerSection.innerHTML += photographerModel.templatePhotographerPage();
+    const photographerModel = new Photographers(selectedPhotographer); //constructor creer new photographer
+    photographerHeader.innerHTML += photographerModel.templatePhotographerPage(); //ajout les infos photographer dans dom
 
-    const photographerContact = document.createElement("button");
-    photographerContact.setAttribute("onclick", "displayModal()");
-    photographerContact.classList.add("contact_button");
-    photographerSection.appendChild(photographerContact);
-    photographerContact.textContent = "Contactez-moi";
+
+    const photographerBottom = document.querySelector(".photographer_bottom");
+    photographerBottom.innerHTML = photographerModel.templateLikeAndPrice();
 };
 
+async function displayPhotographerCreation() { //display les creations photographers (images, videos)
+    const { media } = await getPhotographerData(); //recup photographers et medias
+}
+
 async function init() {
-    await displayData();
+    await displayPhotographerData();
 };
 
 init();

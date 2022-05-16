@@ -18,7 +18,7 @@ class Photographers {
     }
 
     get price() {
-        return `${this._price}€/jour`;
+        return `${this._price}€ / jour`;
     }
 
     templatePhotographerHomePage() {
@@ -44,9 +44,21 @@ class Photographers {
             <p class="photographer_localisation">${this.localisation}</p>
             <p class="photographer_tagline">${this._tagline}</p>
         </div>
+        <button class="contact_button" onclick="displayModal()">Contactez-moi</button>
         <img class="photographer_picture" src="${this.picture}" alt="${this._name} profile"/>
         `
     }
 
+    templateLikeAndPrice() {
+        return `
+        <div class="photographer_other">
+            <div class="photographer_total_like">
+                <p class="photographer_like">280 132</p>
+                <img src="/assets/icons/heart.svg" alt="heart like"/>
+            </div>
+            <p class="photographer_other_price">${this.price}</p>
+        </div>
+        `
+    }
 
 }
