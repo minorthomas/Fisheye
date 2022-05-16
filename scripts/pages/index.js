@@ -1,25 +1,24 @@
-async function getPhotographers() {
+async function getPhotographers() { //fetch recup data fichier json
     const photographers = fetch("../data/photographers.json")
-        .then((res) => res.json())
-        .then((photographers) => photographers)
-        .catch((err) => console.log("Error" + err));
+        .then((res) => res.json()) //reponse en json
+        .then((photographers) => photographers) //recup les photographers
+        .catch((err) => console.log("Error" + err)); //gestion erreur
 
-    return photographers;
+    return photographers; //retourne les photographers
 }
 
-async function displayData(photographers) {
-    const photographersSection = document.querySelector(".photographer_section");
-    photographersSection.innerHTML = "";
+async function displayData(photographers) { //fonction affiche les photographers dans le dom
+    const photographersSection = document.querySelector(".photographers_section"); //select dans dom
 
-    photographers.forEach((photographer) => {
-        const photographerModel = new Photographers(photographer);
-        photographersSection.innerHTML += photographerModel.templatePhotographerHomePage();
+    photographers.forEach((photographer) => { //chaque boucle ajoute 1 photographer
+        const photographerModel = new Photographers(photographer); //creer photograher avec constructor
+        photographersSection.innerHTML += photographerModel.templatePhotographerHomePage(); //ajoute photographer dans dom
     });
 };
 
-async function init() {
-    const { photographers } = await getPhotographers();
-    displayData(photographers);
+async function init() { //initialise la fonction
+    const { photographers } = await getPhotographers(); //recup les data photographers
+    displayData(photographers); //affiche les photographers
 };
 
-init();
+init(); //lance la fonction

@@ -22,6 +22,12 @@ async function displayData() {
 
     const photographerModel = new Photographers(selectedPhotographer);
     photographerSection.innerHTML += photographerModel.templatePhotographerPage();
+
+    const photographerContact = document.createElement("button");
+    photographerContact.setAttribute("onclick", "displayModal()");
+    photographerContact.classList.add("contact_button");
+    photographerSection.appendChild(photographerContact);
+    photographerContact.textContent = "Contactez-moi";
 };
 
 async function init() {
