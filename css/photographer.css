@@ -89,6 +89,29 @@ header {
     margin-left: 0.3em;
 }
 
+/************ SORT BY ***************/
+
+.sort_by {
+    margin: 0 100px;
+    display: flex;
+}
+
+.sort_by_title {
+    margin-right: 1em;
+    font-weight: bold;
+}
+
+.sort_by select {
+    padding: 0 1.5em;
+    background-color: #901C1C;
+    color: white;
+    border-radius: 0.3em;
+}
+
+.sort_by select option {
+    border-radius: 0;
+}
+
 
 /************ MODAL ***************/
 
