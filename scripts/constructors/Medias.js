@@ -26,14 +26,16 @@ class Image extends Media {
 
     templateMedia() {
         return `
-            <div class="media_section">
-                <img src="${this.picture}" class="media_source" alt="photographer image"/>
+            <article class="media_section">
+                <img src="${this.picture}" class="media_source" alt="${this._title}"/>
                 <div class="media_infos">
                     <h2 class="media_title">${this._title}</h2>
-                    <p class="media_like">${this._likes}</p>
-                    <img class="heart" src="/assets/icons/heart.svg" alt="heart like"/>
+                    <div class="media_like">
+                        <p class="media_total_like">${this._likes}</p>
+                        <img class="heart" src="/assets/icons/heartred.svg" alt="like"/>
+                    </div>
                 </div>
-            </div>
+            </article>
         `
     }
 }
@@ -50,16 +52,18 @@ class Video extends Media {
 
     templateMedia() {
         return `
-            <div class="media_section">
-                <video class="media_source" width="320" height="240" controls/>
+            <article class="media_section">
+                <video class="media_source" width="320" height="240" alt="${this._title}" controls/>
                     <source src="${this.video}" type="video/mp4"/>
                 </video>
                 <div class="media_infos">
                     <h2 class="media_title">${this._title}</h2>
-                    <p class="media_like">${this._likes}</p>
-                    <img class="heart"src="/assets/icons/heart.svg" alt="heart like"/>
+                    <div class="media_like">
+                        <p class="media_total_like">${this._likes}</p>
+                        <img class="heart" src="/assets/icons/heartred.svg" alt="like"/>
+                    </div>       
                 </div>
-            </div>
+            </article>
         `
     }
 }

@@ -8,9 +8,12 @@ a {
     color: #000000;
 }
 
+body {
+    margin: 0 18em;
+}
+
 .logo {
-    height: 50px;
-    margin-left: 100px;
+    height: 2.6em;
 }
 
 .heart {
@@ -27,7 +30,7 @@ header {
 .photographer_header {
     background-color: #FAFAFA;
     height: 300px;
-    margin: 2em 100px;
+    margin: 2em 0;
     display: grid;
     gap: 70px;
     grid-template-columns: 1fr 1fr 1fr;
@@ -92,7 +95,6 @@ header {
 /************ SORT BY ***************/
 
 .sort_by {
-    margin: 0 100px;
     display: flex;
 }
 
@@ -114,18 +116,59 @@ header {
 
 /*************MEDIAS****************/
 .medias {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    margin: 3em 100px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin: 3em 0;
+    row-gap: 1em;
+    column-gap: 8em;
+    align-items: center;
 }
 
 .media_source {
-    width: 320px;
+    width: 100%;
     height: 240px;
     object-fit: cover;
     border-radius: 0.3em;
+}
+
+.media_section {
+    margin-top: 1em;
+}
+
+.media_infos {
+    color: #901C1C;
+    display: flex;
+    flex-direction: row;
+    font-size: 0.8em;
+    margin: 0.5em 0;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.media_title {
+    font-weight: lighter;
+}
+
+.media_title,
+.media_like {
+    margin: 0;
+}
+
+.media_like {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-size: 1.8em;
+    margin: 0;
+    font-weight: bold;
+}
+
+.media_total_like {
+    margin: 0;
+}
+
+.heart {
+    font-size: 0.8em;
 }
 
 /************ MODAL ***************/
