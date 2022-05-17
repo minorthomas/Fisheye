@@ -12,6 +12,9 @@ const getUrlParams = new URLSearchParams(getParams);
 const getIdParam = getUrlParams.get("id"); //recup seulement param id de l'url
 
 function pageNotFound() {
+    //recup id main
+    const photographerMain = document.querySelector("#main");
+
     //display none all elements
     document.querySelector(".sort_by").style.display = "none";
     document.querySelector(".photographer_header").style.display = "none";
@@ -19,12 +22,14 @@ function pageNotFound() {
     //set timeout after error (3s)
     setTimeout(function () { window.location.href = "index.html"; }, 3000);
 
-    return `
+    const errorInDom = `
     <div class="error">
         <p class="error_number">Error 404</p>
         <p class="error_text">Page not found, redirect after 3 seconds</p
     </div>
     `
+
+    photographerMain.innerHTML = errorInDom;
 }
 
 async function displayPhotographerData() { //display infos photographers
@@ -39,7 +44,7 @@ async function displayPhotographerData() { //display infos photographers
     //condition si aucun photographe
     if (selectedPhotographer === undefined) {
         //initialise fonction affichage error dom
-        photographerMain.innerHTML = pageNotFound();
+        pageNotFound();
     } else {
         const photographerModel = new Photographers(selectedPhotographer); //constructor creer new photographer
         photographerHeader.innerHTML += photographerModel.templatePhotographerPage(); //ajout les infos photographer dans dom
