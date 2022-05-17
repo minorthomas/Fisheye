@@ -81,3 +81,14 @@ p {
     color: #757575;
     font-size: 0.8em;
 }
+
+/*********** ERROR **************/
+.error {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    font-size: 3em;
+    color: red;
+    font-weight: bold;
+}
