@@ -11,6 +11,22 @@ const getParams = window.location.search; //recup params dans l'url
 const getUrlParams = new URLSearchParams(getParams);
 const getIdParam = getUrlParams.get("id"); //recup seulement param id de l'url
 
+function pageNotFound() {
+    //display none all elements
+    document.querySelector(".sort_by").style.display = "none";
+    document.querySelector(".photographer_header").style.display = "none";
+
+    //set timeout after error (3s)
+    setTimeout(function () { window.location.href = "index.html"; }, 3000);
+
+    return `
+    <div class="error">
+        <p class="error_number">Error 404</p>
+        <p class="error_text">Page not found, redirect after 3 seconds</p
+    </div>
+    `
+}
+
 async function displayPhotographerData() { //display infos photographers
     const { photographers } = await getPhotographerData(); //recup photographers et medias
     const photographerHeader = document.querySelector(".photographer_header");//recup element dom (header)
@@ -22,33 +38,8 @@ async function displayPhotographerData() { //display infos photographers
 
     //condition si aucun photographe
     if (selectedPhotographer === undefined) {
-
-        //select elements
-        const error = document.createElement("div");
-
-        const errorText = document.createElement("div");
-        const errorNumber = document.createElement('p');
-
-        //add classname & text
-        errorNumber.textContent = "Error 404";
-        errorText.textContent = "Page not found, redirect after 3 seconds";
-
-        error.className = "error";
-        errorNumber.className = "errorNumber";
-        errorText.className = "errorText";
-
-        //add child
-        photographerMain.appendChild(error);
-        error.appendChild(errorNumber);
-        error.appendChild(errorText);
-
-        //display none all elements
-        document.querySelector(".sort_by").style.display = "none";
-        document.querySelector(".photographer_header").style.display = "none";
-
-        //set timeout after error (3s)
-        setTimeout(function () { window.location.href = "index.html"; }, 3000);
-
+        //initialise fonction affichage error dom
+        photographerMain.innerHTML = pageNotFound();
     } else {
         const photographerModel = new Photographers(selectedPhotographer); //constructor creer new photographer
         photographerHeader.innerHTML += photographerModel.templatePhotographerPage(); //ajout les infos photographer dans dom
