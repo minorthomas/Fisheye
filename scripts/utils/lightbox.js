@@ -15,8 +15,7 @@ async function getMedias() {
         (media) => media.photographerId == getIdParam
     );
 
-    arrayMediaLightbox.push(selectedMedia);
-    console.log(arrayMediaLightbox);
+    console.log(selectedMedia);
 }
 
 async function init() {
