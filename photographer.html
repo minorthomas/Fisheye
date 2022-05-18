@@ -41,11 +41,23 @@
         <img src="assets/icons/close.svg" alt="close modal" onclick="closeModal()" />
       </header>
       <form>
-        <div>
-          <label>Prénom</label>
-          <input />
+        <div class="modal_form">
+          <label for="firstname">Prénom</label>
+          <input type="text" id="firstname" name="firstname" />
         </div>
-        <button class="contact_button">Envoyer</button>
+        <div class="modal_form">
+          <label for="lastname">Nom</label>
+          <input type="text" id="lastname" name="lastname" />
+        </div>
+        <div class="modal_form">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" />
+        </div>
+        <div class="modal_form">
+          <label for="yourmessage">Votre message</label>
+          <input type="text" id="yourmessage" name="yourmessage" />
+        </div>
+        <input class="modal_confirm_form" type="submit" value="Envoyer" />
       </form>
     </div>
   </div>
