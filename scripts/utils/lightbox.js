@@ -9,7 +9,6 @@ async function getPhotographers() { //fetch recup data fichier json
 
 async function getMedias() {
     const { media } = await getPhotographers();
-    let arrayMediaLightbox = [];
 
     const selectedMedia = media.filter( //trouve et verifi si id du photographer == id dans l'url
         (media) => media.photographerId == getIdParam

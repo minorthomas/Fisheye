@@ -204,15 +204,18 @@ header {
 }
 
 .modal {
+    position: absolute;
     border-radius: 5px;
     background-color: #DB8876;
-    width: 50%;
+    width: 40%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
     padding: 35px;
     margin: auto;
+    top: 5em;
+    left: 35em;
 }
 
 .modal header {

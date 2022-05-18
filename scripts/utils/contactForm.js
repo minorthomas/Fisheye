@@ -1,9 +1,12 @@
+const modal = document.querySelector("#contact_modal");
+const main = document.querySelector("main");
+
 function displayModal() {
-    const modal = document.getElementById("contact_modal");
-	modal.style.display = "block";
+    modal.style.display = "block";
+    main.style.opacity = "0.4";
 }
 
 function closeModal() {
-    const modal = document.getElementById("contact_modal");
     modal.style.display = "none";
+    main.style.opacity = "1";
 }
