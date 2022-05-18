@@ -25,7 +25,7 @@ function pageNotFound() {
     const errorInDom = `
     <div class="error">
         <p class="error_number">Error 404</p>
-        <p class="error_text">Page not found, redirect after 3 seconds</p
+        <p class="error_text">Page not found, redirect after 3 seconds</p>
     </div>
     `
 
@@ -66,7 +66,6 @@ async function displayPhotographerMedias() { //display les medias photographers 
         const allMedias = new MediasFactory(media);
         mediasSection.innerHTML += allMedias.templateMedia();
     });
-
 }
 
 async function init() {

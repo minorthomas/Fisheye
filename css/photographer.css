@@ -189,6 +189,7 @@ header {
     display: none;
 }
 
+.modal_confirm_form,
 .contact_button {
     font-size: 20px;
     font-weight: lighter;
@@ -200,6 +201,10 @@ header {
     background-color: #901C1C;
     border-radius: 5px;
     cursor: pointer;
+    text-align: center;
+}
+
+.contact_button {
     margin: auto;
 }
 
@@ -212,25 +217,41 @@ header {
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    padding: 35px;
+    padding: 20px 35px 50px 35px;
     margin: auto;
     top: 5em;
     left: 35em;
 }
 
 .modal header {
+    display: flex;
     justify-content: space-between;
     width: 100%;
+    margin: 0 0 2em 0;
 }
 
 .modal header img {
     cursor: pointer;
+    align-self: flex-start;
+    margin-top: 1.0em;
 }
 
-.modal header h2 {
-    font-size: 64px;
+.modal_header_infos {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+
+.modal header h2,
+.modal_header_name {
+    font-size: 3.2em;
     font-weight: normal;
     text-align: center;
+    margin: 0;
+}
+
+.modal_header_name {
+    margin: 0;
 }
 
 form {
@@ -242,7 +263,7 @@ form {
 
 form label {
     color: #312E2E;
-    font-size: 36px;
+    font-size: 24px;
 }
 
 form div {
@@ -250,12 +271,17 @@ form div {
     flex-direction: column;
     width: 100%;
     align-items: self-start;
-    margin-bottom: 26px;
+    margin-bottom: 2.5em;
 }
 
 form input {
     width: 100%;
-    height: 68px;
+    height: 50px;
     border: none;
     border-radius: 5px;
+    font-size: 24px;
+}
+
+#yourmessage {
+    height: 5em;
 }

@@ -37,7 +37,10 @@
   <div id="contact_modal">
     <div class="modal">
       <header>
-        <h2>Contactez-moi</h2>
+        <div class="modal_header_infos">
+          <h2>Contactez-moi</h2>
+          <p class="modal_header_name"></p>
+        </div>
         <img src="assets/icons/close.svg" alt="close modal" onclick="closeModal()" />
       </header>
       <form>
@@ -57,7 +60,7 @@
           <label for="yourmessage">Votre message</label>
           <input type="text" id="yourmessage" name="yourmessage" />
         </div>
-        <input class="modal_confirm_form" type="submit" value="Envoyer" />
+        <input class="modal_confirm_form" value="Envoyer" onclick="closeModal()" />
       </form>
     </div>
   </div>
