@@ -35,7 +35,6 @@ function pageNotFound() {
 async function displayPhotographerData() { //display infos photographers
     const { photographers } = await getPhotographerData(); //recup photographers et medias
     const photographerHeader = document.querySelector(".photographer_header");//recup element dom (header)
-    const photographerMain = document.querySelector("#main");
 
     const selectedPhotographer = photographers.find( //trouve et verifi si id du photographer == id dans l'url
         (photographer) => photographer.id == getIdParam
