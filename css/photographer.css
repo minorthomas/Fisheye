@@ -174,13 +174,23 @@ header {
 /************ ERROR ***************/
 
 .error {
+    background-color: #f7f7f7;
     display: flex;
     flex-direction: column;
     width: 100%;
     align-items: center;
     font-size: 3em;
-    color: red;
+}
+
+.error_text {
     font-weight: bold;
+    margin: 0;
+}
+
+.error_redirect {
+    font-weight: bold;
+    margin-top: 0;
+    color: #ff5757;
 }
 
 /************ MODAL ***************/

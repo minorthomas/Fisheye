@@ -20,12 +20,13 @@ function pageNotFound() {
     document.querySelector(".photographer_header").style.display = "none";
 
     //set timeout after error (3s)
-    setTimeout(function () { window.location.href = "index.html"; }, 3000);
+    setTimeout(function () { window.location.href = "index.html"; }, 100000000);
 
     const errorInDom = `
     <div class="error">
-        <p class="error_number">Error 404</p>
-        <p class="error_text">Page not found, redirect after 3 seconds</p>
+        <p class="error_number">404</p>
+        <p class="error_text">Page not found</p>
+        <p class="error_redirect">Redirect after 3 seconds</p>
     </div>
     `
 
