@@ -54,10 +54,7 @@ async function displayPhotographerMedias() { //display les medias photographers 
 
     const mediasSection = document.querySelector(".medias");
 
-    selectedMedia.forEach((media) => {
-        const allMedias = new MediasFactory(media);
-        mediasSection.innerHTML += allMedias.templateMedia();
-    });
+    sortByPopularity();
 
     function sortBy() {
         document.querySelector(".popularity_option").addEventListener("click", function () { //au clique change ordre par likes
