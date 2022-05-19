@@ -59,17 +59,21 @@ async function displayPhotographerMedias() { //display les medias photographers 
         mediasSection.innerHTML += allMedias.templateMedia();
     });
 
-    document.querySelector(".popularity_option").addEventListener("click", function () {
-        sortByPopularity();
-    });
+    function sortBy() {
+        document.querySelector(".popularity_option").addEventListener("click", function () { //au clique change ordre par likes
+            sortByPopularity(); //funct fichier utils/sortBy.js
+        });
 
-    document.querySelector(".date_option").addEventListener("click", function () {
-        sortByDate();
-    });
+        document.querySelector(".date_option").addEventListener("click", function () { //au clique change ordre par date
+            sortByPopularity(); //funct fichier utils/sortBy.js
+        });
 
-    document.querySelector(".title_option").addEventListener("click", function () {
-        sortByTitle();
-    });
+        document.querySelector(".title_option").addEventListener("click", function () { //au clique change ordre par order alpha
+            sortByTitle(); //funct fichier utils/sortBy.js
+        });
+    }
+
+    sortBy(); //initialise la funct de tri
 }
 
 async function init() {
