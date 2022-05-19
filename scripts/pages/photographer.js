@@ -58,6 +58,18 @@ async function displayPhotographerMedias() { //display les medias photographers 
         const allMedias = new MediasFactory(media);
         mediasSection.innerHTML += allMedias.templateMedia();
     });
+
+    document.querySelector(".popularity_option").addEventListener("click", function () {
+        sortByPopularity();
+    });
+
+    document.querySelector(".date_option").addEventListener("click", function () {
+        sortByDate();
+    });
+
+    document.querySelector(".title_option").addEventListener("click", function () {
+        sortByTitle();
+    });
 }
 
 async function init() {

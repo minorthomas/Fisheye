@@ -1,20 +1,43 @@
-async function getMedias() {
-    const { media } = await getPhotographers();
+const mediasSection = document.querySelector(".medias");
 
+async function sortByPopularity() {
+    const { media } = await getPhotographers(); //recup photographers et medias
     const selectedMedia = media.filter( //trouve et verifi si id du photographer == id dans l'url
         (media) => media.photographerId == getIdParam
     );
 
-    let array = [];
+    const sortByDate = selectedMedia.sort((a, b) => {
+        let dateA = new Date(a.date);
+        let dateB = new Date(b.date);
 
-    for (i = 0; i < selectedMedia.length; i++) {
-        const likes = selectedMedia[i].likes;
+        return dateB - dateA;
+    });
 
-        array.push(likes);
-    }
-    const byValue = (a, b) => b - a;
+    mediasSection.innerHTML = "";
 
-    array.sort(byValue)
+    sortByDate.forEach((media) => {
+        const allMedias = new MediasFactory(media);
+        mediasSection.innerHTML += allMedias.templateMedia();
+    });
+}
 
-    console.log(array);
+async function sortByDate() {
+    const { media } = await getPhotographers(); //recup photographers et medias
+    const selectedMedia = media.filter( //trouve et verifi si id du photographer == id dans l'url
+        (media) => media.photographerId == getIdParam
+    );
+
+    const sortByDate = selectedMedia.sort((a, b) => {
+        let dateA = new Date(a.date);
+        let dateB = new Date(b.date);
+
+        return dateB - dateA;
+    });
+
+    mediasSection.innerHTML = "";
+
+    sortByDate.forEach((media) => {
+        const allMedias = new MediasFactory(media);
+        mediasSection.innerHTML += allMedias.templateMedia();
+    });
 }
