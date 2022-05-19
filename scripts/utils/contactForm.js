@@ -12,7 +12,7 @@ function closeModal() {
 }
 
 async function displayNameModal() {
-    const { photographers } = await getPhotographerData(); //recup photographers et medias
+    const { photographers } = await getPhotographers(); //recup photographers et medias
 
     const selectedPhotographer = photographers.find( //trouve et verifi si id du photographer == id dans l'url
         (photographer) => photographer.id == getIdParam
