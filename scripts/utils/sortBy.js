@@ -6,16 +6,11 @@ async function sortByPopularity() {
         (media) => media.photographerId == getIdParam
     );
 
-    const sortByDate = selectedMedia.sort((a, b) => {
-        let dateA = new Date(a.date);
-        let dateB = new Date(b.date);
-
-        return dateB - dateA;
-    });
+    const sortByPopularity = selectedMedia.sort((a, b) => b.likes - a.likes);
 
     mediasSection.innerHTML = "";
 
-    sortByDate.forEach((media) => {
+    sortByPopularity.forEach((media) => {
         const allMedias = new MediasFactory(media);
         mediasSection.innerHTML += allMedias.templateMedia();
     });
