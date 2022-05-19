@@ -47,29 +47,21 @@ async function displayPhotographerData() { //display infos photographers
 };
 
 async function displayPhotographerMedias() { //display les medias photographers (images, videos)
-    const { media } = await getPhotographers(); //recup photographers et medias
-    const selectedMedia = media.filter( //trouve et verifi si id du photographer == id dans l'url
-        (media) => media.photographerId == getIdParam
-    );
-
-    const mediasSection = document.querySelector(".medias");
-
-    sortByPopularity();
-
     function sortBy() {
-        document.querySelector(".popularity_option").addEventListener("click", function () { //au clique change ordre par likes
-            sortByPopularity(); //funct fichier utils/sortBy.js
-        });
+        const filterSelect = document.querySelector("#filter-select");//get select menu
 
-        document.querySelector(".date_option").addEventListener("click", function () { //au clique change ordre par date
-            sortByPopularity(); //funct fichier utils/sortBy.js
-        });
+        sortByPopularity(); //initialise popularity filter par defaut
 
-        document.querySelector(".title_option").addEventListener("click", function () { //au clique change ordre par order alpha
-            sortByTitle(); //funct fichier utils/sortBy.js
-        });
+        filterSelect.addEventListener("change", (event) => {
+            if (event.target.value === "popularity") { //si sur popularity, change dans l'ordre like
+                sortByPopularity();
+            } else if (event.target.value === "date") { //si sur date, change dans l'ordre: plus recente plus ancienne
+                sortByDate();
+            } else if (event.target.value === "title") { //si sur title, change ordre alpha
+                sortByTitle();
+            }
+        })
     }
-
     sortBy(); //initialise la funct de tri
 }
 
