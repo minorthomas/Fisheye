@@ -39,8 +39,7 @@ h1 {
     font-size: 36px;
 }
 
-.photographers_header_image>img,
-.photographers_header_image>video {
+.photographers_header_image>img {
     height: 200px;
     width: 200px;
     border-radius: 50%;
@@ -56,8 +55,7 @@ h1 {
     overflow: hidden;
 }
 
-.photographers_header_image:hover>img,
-.photographers_header_image:hover>video {
+.photographers_header_image:hover>img {
     transform: scale(1.05);
 }
 
