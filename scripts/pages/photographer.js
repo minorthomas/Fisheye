@@ -7,7 +7,7 @@ function pageNotFound() {
     const photographerMain = document.querySelector("#main");
 
     //display none all elements
-    document.querySelector(".sort_by").style.display = "none";
+    document.querySelector("#select_menu").style.display = "none";
     document.querySelector(".photographer_header").style.display = "none";
 
     //set timeout after error (3s)

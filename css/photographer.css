@@ -367,3 +367,20 @@ form input {
 #filter_select:hover .dropdown_section img {
     transform: rotate(180deg);
 }
+
+.line_one,
+.line_two {
+    position: absolute;
+    border-bottom: 0.1em solid white;
+    margin-top: 5px;
+    width: 85%;
+    left: 0.7em;
+}
+
+.line_one {
+    top: -0.3em;
+}
+
+.line_two {
+    top: 2.7em;
+}
