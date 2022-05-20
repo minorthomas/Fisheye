@@ -18,16 +18,22 @@
   <main id="main">
     <div class="photographer_header">
     </div>
-    <div class="sort_by">
-      <div id="select_menu">
-        <label for="filter_select" id="sort">Trier par </label>
-        <select name="select" id="filter-select">
-          <option value="popularity">Popularité</option>
-          <option value="date">Date</option>
-          <option value="title">Titre</option>
-        </select>
+    <div id="select_menu">
+      <label for="filter_select" id="sort">Trier par </label>
+      <div id="filter_select">
+        <div class="dropdown_section">
+          <div class="dropdown_button"></div>
+          <img src="assets/icons/down-arrow.svg" alt="arrow down" />
+        </div>
+
+        <div class="options_buttons">
+          <button class="option_popularity" value="popularity">Popularité</button>
+          <button class="option_date" value="date">Date</button>
+          <button class="option_title" value="title">Titre</button>
+        </div>
       </div>
     </div>
+
     <div class="photographer_bottom">
     </div>
 

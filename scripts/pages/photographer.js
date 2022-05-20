@@ -48,17 +48,49 @@ async function displayPhotographerData() { //display infos photographers
 
 async function displayPhotographerMedias() { //display les medias photographers (images, videos)
     function sortBy() {
-        const filterSelect = document.querySelector("#filter-select");//get select menu
+        const filterSelect = document.querySelector("#filter_select")
+        const dropdownButton = document.querySelector(".dropdown_button");
 
-        sortByPopularity(); //initialise popularity filter par defaut
+        const optionPopularity = document.querySelector(".option_popularity");
+        const optionDate = document.querySelector(".option_date");
+        const optionTitle = document.querySelector(".option_title");
 
-        filterSelect.addEventListener("change", (event) => {
+        sortByPopularity();//initialise popularity filter par defaut
+        optionPopularity.style.display = "none";//option popularite display none par defaut
+        dropdownButton.textContent = "Popularité";
+
+        filterSelect.addEventListener("click", (event) => {
             if (event.target.value === "popularity") { //si sur popularity, change dans l'ordre like
                 sortByPopularity();
+
+                dropdownButton.textContent = "Popularité";
+
+                optionPopularity.style.display = "none";
+                optionDate.style.display = "block";
+                optionTitle.style.display = "block";
+
+                optionDate.style.borderRadius = "0";
+
             } else if (event.target.value === "date") { //si sur date, change dans l'ordre: plus recente plus ancienne
                 sortByDate();
+
+                dropdownButton.textContent = "Date";
+
+                optionPopularity.style.display = "block";
+                optionDate.style.display = "none";
+                optionTitle.style.display = "block";
+
             } else if (event.target.value === "title") { //si sur title, change ordre alpha
                 sortByTitle();
+
+                dropdownButton.textContent = "Titre";
+
+                optionPopularity.style.display = "block";
+                optionDate.style.display = "block";
+                optionTitle.style.display = "none";
+
+                optionDate.style.borderRadius = "0 0 0.3em 0.3em";
+
             }
         })
     }
