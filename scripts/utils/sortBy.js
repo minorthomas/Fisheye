@@ -14,6 +14,8 @@ async function sortByPopularity() {
         const allMedias = new MediasFactory(media);
         mediasSection.innerHTML += allMedias.templateMedia();
     });
+
+    localStorage.setItem("SortBy", JSON.stringify(sortByPopularity));
 }
 
 async function sortByDate() {
@@ -35,6 +37,8 @@ async function sortByDate() {
         const allMedias = new MediasFactory(media);
         mediasSection.innerHTML += allMedias.templateMedia();
     });
+
+    localStorage.setItem("SortBy", JSON.stringify(sortByDate));
 }
 
 async function sortByTitle() {
@@ -62,4 +66,6 @@ async function sortByTitle() {
         const allMedias = new MediasFactory(media);
         mediasSection.innerHTML += allMedias.templateMedia();
     });
+
+    localStorage.setItem("SortBy", JSON.stringify(sortByTitle));
 }
