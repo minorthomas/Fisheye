@@ -27,12 +27,12 @@ class Image extends Media {
     templateMedia() {
         return `
             <article class="media_section">
-                <img src="${this.picture}" class="media_source" alt="${this._title}"/>
+                <img loading="lazy" src="${this.picture}" class="media_source" alt="${this._title}"/>
                 <div class="media_infos">
                     <h2 class="media_title">${this._title}</h2>
                     <div class="media_like">
                         <p class="media_total_like">${this._likes}</p>
-                        <img class="heart" src="/assets/icons/heartred.svg" alt="like"/>
+                        <img loading="lazy" class="heart" src="/assets/icons/heartred.svg" alt="like"/>
                     </div>
                 </div>
             </article>
@@ -60,7 +60,7 @@ class Video extends Media {
                     <h2 class="media_title">${this._title}</h2>
                     <div class="media_like">
                         <p class="media_total_like">${this._likes}</p>
-                        <img class="heart" src="/assets/icons/heartred.svg" alt="like"/>
+                        <img loading="lazy" class="heart" src="/assets/icons/heartred.svg" alt="like"/>
                     </div>       
                 </div>
             </article>

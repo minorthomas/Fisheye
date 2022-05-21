@@ -1,9 +1,4 @@
-async function getMedias() {
-    const { media } = await getPhotographers();
-
-    const selectedMedia = media.filter( //trouve et verifi si id du photographer == id dans l'url
-        (media) => media.photographerId == getIdParam
-    );
+function getMediaId() {
     const getSortByInLocalStorage = JSON.parse(localStorage.getItem("SortBy"));
 
     let arrayId = [];
@@ -11,10 +6,31 @@ async function getMedias() {
     for (let i = 0; i < getSortByInLocalStorage.length; i++) {
         arrayId.push(getSortByInLocalStorage[i].id)
     }
+
+    console.log(arrayId);
+
+    const allMedias = document.querySelectorAll("section > .media_section");
 }
 
-async function init() {
-    await getMedias();
+function templateLightbox() {
+    const lightboxSelect = document.querySelector(".lightbox_section");
+
+    const createTemplateLightbox = `
+        <img class="lightbox_close" alt="button close ligthbox" src="assets/icons/closered.svg"/>
+        <div class="lightbox_select">
+            <img class="lightbox_previous" src="#" alt="#"/>
+            <img class="lightbox_image" src="#" alt="#"/>
+            <img class="lightbox_next" src="#" alt="#"/>
+        </div>
+        <p class="lightbox_image_title">Text test</p>
+    `;
+
+    lightboxSelect.innerHTML = createTemplateLightbox;
+}
+
+function init() {
+    getMediaId();
+    templateLightbox();
 };
 
 init();
