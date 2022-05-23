@@ -24,13 +24,43 @@ function pageNotFound() {
     photographerMain.innerHTML = errorInDom;
 }
 
-async function displayPhotographerData() { //display infos photographers
-    const { photographers } = await getPhotographers(); //recup photographers et medias
+async function displayPhotographerInfos() { //display infos photographers
+    const { photographers, media } = await getPhotographers(); //recup photographers et medias
     const photographerHeader = document.querySelector(".photographer_header");//recup element dom (header)
 
     const selectedPhotographer = photographers.find( //trouve et verifi si id du photographer == id dans l'url
         (photographer) => photographer.id == getIdParam
     );
+
+    const selectedMedia = media.filter( //trouve et verifi si id du photographer == id dans l'url
+        (media) => media.photographerId == getIdParam
+    );
+
+    console.log(selectedMedia);
+
+    function mediaLikes() {
+        const totalLikesDom = document.querySelector(".photographer_likes");
+
+        let sum = 0;
+
+        for (i = 0; i < selectedMedia.length; i++) {
+            sum += selectedMedia[i].likes
+        }
+
+        sum.toString();
+
+        totalLikesDom.textContent = sum;
+
+        function buttonLike() {
+
+            console.log(sum);
+        }
+
+        buttonLike()
+
+    }
+
+
 
     //condition si aucun photographe
     if (selectedPhotographer === undefined) {
@@ -43,6 +73,8 @@ async function displayPhotographerData() { //display infos photographers
         const photographerBottom = document.querySelector(".photographer_bottom");
 
         photographerBottom.innerHTML = photographerModel.templateLikeAndPrice();
+
+        mediaLikes();
     }
 };
 
@@ -55,8 +87,8 @@ async function displayPhotographerMedias() { //display les medias photographers 
         const optionDate = document.querySelector(".option_date");
         const optionTitle = document.querySelector(".option_title");
 
-        sortByPopularity();//initialise popularity filter par defaut
-        optionPopularity.style.display = "none";//option popularite display none par defaut
+        sortByPopularity(); //initialise popularity filter par defaut
+        optionPopularity.style.display = "none"; //option popularite display none par defaut
         dropdownButton.textContent = "Popularité";
 
         filterSelect.addEventListener("click", (event) => {
@@ -98,7 +130,7 @@ async function displayPhotographerMedias() { //display les medias photographers 
 }
 
 async function init() {
-    await displayPhotographerData();
+    await displayPhotographerInfos();
     await displayPhotographerMedias();
 };
 

@@ -16,10 +16,6 @@ body {
     height: 2.6em;
 }
 
-.heart {
-    height: 1em;
-    margin-left: 0.3em;
-}
 
 /************ HEADER ************/
 header {
@@ -90,7 +86,12 @@ header {
 .photographer_total_like {
     display: flex;
     align-items: center;
+}
 
+.total_like_heart {
+    height: 1em;
+    margin-left: 0.4em;
+    fill: #000000;
 }
 
 /************ SORT BY ***************/
@@ -116,7 +117,7 @@ header {
 }
 
 /*************MEDIAS****************/
-.medias {
+.medias_section {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     margin: 3em 0;
@@ -133,14 +134,14 @@ header {
     transition: transform 0.3s ease-in-out;
 }
 
-.media_section {
+.media {
     margin-top: 1em;
     overflow: hidden;
     border-radius: 0.3em;
 }
 
-.media_section:hover>img,
-.media_section:hover>video {
+.media:hover>img,
+.media:hover>video {
     transform: scale(1.05);
 }
 
@@ -176,8 +177,10 @@ header {
     margin: 0;
 }
 
-.heart {
-    font-size: 0.8em;
+.media_heart {
+    height: 0.7em;
+    margin-left: 0.3em;
+    fill: #901C1C;
 }
 
 /************ ERROR ***************/
@@ -321,11 +324,13 @@ form input {
     position: relative;
 }
 
-.dropdown_section img {
+.dropdown_svg {
     position: absolute;
-    top: 0.9em;
+    top: 1.15em;
     left: 8em;
-    height: 1.5em;
+    height: 0.8em;
+    transform: rotate(90deg);
+    fill: white;
 }
 
 .dropdown_button {
@@ -381,8 +386,8 @@ form input {
     border-radius: 0.3em 0.3em 0 0;
 }
 
-#filter_select:hover .dropdown_section img {
-    transform: rotate(180deg);
+#filter_select:hover .dropdown_section svg {
+    transform: rotate(-90deg);
 }
 
 .line_one,
@@ -404,5 +409,5 @@ form input {
 
 /*************LIGHTBOX*************/
 .lightbox_close {
-    fill: black;
+    fill: #901C1C;
 }

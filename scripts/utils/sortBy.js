@@ -1,4 +1,4 @@
-const mediasSection = document.querySelector(".medias");
+const mediasSection = document.querySelector(".medias_section");
 
 async function sortByPopularity() {
     const { media } = await getPhotographers(); //recup photographers et medias
