@@ -30,9 +30,9 @@ class Image extends Media {
                 <img loading="lazy" src="${this.picture}" class="media_source" alt="${this._title}"/>
                 <div class="media_infos">
                     <h2 class="media_title">${this._title}</h2>
-                    <div class="media_like">
-                        <p class="media_total_like">${this._likes}</p>
-                        <svg onclick="likesMedias()" class="media_heart" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                    <div class="media_like" id="like${this._id}">
+                        ${this._likes}
+                        <svg class="media_heart" id="heart${this._id}" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                             viewBox="0 0 302.489 302.489" style="enable-background:new 0 0 302.489 302.489;" xml:space="preserve">
                             <path d="M302.351,98.012c-1.116-20.846-9.942-40.422-24.855-55.122c-15.103-14.887-34.811-23.086-55.491-23.086
                             c-30.776,0-53.082,24.334-65.065,37.408c-1.85,2.019-4.018,4.384-5.527,5.827c-1.208-1.25-2.845-3.114-4.351-4.828
@@ -76,9 +76,9 @@ class Video extends Media {
                 </svg>
                 <div class="media_infos">
                     <h2 class="media_title">${this._title}</h2>
-                    <div class="media_like">
-                        <p class="media_total_like">${this._likes}</p>
-                        <svg onclick="likesMedias()" class="media_heart" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                    <div class="media_like" id="like${this._id}">
+                        ${this._likes}
+                        <svg class="media_heart" id="heart${this._id}" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                             viewBox="0 0 302.489 302.489" style="enable-background:new 0 0 302.489 302.489;" xml:space="preserve">
                             <path d="M302.351,98.012c-1.116-20.846-9.942-40.422-24.855-55.122c-15.103-14.887-34.811-23.086-55.491-23.086
                             c-30.776,0-53.082,24.334-65.065,37.408c-1.85,2.019-4.018,4.384-5.527,5.827c-1.208-1.25-2.845-3.114-4.351-4.828

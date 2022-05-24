@@ -9,7 +9,7 @@ async function selectedPhotographerPage() {
         (photographer) => photographer.id == getIdParam
     );
 
-    const selectedMedia = media.filter( //trouve et verifie si media selectionné === id dans url
+    const selectedMedias = media.filter( //trouve et verifie si media selectionné === id dans url
         (media) => media.photographerId == getIdParam
     );
 
@@ -34,29 +34,27 @@ async function selectedPhotographerPage() {
     function filterMedias() {
         const filterSelect = document.querySelector("#filter_select")
 
-        sortByPopularity(selectedMedia); //initialise popularity filter par defaut
+        sortByPopularity(selectedMedias); //initialise popularity filter par defaut
 
         filterSelect.addEventListener("click", (event) => {
             if (event.target.value === "popularity") { //si sur popularity, change dans l'ordre like
-                sortByPopularity(selectedMedia);
+                sortByPopularity(selectedMedias);
             } else if (event.target.value === "date") { //si sur date, change dans l'ordre: plus recente plus ancienne
-                sortByDate(selectedMedia);
+                sortByDate(selectedMedias);
             } else if (event.target.value === "title") { //si sur title, change ordre alpha
-                sortByTitle(selectedMedia);
+                sortByTitle(selectedMedias);
             }
         })
     }
 
     /////////////////////////////////////////////////////
     async function calculateTotalLike() {
-
-
         const totalLikesDom = document.querySelector(".photographer_likes");
 
         let sum = 0;
 
-        for (i = 0; i < selectedMedia.length; i++) {
-            sum += selectedMedia[i].likes
+        for (i = 0; i < selectedMedias.length; i++) {
+            sum += selectedMedias[i].likes
         }
 
         totalLikesDom.textContent = sum.toString();
@@ -66,22 +64,38 @@ async function selectedPhotographerPage() {
 
     ////////////////////////////////////////////////////////
     async function likesMedias() {
-        const selectedMedia = media.filter( //trouve et verifi si id du photographer == id dans l'url
-            (media) => media.photographerId == getIdParam
-        );
+        selectedMedias.forEach((selectedMedia) => {
+            let status = false; //status sur false par defaut === pas de like
 
-        selectedMedia.forEach((media) => {
-            let status = false;
-        })
+            const likesSection = document.querySelector('#like' + selectedMedia.id);
 
-        const medias = document.querySelectorAll(".media_like");
+            likesSection.addEventListener("click", (event) => {
+                event.preventDefault();
 
-        console.log(medias);
+                const heart = document.querySelector("#heart" + selectedMedia.id);
+
+                if (status == false) {
+                    let incrementLike = selectedMedia.likes += 1;
+                    likesSection.firstChild.textContent = incrementLike;
+                    heart.style.fill = "#DB8876";
+                    status = true;
+                } else {
+                    let decrementLike = selectedMedia.likes -= 1;
+                    likesSection.firstChild.textContent = decrementLike;
+                    status = false;
+                    heart.style.fill = "#901C1C";
+                }
+                calculateTotalLike()
+            });
+        });
+
     }
 
     /////INIT ALL FUNCTION
     displayPhotographerInfos();
     filterMedias();
+    calculateTotalLike()
+    likesMedias();
 }
 
 selectedPhotographerPage(); //init la function selectedPhotographerPage

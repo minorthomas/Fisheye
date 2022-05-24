@@ -345,6 +345,7 @@ form input {
     height: 0.8em;
     transform: rotate(90deg);
     fill: white;
+    z-index: 2;
 }
 
 .dropdown_button {
@@ -356,7 +357,7 @@ form input {
     background-color: #901C1C;
     color: white;
     padding: 0.9em;
-    z-index: 3;
+    z-index: 2;
 }
 
 .options_buttons {
