@@ -2,73 +2,54 @@ const getParams = window.location.search; //recup params dans l'url
 const getUrlParams = new URLSearchParams(getParams);
 const getIdParam = getUrlParams.get("id"); //recup seulement param id de l'url
 
-function displayPageNotFound() {
-    //recup id main
-    const photographerMain = document.querySelector("#main");
+async function selectedPhotographerPage() {
+    const { photographers, media } = await getPhotographers(); //get photographers et medias
 
-    //display none all elements
-    document.querySelector("#select_menu").style.display = "none";
-    document.querySelector(".photographer_header").style.display = "none";
-
-    //set timeout after error (3s)
-    setTimeout(function () { window.location.href = "index.html"; }, 3000);
-
-    const errorInDom = `
-    <div class="error">
-        <p class="error_number">404</p>
-        <p class="error_text">Page not found</p>
-        <p class="error_redirect">Auto redirect after 3 seconds</p>
-    </div>
-    `
-
-    photographerMain.innerHTML = errorInDom;
-}
-
-async function displayPhotographerInfos() { //display infos photographers
-    const { photographers, media } = await getPhotographers(); //recup photographers et medias
-    const photographerHeader = document.querySelector(".photographer_header");//recup element dom (header)
-
-    const selectedPhotographer = photographers.find( //trouve et verifi si id du photographer == id dans l'url
+    const selectedPhotographer = photographers.find( //trouve et verifie si photographer selectionné === id dans url
         (photographer) => photographer.id == getIdParam
     );
 
+    const selectedMedia = media.filter( //trouve et verifie si media selectionné === id dans url
+        (media) => media.photographerId == getIdParam
+    );
 
+    async function displayPhotographerInfos() { //display infos photographers
+        const photographerHeader = document.querySelector(".photographer_header");//recup element dom (header)
 
-    //condition si aucun photographe
-    if (selectedPhotographer === undefined) {
-        //initialise fonction affichage error dom
-        displayPageNotFound();
-    } else {
-        const photographerModel = new Photographers(selectedPhotographer); //constructor creer new photographer
-        photographerHeader.innerHTML += photographerModel.templatePhotographerPage(); //ajout les infos photographer dans dom
+        //condition si aucun photographe
+        if (selectedPhotographer === undefined) {
+            //initialise fonction affichage error dom
+            displayPageNotFound();
+        } else {
+            const photographerModel = new Photographers(selectedPhotographer); //constructor creer new photographer
+            photographerHeader.innerHTML += photographerModel.templatePhotographerPage(); //ajout les infos photographer dans dom
 
-        const photographerBottom = document.querySelector(".photographer_bottom");
+            const photographerBottom = document.querySelector(".photographer_bottom");
 
-        photographerBottom.innerHTML = photographerModel.templateLikeAndPrice();
-    }
-};
+            photographerBottom.innerHTML = photographerModel.templateLikeAndPrice();
+        }
+    };
 
-async function displayPhotographerMedias() { //display les medias photographers (images, videos)
-    function sortBy() {
+    /////////////////////////////////////////////////
+    function filterMedias() {
         const filterSelect = document.querySelector("#filter_select")
 
-        sortByPopularity(); //initialise popularity filter par defaut
+        sortByPopularity(selectedMedia); //initialise popularity filter par defaut
 
         filterSelect.addEventListener("click", (event) => {
             if (event.target.value === "popularity") { //si sur popularity, change dans l'ordre like
-                sortByPopularity();
+                sortByPopularity(selectedMedia);
             } else if (event.target.value === "date") { //si sur date, change dans l'ordre: plus recente plus ancienne
-                sortByDate();
+                sortByDate(selectedMedia);
             } else if (event.target.value === "title") { //si sur title, change ordre alpha
-                sortByTitle();
+                sortByTitle(selectedMedia);
             }
         })
     }
 
+    /////////////////////////////////////////////////////
     async function calculateTotalLike() {
-        const selectedMedia = media.filter( //trouve et verifi si id du photographer == id dans l'url
-            (media) => media.photographerId == getIdParam
-        );
+
 
         const totalLikesDom = document.querySelector(".photographer_likes");
 
@@ -83,6 +64,7 @@ async function displayPhotographerMedias() { //display les medias photographers 
         localStorage.setItem("TotalLike", JSON.stringify(sum));
     }
 
+    ////////////////////////////////////////////////////////
     async function likesMedias() {
         const selectedMedia = media.filter( //trouve et verifi si id du photographer == id dans l'url
             (media) => media.photographerId == getIdParam
@@ -97,14 +79,9 @@ async function displayPhotographerMedias() { //display les medias photographers 
         console.log(medias);
     }
 
-    sortBy(); //initialise la funct de tri
-    calculateTotalLike()
-    likesMedias();
+    /////INIT ALL FUNCTION
+    displayPhotographerInfos();
+    filterMedias();
 }
 
-async function init() {
-    await displayPhotographerInfos();
-    await displayPhotographerMedias();
-};
-
-init();
+selectedPhotographerPage(); //init la function selectedPhotographerPage
