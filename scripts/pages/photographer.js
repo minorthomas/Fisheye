@@ -32,6 +32,39 @@ async function displayPhotographerInfos() { //display infos photographers
         (photographer) => photographer.id == getIdParam
     );
 
+
+
+    //condition si aucun photographe
+    if (selectedPhotographer === undefined) {
+        //initialise fonction affichage error dom
+        displayPageNotFound();
+    } else {
+        const photographerModel = new Photographers(selectedPhotographer); //constructor creer new photographer
+        photographerHeader.innerHTML += photographerModel.templatePhotographerPage(); //ajout les infos photographer dans dom
+
+        const photographerBottom = document.querySelector(".photographer_bottom");
+
+        photographerBottom.innerHTML = photographerModel.templateLikeAndPrice();
+    }
+};
+
+async function displayPhotographerMedias() { //display les medias photographers (images, videos)
+    function sortBy() {
+        const filterSelect = document.querySelector("#filter_select")
+
+        sortByPopularity(); //initialise popularity filter par defaut
+
+        filterSelect.addEventListener("click", (event) => {
+            if (event.target.value === "popularity") { //si sur popularity, change dans l'ordre like
+                sortByPopularity();
+            } else if (event.target.value === "date") { //si sur date, change dans l'ordre: plus recente plus ancienne
+                sortByDate();
+            } else if (event.target.value === "title") { //si sur title, change ordre alpha
+                sortByTitle();
+            }
+        })
+    }
+
     async function calculateTotalLike() {
         const selectedMedia = media.filter( //trouve et verifi si id du photographer == id dans l'url
             (media) => media.photographerId == getIdParam
@@ -50,71 +83,23 @@ async function displayPhotographerInfos() { //display infos photographers
         localStorage.setItem("TotalLike", JSON.stringify(sum));
     }
 
-    //condition si aucun photographe
-    if (selectedPhotographer === undefined) {
-        //initialise fonction affichage error dom
-        displayPageNotFound();
-    } else {
-        const photographerModel = new Photographers(selectedPhotographer); //constructor creer new photographer
-        photographerHeader.innerHTML += photographerModel.templatePhotographerPage(); //ajout les infos photographer dans dom
+    async function likesMedias() {
+        const selectedMedia = media.filter( //trouve et verifi si id du photographer == id dans l'url
+            (media) => media.photographerId == getIdParam
+        );
 
-        const photographerBottom = document.querySelector(".photographer_bottom");
-
-        photographerBottom.innerHTML = photographerModel.templateLikeAndPrice();
-
-        calculateTotalLike()
-    }
-};
-
-async function displayPhotographerMedias() { //display les medias photographers (images, videos)
-    function sortBy() {
-        const filterSelect = document.querySelector("#filter_select")
-        const dropdownButton = document.querySelector(".dropdown_button");
-
-        const optionPopularity = document.querySelector(".option_popularity");
-        const optionDate = document.querySelector(".option_date");
-        const optionTitle = document.querySelector(".option_title");
-
-        sortByPopularity(); //initialise popularity filter par defaut
-        optionPopularity.style.display = "none"; //option popularite display none par defaut
-        dropdownButton.textContent = "Popularité";
-
-        filterSelect.addEventListener("click", (event) => {
-            if (event.target.value === "popularity") { //si sur popularity, change dans l'ordre like
-                sortByPopularity();
-
-                dropdownButton.textContent = "Popularité";
-
-                optionPopularity.style.display = "none";
-                optionDate.style.display = "block";
-                optionTitle.style.display = "block";
-
-                optionDate.style.borderRadius = "0";
-
-            } else if (event.target.value === "date") { //si sur date, change dans l'ordre: plus recente plus ancienne
-                sortByDate();
-
-                dropdownButton.textContent = "Date";
-
-                optionPopularity.style.display = "block";
-                optionDate.style.display = "none";
-                optionTitle.style.display = "block";
-
-            } else if (event.target.value === "title") { //si sur title, change ordre alpha
-                sortByTitle();
-
-                dropdownButton.textContent = "Titre";
-
-                optionPopularity.style.display = "block";
-                optionDate.style.display = "block";
-                optionTitle.style.display = "none";
-
-                optionDate.style.borderRadius = "0 0 0.3em 0.3em";
-
-            }
+        selectedMedia.forEach((media) => {
+            let status = false;
         })
+
+        const medias = document.querySelectorAll(".media_like");
+
+        console.log(medias);
     }
+
     sortBy(); //initialise la funct de tri
+    calculateTotalLike()
+    likesMedias();
 }
 
 async function init() {

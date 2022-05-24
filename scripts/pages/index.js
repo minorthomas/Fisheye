@@ -1,16 +1,16 @@
-async function displayData(photographers) { //fonction affiche les photographers dans le dom
+async function photographersPage() { //function contient getPhotographer & displayData funct
+    const { photographers } = await getPhotographers(); //get all photographers
 
-    const photographersSection = document.querySelector(".photographers_section"); //select dans dom
+    function displayData() { //affiche all infos photographers
+        const photographersSection = document.querySelector(".photographers_section"); //select ".photographers_section" in dom
 
-    photographers.forEach((photographer) => { //chaque boucle ajoute 1 photographer
-        const photographerModel = new Photographers(photographer); //creer photograher avec constructor
-        photographersSection.innerHTML += photographerModel.templatePhotographerHomePage(); //ajoute photographer dans dom
-    });
-};
+        photographers.forEach((photographer) => { //boucle ajoute in dom chaque photographers trouvé
+            const photographerModel = new Photographers(photographer); //creer photographer avec le constructor
+            photographersSection.innerHTML += photographerModel.templatePhotographerHomePage(); //ajoute photographer dans dom
+        });
+    };
 
-async function init() { //initialise la fonction
-    const { photographers } = await getPhotographers(); //recup les data photographers
-    displayData(photographers); //affiche les photographers
-};
+    displayData() //init la function display data
+}
 
-init(); //lance la fonction
+photographersPage(); //init la function photographerPage

@@ -1,11 +1,14 @@
 const mediasSection = document.querySelector(".medias_section");
 
-async function sortByPopularity() {
-    const { media } = await getPhotographers(); //recup photographers et medias
-    const selectedMedia = media.filter( //trouve et verifi si id du photographer == id dans l'url
-        (media) => media.photographerId == getIdParam
-    );
 
+
+const dropdownButton = document.querySelector(".dropdown_button");
+
+const optionPopularity = document.querySelector(".option_popularity");
+const optionDate = document.querySelector(".option_date");
+const optionTitle = document.querySelector(".option_title");
+
+async function sortByPopularity() {
     const sortByPopularity = selectedMedia.sort((a, b) => b.likes - a.likes);
 
     mediasSection.innerHTML = "";
@@ -16,14 +19,17 @@ async function sortByPopularity() {
     });
 
     localStorage.setItem("SortBy", JSON.stringify(sortByPopularity));
+
+    dropdownButton.textContent = "Popularité";
+
+    optionPopularity.style.display = "none";
+    optionDate.style.display = "block";
+    optionTitle.style.display = "block";
+
+    optionDate.style.borderRadius = "0";
 }
 
 async function sortByDate() {
-    const { media } = await getPhotographers(); //recup photographers et medias
-    const selectedMedia = media.filter( //trouve et verifi si id du photographer == id dans l'url
-        (media) => media.photographerId == getIdParam
-    );
-
     const sortByDate = selectedMedia.sort((a, b) => {
         let dateA = new Date(a.date);
         let dateB = new Date(b.date);
@@ -39,14 +45,15 @@ async function sortByDate() {
     });
 
     localStorage.setItem("SortBy", JSON.stringify(sortByDate));
+
+    dropdownButton.textContent = "Date";
+
+    optionPopularity.style.display = "block";
+    optionDate.style.display = "none";
+    optionTitle.style.display = "block";
 }
 
 async function sortByTitle() {
-    const { media } = await getPhotographers(); //recup photographers et medias
-    const selectedMedia = media.filter( //trouve et verifi si id du photographer == id dans l'url
-        (media) => media.photographerId == getIdParam
-    );
-
     const sortByTitle = selectedMedia.sort((a, b) => {
         let titleA = a.title.toLowerCase(),
             titleB = b.title.toLowerCase();
@@ -68,4 +75,12 @@ async function sortByTitle() {
     });
 
     localStorage.setItem("SortBy", JSON.stringify(sortByTitle));
+
+    dropdownButton.textContent = "Titre";
+
+    optionPopularity.style.display = "block";
+    optionDate.style.display = "block";
+    optionTitle.style.display = "none";
+
+    optionDate.style.borderRadius = "0 0 0.3em 0.3em";
 }

@@ -6,9 +6,6 @@ function getMediaById() {
     for (let i = 0; i < getSortByInLocalStorage.length; i++) {
         arrayId.push(getSortByInLocalStorage[i].id)
     }
-
-    console.log(arrayId);
-
     const allMedias = document.querySelectorAll("section > .media_section");
 }
 
@@ -31,7 +28,7 @@ function templateLightbox() {
 }
 
 function init() {
-    getMediaId();
+    getMediaById();
     templateLightbox();
 };
 
