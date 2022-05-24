@@ -198,7 +198,7 @@ header {
 
 /************ ERROR ***************/
 
-.error {
+.error_section {
     background-color: #f7f7f7;
     display: flex;
     flex-direction: column;
@@ -207,12 +207,12 @@ header {
     font-size: 3em;
 }
 
-.error_text {
+.error_notfound_text {
     font-weight: bold;
     margin: 0;
 }
 
-.error_redirect {
+.error_redirect_text {
     font-weight: bold;
     margin-top: 0;
     color: #ff5757;
