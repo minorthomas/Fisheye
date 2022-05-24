@@ -1,4 +1,4 @@
-function getMediaId() {
+function getMediaById() {
     const getSortByInLocalStorage = JSON.parse(localStorage.getItem("SortBy"));
 
     let arrayId = [];

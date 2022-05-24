@@ -2,7 +2,7 @@ const getParams = window.location.search; //recup params dans l'url
 const getUrlParams = new URLSearchParams(getParams);
 const getIdParam = getUrlParams.get("id"); //recup seulement param id de l'url
 
-function pageNotFound() {
+function displayPageNotFound() {
     //recup id main
     const photographerMain = document.querySelector("#main");
 
@@ -32,13 +32,11 @@ async function displayPhotographerInfos() { //display infos photographers
         (photographer) => photographer.id == getIdParam
     );
 
-    const selectedMedia = media.filter( //trouve et verifi si id du photographer == id dans l'url
-        (media) => media.photographerId == getIdParam
-    );
+    async function calculateTotalLike() {
+        const selectedMedia = media.filter( //trouve et verifi si id du photographer == id dans l'url
+            (media) => media.photographerId == getIdParam
+        );
 
-    console.log(selectedMedia);
-
-    function mediaLikes() {
         const totalLikesDom = document.querySelector(".photographer_likes");
 
         let sum = 0;
@@ -47,25 +45,15 @@ async function displayPhotographerInfos() { //display infos photographers
             sum += selectedMedia[i].likes
         }
 
-        sum.toString();
+        totalLikesDom.textContent = sum.toString();
 
-        totalLikesDom.textContent = sum;
-
-        function buttonLike() {
-
-            console.log(sum);
-        }
-
-        buttonLike()
-
+        localStorage.setItem("TotalLike", JSON.stringify(sum));
     }
-
-
 
     //condition si aucun photographe
     if (selectedPhotographer === undefined) {
         //initialise fonction affichage error dom
-        pageNotFound();
+        displayPageNotFound();
     } else {
         const photographerModel = new Photographers(selectedPhotographer); //constructor creer new photographer
         photographerHeader.innerHTML += photographerModel.templatePhotographerPage(); //ajout les infos photographer dans dom
@@ -74,7 +62,7 @@ async function displayPhotographerInfos() { //display infos photographers
 
         photographerBottom.innerHTML = photographerModel.templateLikeAndPrice();
 
-        mediaLikes();
+        calculateTotalLike()
     }
 };
 

@@ -252,7 +252,8 @@ header {
     margin: 0 0 2em 0;
 }
 
-.modal header img {
+.modal_close_button {
+    height: 3em;
     cursor: pointer;
     align-self: flex-start;
     margin-top: 1.0em;
