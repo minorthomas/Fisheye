@@ -39,16 +39,19 @@ async function selectedPhotographerPage() {
         filterSelect.addEventListener("click", (event) => {
             if (event.target.value === "popularity") { //si sur popularity, change dans l'ordre like
                 sortByPopularity(selectedMedias);
+                likesMedias();
             } else if (event.target.value === "date") { //si sur date, change dans l'ordre: plus recente plus ancienne
                 sortByDate(selectedMedias);
+                likesMedias();
             } else if (event.target.value === "title") { //si sur title, change ordre alpha
                 sortByTitle(selectedMedias);
+                likesMedias();
             }
         })
     }
 
     /////////////////////////////////////////////////////
-    async function calculateTotalLike() {
+    function calculateTotalLike() {
         const totalLikesDom = document.querySelector(".photographer_likes");
 
         let sum = 0;
@@ -63,7 +66,7 @@ async function selectedPhotographerPage() {
     }
 
     ////////////////////////////////////////////////////////
-    async function likesMedias() {
+    function likesMedias() {
         selectedMedias.forEach((selectedMedia) => {
             let status = false; //status sur false par defaut === pas de like
 
