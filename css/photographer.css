@@ -1,23 +1,5 @@
-* {
-    font-family: "DM Sans", sans-serif;
-    box-sizing: border-box;
-}
-
-a {
-    text-decoration: none;
-    color: #000000;
-}
-
-body {
-    margin: 0 18em;
-}
-
-.logo {
-    height: 2.6em;
-}
-
-
 /************ HEADER ************/
+
 header {
     margin-top: 2em;
 }

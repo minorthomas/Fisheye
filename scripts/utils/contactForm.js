@@ -22,7 +22,18 @@ async function displayNameModal() {
 
     const modalPhotographeName = document.querySelector(".modal_header_name");
     modalPhotographeName.innerHTML = namePhoto._name;
+
+    const confirmModalButton = document.querySelector("#modal_confirm_form");
+
+    confirmModalButton.addEventListener("click", (event) => {
+        const firstname = document.querySelector('#firstname').value;
+        console.log(firstname);
+    });
+
+}
+
+function getValueInput() {
+
 }
 
 displayNameModal();
-

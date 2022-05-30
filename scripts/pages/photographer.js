@@ -39,14 +39,12 @@ async function selectedPhotographerPage() {
         filterSelect.addEventListener("click", (event) => {
             if (event.target.value === "popularity") { //si sur popularity, change dans l'ordre like
                 sortByPopularity(selectedMedias);
-                likesMedias();
             } else if (event.target.value === "date") { //si sur date, change dans l'ordre: plus recente plus ancienne
                 sortByDate(selectedMedias);
-                likesMedias();
             } else if (event.target.value === "title") { //si sur title, change ordre alpha
                 sortByTitle(selectedMedias);
-                likesMedias();
             }
+            likesMedias();
         })
     }
 
@@ -91,13 +89,12 @@ async function selectedPhotographerPage() {
                 calculateTotalLike()
             });
         });
-
     }
 
     /////INIT ALL FUNCTION
     displayPhotographerInfos();
     filterMedias();
-    calculateTotalLike()
+    calculateTotalLike();
     likesMedias();
 }
 

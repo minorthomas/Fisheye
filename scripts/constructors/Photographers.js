@@ -23,19 +23,19 @@ class Photographers {
 
     templatePhotographerHomePage() {
         return `
-        <a class="photographers_link" href="photographer.html?id=${this._id}">
-            <div class="photographers_header">
-                <div class="photographers_header_image">
-                    <img src="${this.picture}" alt="${this._name} profile"/>
-                </div>    
-                <h2>${this._name}</h2>
-            </div>
-            <div class="photographers_footer">
-                <h3>${this.localisation}</h3>
-                <p class="photographers_footer_tagline">${this._tagline}</p>
-                <p class="photographers__footer_price">${this.price}</p>
-            </div>
-        </a>
+        <article>
+            <a href="photographer.html?id=${this._id}">
+                <div class="photographer_header">
+                    <img src="${this.picture}" alt="${this._name} profile"/>  
+                    <h2>${this._name}</h2>
+                </div>
+                <div class="photographer_footer">
+                    <h3>${this.localisation}</h3>
+                    <p class="tagline">${this._tagline}</p>
+                    <p class="price">${this.price}</p>
+                </div>
+            </a>
+        </article>
         `
     }
 

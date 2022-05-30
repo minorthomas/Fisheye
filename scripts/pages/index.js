@@ -2,7 +2,7 @@ async function photographersPage() { //function contient getPhotographer & displ
     const { photographers } = await getPhotographers(); //get all photographers
 
     function displayData() { //affiche all infos photographers
-        const photographersSection = document.querySelector(".photographers_section"); //select ".photographers_section" in dom
+        const photographersSection = document.querySelector("main"); //select "main" in dom
 
         photographers.forEach((photographer) => { //boucle ajoute in dom chaque photographers trouvé
             const photographerModel = new Photographers(photographer); //creer photographer avec le constructor
