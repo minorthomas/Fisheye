@@ -6,7 +6,7 @@ async function photographersPage() { //function contient getPhotographer & displ
 
         photographers.forEach((photographer) => { //boucle ajoute in dom chaque photographers trouvé
             const photographerModel = new Photographers(photographer); //creer photographer avec le constructor
-            photographersSection.innerHTML += photographerModel.templatePhotographerHomePage(); //ajoute photographer dans dom
+            photographersSection.innerHTML += photographerModel.templateDisplayAllPhotographers(); //ajoute photographer dans dom
         });
     };
 

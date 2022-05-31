@@ -14,7 +14,7 @@ async function selectedPhotographerPage() {
     );
 
     async function displayPhotographerInfos() { //display infos photographers
-        const photographerHeader = document.querySelector(".photographer_header");//recup element dom (header)
+        const photographerHeader = document.querySelector("#photographer_header");//recup element dom (header)
 
         //condition si aucun photographe
         if (selectedPhotographer === undefined) {
@@ -22,11 +22,11 @@ async function selectedPhotographerPage() {
             displayPageNotFound();
         } else {
             const photographerModel = new Photographers(selectedPhotographer); //constructor creer new photographer
-            photographerHeader.innerHTML += photographerModel.templatePhotographerPage(); //ajout les infos photographer dans dom
+            photographerHeader.innerHTML += photographerModel.templateDisplaySelectedPhotographer(); //ajout les infos photographer dans dom
 
             const photographerBottom = document.querySelector(".photographer_bottom");
 
-            photographerBottom.innerHTML = photographerModel.templateLikeAndPrice();
+            photographerBottom.innerHTML = photographerModel.templateDisplayLikeAndPrice();
         }
     };
 

@@ -1,11 +1,12 @@
-/************ HEADER ************/
+/*HEADER*/
 
 header {
     margin-top: 2em;
 }
 
-/************ PHOTOGRAPHER HEADER ************/
-.photographer_header {
+/*PHOTOGRAPHER HEADER*/
+
+#photographer_header {
     background-color: #FAFAFA;
     height: 300px;
     margin: 2em 0;
@@ -16,11 +17,7 @@ header {
     border-radius: 0.3em;
 }
 
-.photographer_infos {
-    margin: auto;
-}
-
-.photographer_header img {
+#photographer_header img {
     height: 200px;
     width: 200px;
     border-radius: 50%;
@@ -29,52 +26,51 @@ header {
     margin: auto;
 }
 
-.photographer_name {
+h1 {
     color: #D3573C;
     font-size: 3em;
     font-weight: lighter;
     margin: 0;
 }
 
-.photographer_localisation {
+#photographer_header div:nth-child(1) {
+    /*Left side*/
+    margin-left: 4em;
+}
+
+#photographer_header div:nth-child(1) p:nth-child(2) {
+    /*Country*/
     color: #901C1C;
     font-size: 1.5em;
-    margin: 0;
+    margin: 0.4em 0 0 0;
 }
 
-.photographer_tagline {
+#photographer_header div:nth-child(1) p:nth-child(3) {
+    /*Slogan*/
     color: #525252;
+    margin: 1em 0 0 0;
 }
 
-/************ PHOTOGRAPHER BOTTOM ************/
-
-.photographer_bottom {
-    position: fixed;
-    bottom: 0;
-    right: 3em;
-    z-index: 99;
+#photographer_header button {
+    margin: auto;
+    font-size: 20px;
+    font-weight: lighter;
+    color: white;
+    padding: 11px;
+    width: 170px;
+    height: 70px;
+    border: none;
+    background-color: #901C1C;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    transition: 0.2s;
 }
 
-.photographer_other {
-    display: flex;
-    width: 18em;
-    justify-content: space-around;
+#photographer_header button:hover {
     background-color: #DB8876;
-    color: #000000;
-    border-radius: 0.5em 0.5em 0 0;
-    font-weight: bold;
 }
 
-.photographer_total_like {
-    display: flex;
-    align-items: center;
-}
-
-.total_like_heart {
-    height: 1em;
-    margin-left: 0.4em;
-    fill: #000000;
-}
 
 /************ SORT BY ***************/
 
@@ -206,8 +202,7 @@ header {
     display: none;
 }
 
-.modal_confirm_form,
-.contact_button {
+.modal_confirm_form {
     font-size: 20px;
     font-weight: lighter;
     color: white;
@@ -221,9 +216,7 @@ header {
     text-align: center;
 }
 
-.contact_button {
-    margin: auto;
-}
+
 
 .modal {
     position: absolute;
@@ -363,8 +356,7 @@ form input {
 }
 
 .option_button:hover,
-.dropdown_button:hover,
-.contact_button:hover {
+.dropdown_button:hover {
     background-color: #DB8876;
 }
 
@@ -409,4 +401,34 @@ form input {
 /*************LIGHTBOX*************/
 .lightbox_close {
     fill: #901C1C;
+}
+
+/*PHOTOGRAPHER FOOTER*/
+
+.photographer_bottom {
+    position: fixed;
+    bottom: 0;
+    right: 3em;
+    z-index: 99;
+}
+
+.photographer_other {
+    display: flex;
+    width: 18em;
+    justify-content: space-around;
+    background-color: #DB8876;
+    color: #000000;
+    border-radius: 0.5em 0.5em 0 0;
+    font-weight: bold;
+}
+
+.photographer_total_like {
+    display: flex;
+    align-items: center;
+}
+
+.total_like_heart {
+    height: 1em;
+    margin-left: 0.4em;
+    fill: #000000;
 }

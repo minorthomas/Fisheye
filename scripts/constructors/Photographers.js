@@ -21,43 +21,42 @@ class Photographers {
         return `${this._price}€ / jour`;
     }
 
-    templatePhotographerHomePage() {
+    templateDisplayAllPhotographers() {
         return `
-        <article>
-            <a href="photographer.html?id=${this._id}">
-                <div class="photographer_header">
-                    <img src="${this.picture}" alt="${this._name} profile"/>  
-                    <h2>${this._name}</h2>
-                </div>
-                <div class="photographer_footer">
-                    <h3>${this.localisation}</h3>
-                    <p class="tagline">${this._tagline}</p>
-                    <p class="price">${this.price}</p>
-                </div>
-            </a>
-        </article>
+            <article>
+                <a href="photographer.html?id=${this._id}">
+                    <div>
+                        <img src="${this.picture}" alt="${this._name} profile"/>  
+                        <h2>${this._name}</h2>
+                    </div>
+                    <div>
+                        <h3>${this.localisation}</h3>
+                        <p>${this._tagline}</p>
+                        <p>${this.price}</p>
+                    </div>
+                </a>
+            </article>
         `
     }
 
-    templatePhotographerPage() {
+    templateDisplaySelectedPhotographer() {
         return `
-        <div class="photographer_infos">
-            <h1 class="photographer_name">${this._name}</h1>
-            <p class="photographer_localisation">${this.localisation}</p>
-            <p class="photographer_tagline">${this._tagline}</p>
-        </div>
-        <button class="contact_button" onclick="displayModal()">Contactez-moi</button>
-        <img class="photographer_picture" src="${this.picture}" alt="${this._name} profile"/>
+            <div>
+                <h1>${this._name}</h1>
+                <p>${this.localisation}</p>
+                <p>${this._tagline}</p>
+            </div>
+            <button onclick="displayModal()">Contactez-moi</button>
+            <img src="${this.picture}" alt="${this._name} profile picture"/>
         `
     }
 
-    templateLikeAndPrice() {
+    templateDisplayLikeAndPrice() {
         return `
         <div class="photographer_other">
             <div class="photographer_total_like">
                 <p class="photographer_likes"></p>
-                <svg class="total_like_heart" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-                    viewBox="0 0 302.489 302.489" style="enable-background:new 0 0 302.489 302.489;" xml:space="preserve">
+                <svg class="total_like_heart" viewBox="0 0 302.489 302.489" style="enable-background:new 0 0 302.489 302.489;">
                     <path d="M302.351,98.012c-1.116-20.846-9.942-40.422-24.855-55.122c-15.103-14.887-34.811-23.086-55.491-23.086
                     c-30.776,0-53.082,24.334-65.065,37.408c-1.85,2.019-4.018,4.384-5.527,5.827c-1.208-1.25-2.845-3.114-4.351-4.828
                     c-10.944-12.466-33.72-38.406-66.571-38.406c-20.68,0-40.387,8.199-55.49,23.086C10.087,57.59,1.259,77.165,0.143,98.012
