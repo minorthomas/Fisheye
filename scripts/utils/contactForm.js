@@ -25,10 +25,10 @@ async function displayNameModal() {
 
     const confirmModalButton = document.querySelector("#modal_confirm_form");
 
-    confirmModalButton.addEventListener("click", (event) => {
-        const firstname = document.querySelector('#firstname').value;
-        console.log(firstname);
-    });
+    // confirmModalButton.addEventListener("click", (event) => {
+    //     const firstname = document.querySelector('#firstname').value;
+    //     console.log(firstname);
+    // });
 
 }
 

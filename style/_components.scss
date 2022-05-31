@@ -1,0 +1,23 @@
+*::first-letter {
+    text-transform: uppercase;
+}
+
+* {
+    font-family: "DM Sans", sans-serif;
+}
+
+body {
+    margin: 0 18em;
+    box-sizing: border-box;
+
+    a {
+        text-decoration: none;
+        color: $black;
+    }
+
+    header {
+        img {
+            height: 2.6em;
+        }
+    }
+}

@@ -25,14 +25,14 @@ class Photographers {
         return `
             <article>
                 <a href="photographer.html?id=${this._id}">
-                    <div>
+                    <div class="photographer_header">
                         <img src="${this.picture}" alt="${this._name} profile"/>  
                         <h2>${this._name}</h2>
                     </div>
-                    <div>
+                    <div class="photographer_footer">
                         <h3>${this.localisation}</h3>
-                        <p>${this._tagline}</p>
-                        <p>${this.price}</p>
+                        <p class="photographer_footer_tagline">${this._tagline}</p>
+                        <p class="photographer_footer_price">${this.price}</p>
                     </div>
                 </a>
             </article>
