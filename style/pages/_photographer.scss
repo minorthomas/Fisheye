@@ -174,3 +174,33 @@
         }
     }
 }
+
+// FOOTER
+
+#footer_photographer_page {
+    position: fixed;
+    bottom: 0;
+    right: 3em;
+    z-index: 99;
+
+    #other_section {
+        display: flex;
+        width: 18em;
+        justify-content: space-around;
+        background-color: #DB8876;
+        color: #000000;
+        border-radius: 0.5em 0.5em 0 0;
+        font-weight: bold;
+
+        div {
+            display: flex;
+            align-items: center;
+
+            svg {
+                height: 1em;
+                margin-left: 0.4em;
+                fill: #000000;
+            }
+        }
+    }
+}

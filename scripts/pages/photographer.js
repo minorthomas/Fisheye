@@ -24,7 +24,7 @@ async function selectedPhotographerPage() {
             const photographerModel = new Photographers(selectedPhotographer); //constructor creer new photographer
             photographerHeader.innerHTML += photographerModel.templateDisplaySelectedPhotographer(); //ajout les infos photographer dans dom
 
-            const photographerBottom = document.querySelector(".photographer_bottom");
+            const photographerBottom = document.querySelector("#footer_photographer_page");
 
             photographerBottom.innerHTML = photographerModel.templateDisplayLikeAndPrice();
         }
@@ -50,7 +50,7 @@ async function selectedPhotographerPage() {
 
     /////////////////////////////////////////////////////
     function calculateTotalLike() {
-        const totalLikesDom = document.querySelector(".photographer_likes");
+        const totalLikesDom = document.querySelector("#other_section div p");
 
         let sum = 0;
 
