@@ -17,11 +17,25 @@ body a {
   color: #000000;
 }
 
+body header {
+  margin-top: 2em;
+}
+
 body header img {
   height: 2.6em;
 }
 
-header {
+.profile_picture {
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -webkit-box-shadow: 0px 4px 4px -1px rgba(0, 0, 0, 0.4);
+          box-shadow: 0px 4px 4px -1px rgba(0, 0, 0, 0.4);
+}
+
+#header_index_page {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -35,18 +49,18 @@ header {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  height: 90px;
 }
 
-header img {
+#header_index_page img {
   height: 2.6em;
 }
 
-header h1 {
+#header_index_page h1 {
   color: #901C1C;
+  margin: 0;
 }
 
-main {
+#main_index_page {
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 1fr 1fr 1fr;
@@ -55,7 +69,7 @@ main {
   margin: 100px 0;
 }
 
-main article {
+#main_index_page article {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -65,7 +79,7 @@ main article {
           flex-direction: column;
 }
 
-main article .photographer_header {
+#main_index_page article .photographers_header {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -78,24 +92,14 @@ main article .photographer_header {
           align-items: center;
 }
 
-main article .photographer_header img {
-  height: 200px;
-  width: 200px;
-  border-radius: 50%;
-  -o-object-fit: cover;
-     object-fit: cover;
-  -webkit-box-shadow: 0px 4px 4px -1px rgba(0, 0, 0, 0.4);
-          box-shadow: 0px 4px 4px -1px rgba(0, 0, 0, 0.4);
-}
-
-main article .photographer_header h2 {
+#main_index_page article h2 {
   margin: 0.8em 0 0 0;
   color: #D3573C;
   font-size: 2em;
   font-weight: lighter;
 }
 
-main article .photographer_footer {
+#main_index_page .photographers_footer {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -108,22 +112,217 @@ main article .photographer_footer {
           align-items: center;
 }
 
-main article .photographer_footer h3 {
+#main_index_page .photographers_footer h3 {
   margin: 0.3em 0 0 0;
   font-weight: lighter;
   color: #901C1C;
   font-size: 1em;
 }
 
-main article .photographer_footer_tagline {
+#main_index_page .photographers_footer_tagline {
   color: #000000;
   font-size: 0.8em;
   margin: 0.3em 0 0 0;
 }
 
-main article .photographer_footer_price {
+#main_index_page .photographers_footer_price {
   color: #525252;
   font-size: 0.8em;
   margin: 0.3em 0 0 0;
+}
+
+#header_photographer_page {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+#header_photographer_page #photographer_header {
+  background-color: #FAFAFA;
+  height: 300px;
+  margin: 2em 0;
+  display: -ms-grid;
+  display: grid;
+  gap: 70px;
+  -ms-grid-columns: 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 0.3em;
+}
+
+#header_photographer_page #photographer_header img {
+  margin: auto;
+}
+
+#header_photographer_page #photographer_header div {
+  margin-left: 4em;
+}
+
+#header_photographer_page #photographer_header div h1 {
+  color: #D3573C;
+  font-size: 3em;
+  font-weight: lighter;
+  margin: 0;
+}
+
+#header_photographer_page #photographer_header div p:nth-child(2) {
+  color: #901C1C;
+  font-size: 1.5em;
+  margin: 0.4em 0 0 0;
+}
+
+#header_photographer_page #photographer_header div p:nth-child(3) {
+  color: #525252;
+  margin: 1em 0 0 0;
+}
+
+#header_photographer_page #photographer_header button {
+  margin: auto;
+  font-size: 20px;
+  font-weight: lighter;
+  color: white;
+  padding: 11px;
+  width: 170px;
+  height: 70px;
+  border: none;
+  background-color: #901C1C;
+  border-radius: 5px;
+  cursor: pointer;
+  text-align: center;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+.dropdown_svg {
+  height: 1em;
+}
+
+#main_photographer_page #filter_section label {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  margin-right: 1em;
+}
+
+#main_photographer_page #filter_section #filter_select_dropdown {
+  color: red;
+}
+
+#main_photographer_page #filter_section #filter_select_options {
+  display: none;
+  z-index: 3;
+}
+
+#main_photographer_page #filter_section #filter_select_options button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 10em;
+  font-size: 1em;
+  border: none;
+  background-color: #901C1C;
+  color: white;
+  padding: 0.9em;
+}
+
+#main_photographer_page #filter_section #filter_select_options button:last-child {
+  border-radius: 0 0 0.3em 0.3em;
+}
+
+#main_photographer_page #medias_section {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr;
+  margin: 3em 0;
+  row-gap: 1em;
+  -webkit-column-gap: 8em;
+          column-gap: 8em;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#main_photographer_page #medias_section article {
+  margin-top: 1em;
+  overflow: hidden;
+  border-radius: 0.3em;
+  position: relative;
+  z-index: 2;
+}
+
+#main_photographer_page #medias_section article .play_button {
+  position: absolute;
+  left: 8em;
+  top: 4.5em;
+  fill: white;
+  height: 6em;
+  padding: 0.2em;
+  border: 0.2em solid black;
+  border-radius: 50%;
+}
+
+#main_photographer_page #medias_section article img {
+  width: 100%;
+  height: 240px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 0.3em;
+}
+
+#main_photographer_page #medias_section article div {
+  color: #901C1C;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  font-size: 0.8em;
+  margin: 0.5em 0;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#main_photographer_page #medias_section article div h2 {
+  margin: 0;
+  font-weight: lighter;
+}
+
+#main_photographer_page #medias_section article div div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 1.8em;
+  margin: 0;
+  font-weight: bold;
+}
+
+#main_photographer_page #medias_section article div div svg {
+  height: 0.7em;
+  margin-left: 0.3em;
+  fill: #901C1C;
 }
 /*# sourceMappingURL=main.css.map */

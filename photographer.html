@@ -11,36 +11,37 @@
 </head>
 
 <body>
-  <header>
+  <header id="header_photographer_page">
     <a href="index.html" alt="Fisheye home page">
       <img src="assets/images/logo.png" class="logo" alt="Fisheye logo" />
     </a>
     <div id="photographer_header">
     </div>
   </header>
-  <main>
-    <div id="select_menu">
-      <label for="filter_select" id="sort">Trier par </label>
+
+  <main id="main_photographer_page">
+    <div id="filter_section">
+      <label for="filter_select">Trier par </label>
       <div id="filter_select">
-        <div class="dropdown_section">
+        <div class="filter_select_dropdown">
           <div class="dropdown_button"></div>
           <svg class="dropdown_svg" viewBox="0 0 434.002 434.002" style="enable-background:new 0 0 434.002 434.002;">
             <path d="M95.457,434.002l-33.105-45.076l234.094-171.928L62.352,45.077L95.456,0L360.24,194.459
 			      c7.174,5.269,11.41,13.638,11.41,22.539c0,8.9-4.236,17.27-11.41,22.538L95.457,434.002z" />
           </svg>
         </div>
-        <div class="options_buttons">
-          <div class="line line_one"></div>
-          <div class="line line_two"></div>
+        <div id="filter_select_options">
+          <div class="line" id="line_one"></div>
+          <div class="line" id="line_two"></div>
 
-          <button class="option_button option_popularity" value="popularity">Popularité</button>
-          <button class="option_button option_date" value="date">Date</button>
-          <button class="option_button option_title" value="title">Titre</button>
+          <button class="option_button" id="option_popularity" value="popularity">Popularité</button>
+          <button class="option_button" id="option_date" value="date">Date</button>
+          <button class="option_button" id="option_title" value="title">Titre</button>
         </div>
       </div>
     </div>
 
-    <section class="medias_section">
+    <section id="medias_section">
     </section>
 
   </main>

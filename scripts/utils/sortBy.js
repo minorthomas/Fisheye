@@ -1,11 +1,11 @@
-const mediasSection = document.querySelector(".medias_section"); //get medias section in dom
+const mediasSection = document.querySelector("#medias_section"); //get medias section in dom
 
 const dropdownButton = document.querySelector(".dropdown_button"); //get button dropdown in dom
 
 //get button options filter
-const optionPopularity = document.querySelector(".option_popularity");
-const optionDate = document.querySelector(".option_date");
-const optionTitle = document.querySelector(".option_title");
+const optionPopularity = document.querySelector("#option_popularity");
+const optionDate = document.querySelector("#option_date");
+const optionTitle = document.querySelector("#option_title");
 
 function sortByPopularity(selectedMedia) { //function filtre by likes
     const sortByPopularity = selectedMedia.sort((a, b) => b.likes - a.likes); //compare les likes
@@ -18,7 +18,7 @@ function sortByPopularity(selectedMedia) { //function filtre by likes
     });
 
     //add in localstorage
-    localStorage.setItem("SortBy", JSON.stringify(sortByPopularity));
+    localStorage.setItem("Filter", JSON.stringify(sortByPopularity));
 
     //change all elements un dom
     dropdownButton.textContent = "Popularité";
@@ -46,7 +46,7 @@ function sortByDate(selectedMedia) {
     });
 
     //add in localstorage
-    localStorage.setItem("SortBy", JSON.stringify(sortByDate));
+    localStorage.setItem("Filter", JSON.stringify(sortByDate));
 
     //change all elements un dom
     dropdownButton.textContent = "Date";
@@ -78,7 +78,7 @@ function sortByTitle(selectedMedia) {
     });
 
     //add in localstorage
-    localStorage.setItem("SortBy", JSON.stringify(sortByTitle));
+    localStorage.setItem("Filter", JSON.stringify(sortByTitle));
 
     //change all elements un dom
     dropdownButton.textContent = "Titre";

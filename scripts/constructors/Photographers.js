@@ -25,14 +25,14 @@ class Photographers {
         return `
             <article>
                 <a href="photographer.html?id=${this._id}">
-                    <div class="photographer_header">
-                        <img src="${this.picture}" alt="${this._name} profile"/>  
+                    <div class="photographers_header">
+                        <img class="profile_picture" src="${this.picture}" alt="${this._name} profile picture"/>  
                         <h2>${this._name}</h2>
                     </div>
-                    <div class="photographer_footer">
+                    <div class="photographers_footer">
                         <h3>${this.localisation}</h3>
-                        <p class="photographer_footer_tagline">${this._tagline}</p>
-                        <p class="photographer_footer_price">${this.price}</p>
+                        <p class="photographers_footer_tagline">${this._tagline}</p>
+                        <p class="photographers_footer_price">${this.price}</p>
                     </div>
                 </a>
             </article>
@@ -47,7 +47,7 @@ class Photographers {
                 <p>${this._tagline}</p>
             </div>
             <button onclick="displayModal()">Contactez-moi</button>
-            <img src="${this.picture}" alt="${this._name} profile picture"/>
+            <img class="profile_picture" src="${this.picture}" alt="${this._name} profile picture"/>
         `
     }
 

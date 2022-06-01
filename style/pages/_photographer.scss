@@ -1,0 +1,171 @@
+// HEADER
+#header_photographer_page {
+    display: flex;
+    flex-direction: column;
+
+    #photographer_header {
+        background-color: #FAFAFA;
+        height: 300px;
+        margin: 2em 0;
+        display: grid;
+        gap: 70px;
+        grid-template-columns: 1fr 1fr 1fr;
+        align-items: center;
+        border-radius: 0.3em;
+
+        img {
+            margin: auto;
+        }
+
+        div {
+            margin-left: 4em;
+
+            h1 {
+                color: #D3573C;
+                font-size: 3em;
+                font-weight: lighter;
+                margin: 0;
+            }
+
+            p:nth-child(2) {
+                color: #901C1C;
+                font-size: 1.5em;
+                margin: 0.4em 0 0 0;
+            }
+
+            p:nth-child(3) {
+                color: #525252;
+                margin: 1em 0 0 0;
+            }
+        }
+
+        button {
+            margin: auto;
+            font-size: 20px;
+            font-weight: lighter;
+            color: white;
+            padding: 11px;
+            width: 170px;
+            height: 70px;
+            border: none;
+            background-color: #901C1C;
+            border-radius: 5px;
+            cursor: pointer;
+            text-align: center;
+            transition: 0.2s;
+        }
+    }
+}
+
+// MAIN
+
+.dropdown_svg {
+    height: 1em;
+}
+
+#main_photographer_page {
+
+    // SELECT MENU
+    #filter_section {
+
+        label {
+            align-self: center;
+            margin-right: 1em;
+        }
+
+        #filter_select {
+
+            &_dropdown {
+
+                color: red;
+            }
+
+            &_options {
+                display: none;
+                z-index: 3;
+
+                button {
+                    display: flex;
+                    flex-direction: column;
+                    width: 10em;
+                    font-size: 1em;
+                    border: none;
+                    background-color: #901C1C;
+                    color: white;
+                    padding: 0.9em;
+                }
+
+                button:last-child {
+                    border-radius: 0 0 0.3em 0.3em;
+                }
+            }
+        }
+    }
+
+    // MEDIAS
+
+    #medias_section {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        margin: 3em 0;
+        row-gap: 1em;
+        column-gap: 8em;
+        align-items: center;
+
+        article {
+            margin-top: 1em;
+            overflow: hidden;
+            border-radius: 0.3em;
+            position: relative;
+            z-index: 2;
+
+            .play_button {
+                position: absolute;
+                left: 8em;
+                top: 4.5em;
+                fill: white;
+                height: 6em;
+                padding: 0.2em;
+                border: 0.2em solid black;
+                border-radius: 50%;
+            }
+
+            img {
+                width: 100%;
+                height: 240px;
+                object-fit: cover;
+                border-radius: 0.3em;
+            }
+
+            div {
+                color: #901C1C;
+                display: flex;
+                flex-direction: row;
+                font-size: 0.8em;
+                margin: 0.5em 0;
+                justify-content: space-between;
+                align-items: center;
+
+                h2 {
+                    margin: 0;
+                    font-weight: lighter;
+                }
+
+                div {
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    font-size: 1.8em;
+                    margin: 0;
+                    font-weight: bold;
+
+                    svg {
+                        height: 0.7em;
+                        margin-left: 0.3em;
+                        fill: #901C1C;
+                    }
+                }
+            }
+        }
+    }
+}
