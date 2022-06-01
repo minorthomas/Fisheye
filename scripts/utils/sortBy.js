@@ -1,6 +1,6 @@
 const mediasSection = document.querySelector("#medias_section"); //get medias section in dom
 
-const dropdownButton = document.querySelector(".dropdown_button"); //get button dropdown in dom
+const dropdownButton = document.querySelector("#filter_select_dropdown button"); //get button dropdown in dom
 
 //get button options filter
 const optionPopularity = document.querySelector("#option_popularity");
