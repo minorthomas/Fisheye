@@ -69,23 +69,25 @@ async function selectedPhotographerPage() {
             let status = false; //status sur false par defaut === pas de like
 
             const likesSection = document.querySelector('#like' + selectedMedia.id);
+            const heart = document.querySelector("#heart" + selectedMedia.id);
 
             likesSection.addEventListener("click", (event) => {
                 event.preventDefault();
-
-                const heart = document.querySelector("#heart" + selectedMedia.id);
 
                 if (status == false) {
                     let incrementLike = selectedMedia.likes += 1;
                     likesSection.firstChild.textContent = incrementLike;
                     heart.style.fill = "#DB8876";
+                    likesSection.style.color = "#DB8876";
                     status = true;
                 } else {
                     let decrementLike = selectedMedia.likes -= 1;
                     likesSection.firstChild.textContent = decrementLike;
                     status = false;
                     heart.style.fill = "#901C1C";
+                    likesSection.style.color = "#901C1C";
                 }
+
                 calculateTotalLike()
             });
         });

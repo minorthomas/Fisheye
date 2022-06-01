@@ -292,10 +292,10 @@ body header img {
   position: absolute;
   left: 8em;
   top: 4.5em;
-  fill: white;
+  fill: #FAFAFA;
   height: 6em;
   padding: 0.2em;
-  border: 0.2em solid black;
+  border: 0.2em solid #DB8876;
   border-radius: 50%;
 }
 
@@ -331,7 +331,7 @@ body header img {
   font-weight: lighter;
 }
 
-#main_photographer_page #medias_section article div div {
+#main_photographer_page #medias_section article div button {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -345,11 +345,18 @@ body header img {
   font-size: 1.8em;
   margin: 0;
   font-weight: bold;
+  background-color: transparent;
+  border: none;
+  color: #901C1C;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
 }
 
-#main_photographer_page #medias_section article div div svg {
+#main_photographer_page #medias_section article div button svg {
   height: 0.7em;
   margin-left: 0.3em;
   fill: #901C1C;
+  -webkit-transition: 1s;
+  transition: 1s;
 }
 /*# sourceMappingURL=main.css.map */

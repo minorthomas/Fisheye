@@ -8,7 +8,7 @@ function displayPageNotFound() { //display l'erreur si pas de photographers trou
     setTimeout(function () { window.location.href = "index.html"; }, 3000);//set timeout after error (3s)
 
     //template de l'erreur
-    const templateError = `
+    const templateDisplayError = `
     <div class="error_section">
         <p>404</p>
         <p>Page not found</p>
@@ -16,5 +16,5 @@ function displayPageNotFound() { //display l'erreur si pas de photographers trou
     </div>
     `
 
-    photographerMain.innerHTML = templateError; //ajoute l'erreur dans le main dom
+    photographerMain.innerHTML = templateDisplayError; //ajoute l'erreur dans le main dom
 }

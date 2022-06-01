@@ -123,10 +123,10 @@
                 position: absolute;
                 left: 8em;
                 top: 4.5em;
-                fill: white;
+                fill: $lightgrey;
                 height: 6em;
                 padding: 0.2em;
-                border: 0.2em solid black;
+                border: 0.2em solid $secondary-color;
                 border-radius: 50%;
             }
 
@@ -138,7 +138,7 @@
             }
 
             div {
-                color: #901C1C;
+                color: $primary-color;
                 display: flex;
                 flex-direction: row;
                 font-size: 0.8em;
@@ -151,18 +151,23 @@
                     font-weight: lighter;
                 }
 
-                div {
+                button {
                     display: flex;
                     flex-direction: row;
                     align-items: center;
                     font-size: 1.8em;
                     margin: 0;
                     font-weight: bold;
+                    background-color: transparent;
+                    border: none;
+                    color: $primary-color;
+                    transition: 0.2s;
 
                     svg {
                         height: 0.7em;
                         margin-left: 0.3em;
-                        fill: #901C1C;
+                        fill: $primary-color;
+                        transition: 1s;
                     }
                 }
             }
