@@ -35,6 +35,33 @@ body header img {
           box-shadow: 0px 4px 4px -1px rgba(0, 0, 0, 0.4);
 }
 
+.error_section {
+  background-color: #f7f7f7;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 3em;
+}
+
+.error_section p:nth-child(2) {
+  font-weight: bold;
+  margin: 0;
+}
+
+.error_section p:nth-child(3) {
+  font-weight: bold;
+  margin-top: 0;
+  color: #ff5757;
+}
+
 #header_index_page {
   display: -webkit-box;
   display: -ms-flexbox;

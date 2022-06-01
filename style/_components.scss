@@ -24,10 +24,34 @@ body {
     }
 }
 
+// PROFILE PICTURE
+
 .profile_picture {
     height: 200px;
     width: 200px;
     border-radius: 50%;
     object-fit: cover;
     box-shadow: 0px 4px 4px -1px rgba(0, 0, 0, 0.4);
+}
+
+// ERROR
+
+.error_section {
+    background-color: #f7f7f7;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    font-size: 3em;
+
+    p:nth-child(2) {
+        font-weight: bold;
+        margin: 0;
+    }
+
+    p:nth-child(3) {
+        font-weight: bold;
+        margin-top: 0;
+        color: #ff5757;
+    }
 }
