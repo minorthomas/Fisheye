@@ -357,6 +357,7 @@ body header img {
   color: #901C1C;
   -webkit-transition: 0.2s;
   transition: 0.2s;
+  cursor: pointer;
 }
 
 #main_photographer_page #medias_section article div button svg {
