@@ -35,6 +35,26 @@ body header img {
           box-shadow: 0px 4px 4px -1px rgba(0, 0, 0, 0.4);
 }
 
+.button {
+  font-size: 20px;
+  font-weight: lighter;
+  color: white;
+  padding: 11px;
+  width: 170px;
+  height: 70px;
+  border: solid 0.15em transparent;
+  background-color: #901C1C;
+  border-radius: 5px;
+  text-align: center;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+.button:hover {
+  background-color: #DB8876;
+  color: #000000;
+}
+
 .error_section {
   background-color: #f7f7f7;
   display: -webkit-box;
@@ -211,19 +231,6 @@ body header img {
 
 #header_photographer_page #photographer_header button {
   margin: auto;
-  font-size: 20px;
-  font-weight: lighter;
-  color: white;
-  padding: 11px;
-  width: 170px;
-  height: 70px;
-  border: none;
-  background-color: #901C1C;
-  border-radius: 5px;
-  cursor: pointer;
-  text-align: center;
-  -webkit-transition: 0.2s;
-  transition: 0.2s;
 }
 
 .dropdown_svg {
@@ -358,6 +365,137 @@ body header img {
   fill: #901C1C;
   -webkit-transition: 1s;
   transition: 1s;
+}
+
+#modal_section {
+  display: none;
+  position: absolute;
+  border-radius: 5px;
+  background-color: #DB8876;
+  width: 40%;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 20px 35px 50px 35px;
+  margin: auto;
+  top: 5em;
+  left: 35em;
+  z-index: 4;
+}
+
+#modal_section #modal_header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 100%;
+  margin: 0 0 2em 0;
+}
+
+#modal_section #modal_header div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: start;
+}
+
+#modal_section #modal_header div h2 {
+  font-size: 3.2em;
+  font-weight: normal;
+  text-align: center;
+  margin: 0;
+}
+
+#modal_section #modal_header div p {
+  font-size: 3.2em;
+  font-weight: normal;
+  text-align: center;
+  margin: 0;
+}
+
+#modal_section #modal_header button {
+  background-color: transparent;
+  border: none;
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+  margin-top: 1.0em;
+}
+
+#modal_section #modal_header button svg {
+  cursor: pointer;
+  height: 3em;
+  fill: #FFFFFF;
+}
+
+#modal_section form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+#modal_section form div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100%;
+  -webkit-box-align: self-start;
+      -ms-flex-align: self-start;
+          align-items: self-start;
+  margin-bottom: 2.5em;
+}
+
+#modal_section form div input {
+  width: 100%;
+  height: 50px;
+  border: none;
+  border-radius: 5px;
+  font-size: 24px;
+}
+
+#modal_section form div label {
+  color: #312E2E;
+  font-size: 24px;
+}
+
+#modal_section form div #yourmessage {
+  height: 5em;
+}
+
+#modal_section .button {
+  -ms-flex-item-align: start;
+      -ms-grid-row-align: start;
+      align-self: start;
+}
+
+#modal_section .button:hover {
+  border: solid 0.15em #000000;
 }
 
 #footer_photographer_page {

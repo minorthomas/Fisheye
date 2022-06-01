@@ -34,6 +34,27 @@ body {
     box-shadow: 0px 4px 4px -1px rgba(0, 0, 0, 0.4);
 }
 
+// BUTTON
+
+.button {
+    font-size: 20px;
+    font-weight: lighter;
+    color: white;
+    padding: 11px;
+    width: 170px;
+    height: 70px;
+    border: solid 0.15em transparent;
+    background-color: #901C1C;
+    border-radius: 5px;
+    text-align: center;
+    transition: 0.2s;
+}
+
+.button:hover {
+    background-color: $secondary-color;
+    color: $black;
+}
+
 // ERROR
 
 .error_section {

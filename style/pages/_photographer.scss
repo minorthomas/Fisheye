@@ -41,18 +41,6 @@
 
         button {
             margin: auto;
-            font-size: 20px;
-            font-weight: lighter;
-            color: white;
-            padding: 11px;
-            width: 170px;
-            height: 70px;
-            border: none;
-            background-color: #901C1C;
-            border-radius: 5px;
-            cursor: pointer;
-            text-align: center;
-            transition: 0.2s;
         }
     }
 }
@@ -172,6 +160,105 @@
                 }
             }
         }
+    }
+}
+
+// MODAL
+
+#modal_section {
+    display: none;
+    position: absolute;
+    border-radius: 5px;
+    background-color: #DB8876;
+    width: 40%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 35px 50px 35px;
+    margin: auto;
+    top: 5em;
+    left: 35em;
+    z-index: 4;
+
+    #modal_header {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        margin: 0 0 2em 0;
+
+        div {
+            display: flex;
+            flex-direction: column;
+            align-items: start;
+
+            h2 {
+                font-size: 3.2em;
+                font-weight: normal;
+                text-align: center;
+                margin: 0;
+            }
+
+            p {
+                font-size: 3.2em;
+                font-weight: normal;
+                text-align: center;
+                margin: 0;
+            }
+
+        }
+
+        button {
+            background-color: transparent;
+            border: none;
+            align-self: flex-start;
+            margin-top: 1.0em;
+
+            svg {
+                cursor: pointer;
+                height: 3em;
+                fill: $white;
+            }
+        }
+    }
+
+    form {
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+        align-items: flex-start;
+
+        div {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            align-items: self-start;
+            margin-bottom: 2.5em;
+
+            input {
+                width: 100%;
+                height: 50px;
+                border: none;
+                border-radius: 5px;
+                font-size: 24px;
+            }
+
+            label {
+                color: #312E2E;
+                font-size: 24px;
+            }
+
+            #yourmessage {
+                height: 5em;
+            }
+        }
+    }
+
+    .button {
+        align-self: start;
+    }
+
+    .button:hover {
+        border: solid 0.15em $black;
     }
 }
 

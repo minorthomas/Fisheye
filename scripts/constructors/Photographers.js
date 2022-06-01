@@ -46,7 +46,7 @@ class Photographers {
                 <p>${this.localisation}</p>
                 <p>${this._tagline}</p>
             </div>
-            <button onclick="displayModal()">Contactez-moi</button>
+            <button class="button" onclick="displayModal()">Contactez-moi</button>
             <img class="profile_picture" src="${this.picture}" alt="${this._name} profile picture"/>
         `
     }

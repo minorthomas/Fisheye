@@ -171,7 +171,7 @@ h1 {
 
 /************ ERROR ***************/
 
-.error_section {
+/* .error_section {
     background-color: #f7f7f7;
     display: flex;
     flex-direction: column;
@@ -189,7 +189,7 @@ h1 {
     font-weight: bold;
     margin-top: 0;
     color: #ff5757;
-}
+} */
 
 /************ MODAL ***************/
 
@@ -213,7 +213,7 @@ h1 {
 
 
 
-.modal {
+/* .modal {
     position: absolute;
     border-radius: 5px;
     background-color: #DB8876;
@@ -226,21 +226,21 @@ h1 {
     margin: auto;
     top: 5em;
     left: 35em;
-}
+} */
 
-.modal header {
+/* .modal header {
     display: flex;
     justify-content: space-between;
     width: 100%;
     margin: 0 0 2em 0;
-}
+} */
 
-.modal_close_button {
+/* .modal_close_button {
     height: 3em;
     cursor: pointer;
     align-self: flex-start;
     margin-top: 1.0em;
-}
+} */
 
 .modal_header_infos {
     display: flex;
@@ -248,45 +248,45 @@ h1 {
     align-items: start;
 }
 
-.modal header h2,
+/* .modal header h2,
 .modal_header_name {
     font-size: 3.2em;
     font-weight: normal;
     text-align: center;
     margin: 0;
-}
+} */
 
-.modal_header_name {
+/* .modal_header_name {
     margin: 0;
-}
+} */
 
-form {
+/* form {
     display: flex;
     width: 100%;
     flex-direction: column;
     align-items: flex-start;
-}
-
+} */
+/* 
 form label {
     color: #312E2E;
     font-size: 24px;
-}
+} */
 
-form div {
+/* form div {
     display: flex;
     flex-direction: column;
     width: 100%;
     align-items: self-start;
     margin-bottom: 2.5em;
-}
+} */
 
-form input {
+/* form input {
     width: 100%;
     height: 50px;
     border: none;
     border-radius: 5px;
     font-size: 24px;
-}
+} */
 
 #yourmessage {
     height: 5em;
@@ -399,7 +399,7 @@ form input {
 }
 
 /*PHOTOGRAPHER FOOTER*/
-
+/* 
 .photographer_bottom {
     position: fixed;
     bottom: 0;
@@ -426,4 +426,4 @@ form input {
     height: 1em;
     margin-left: 0.4em;
     fill: #000000;
-}
+} */
