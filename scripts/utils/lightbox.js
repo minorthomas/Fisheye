@@ -19,11 +19,12 @@ class Lightbox {
     constructor(url, images) {
         this.element = this.buildDOM(url)
         this.images = images
-        this.loadImage(url)
         this.onKeyUp = this.onKeyUp.bind(this);
 
         document.addEventListener("keyup", this.onKeyUp)
         document.body.appendChild(this.element)
+
+        this.loadImage(url)
     }
 
     // close lightbox
@@ -44,7 +45,9 @@ class Lightbox {
 
     loadImage(url) {
         this.url = null;
+        this.alt = null;
         const container = this.element.querySelector("#media_lightbox");
+        const titleMedia = document.querySelector("#lightbox_media_title")
 
         if (url.endsWith(".mp4")) {
             this.url = url;
@@ -53,13 +56,37 @@ class Lightbox {
             container.appendChild(video);
             video.setAttribute("controls", "");
             video.src = url;
+
+            //add title
+            let title = this.createTitle(this.url);
+            titleMedia.innerText = title;
+
+            this.alt = title
+            video.setAttribute("alt", this.alt);
         } else {
             this.url = url;
             const picture = new Image();
             container.innerHTML = "";
             container.appendChild(picture);
             picture.src = url;
+
+            //add title
+            let title = this.createTitle(this.url);
+            titleMedia.innerText = title;
+
+            this.alt = title
             picture.setAttribute("alt", this.alt);
+        }
+    }
+
+    //create title
+    createTitle(url) {
+        let array = url.split("/");
+        let title = array[array.length - 1].replaceAll("_", " ");
+        if (title.endsWith(".webp")) {
+            return title.replace(".webp", " ");
+        } else {
+            return title.replace(".mp4", " ");
         }
     }
 
@@ -130,9 +157,9 @@ class Lightbox {
                         <path d="M95.457,434.002l-33.105-45.076l234.094-171.928L62.352,45.077L95.456,0L360.24,194.459
                         c7.174,5.269,11.41,13.638,11.41,22.539c0,8.9-4.236,17.27-11.41,22.538L95.457,434.002z" />
                     </svg>
-                </button>    
+                </button> 
             </div>
-            <p class="lightbox_image_title">Titre de la photo</p>
+            <p id="lightbox_media_title"></p>
         `
 
         //event des boutons de la lightbox
