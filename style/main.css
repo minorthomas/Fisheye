@@ -6,6 +6,21 @@
   font-family: "DM Sans", sans-serif;
 }
 
+::-webkit-scrollbar {
+  width: 7px;
+  padding: 1px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #DB8876;
+  padding: 1px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #901C1C;
+  border-radius: 4px;
+}
+
 body {
   margin: 0 18em;
   -webkit-box-sizing: border-box;
@@ -15,6 +30,7 @@ body {
 body a {
   text-decoration: none;
   color: #000000;
+  display: block;
 }
 
 body header {
@@ -58,6 +74,8 @@ body header img {
 button {
   background-color: transparent;
   border: none;
+  cursor: pointer;
+  display: block;
 }
 
 .error_section {
@@ -103,7 +121,7 @@ button {
           align-items: center;
 }
 
-#header_index_page img {
+#header_index_page a img {
   height: 2.6em;
 }
 
@@ -402,7 +420,7 @@ button {
 
 #main_photographer_page #medias_section article .play_button {
   position: absolute;
-  left: 8em;
+  left: 7.8em;
   top: 4.5em;
   fill: #FAFAFA;
   height: 6em;
@@ -411,7 +429,7 @@ button {
   border-radius: 50%;
 }
 
-#main_photographer_page #medias_section article img {
+#main_photographer_page #medias_section article .open_lightbox img {
   width: 100%;
   height: 240px;
   -o-object-fit: cover;
@@ -646,6 +664,13 @@ button {
       justify-content: space-around;
 }
 
+#lightbox_section div #previous_button {
+  height: 2.5em;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
 #lightbox_section div #previous_button svg {
   cursor: pointer;
   -ms-flex-item-align: center;
@@ -664,11 +689,20 @@ button {
      object-fit: cover;
 }
 
-#lightbox_section div #next_button svg {
-  cursor: pointer;
+#lightbox_section div video {
+  width: 1050px;
+  height: 800px;
+}
+
+#lightbox_section div #next_button {
+  height: 2.5em;
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
       align-self: center;
+}
+
+#lightbox_section div #next_button svg {
+  cursor: pointer;
   height: 2.5em;
   fill: #901C1C;
 }

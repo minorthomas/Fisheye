@@ -31,6 +31,7 @@ async function selectedPhotographerPage() {
     };
 
     /////////////////////////////////////////////////
+
     function filterMedias() {
         const filterSelect = document.querySelector("#filter_select")
 
@@ -45,10 +46,12 @@ async function selectedPhotographerPage() {
                 sortByTitle(selectedMedias);
             }
             likesMedias();
+            Lightbox.init();
         })
     }
 
     /////////////////////////////////////////////////////
+
     function calculateTotalLike() {
         const totalLikesDom = document.querySelector("#other_section div p");
 
@@ -64,6 +67,7 @@ async function selectedPhotographerPage() {
     }
 
     ////////////////////////////////////////////////////////
+
     function likesMedias() {
         selectedMedias.forEach((selectedMedia) => {
             let status = false; //status sur false par defaut === pas de like
@@ -93,11 +97,14 @@ async function selectedPhotographerPage() {
         });
     }
 
+    ////////////////////////////////////////////////
+
     /////INIT ALL FUNCTION
     displayPhotographerInfos();
     filterMedias();
     calculateTotalLike();
     likesMedias();
+    Lightbox.init();
 }
 
 selectedPhotographerPage(); //init la function selectedPhotographerPage

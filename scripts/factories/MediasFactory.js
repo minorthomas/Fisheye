@@ -1,7 +1,7 @@
 class MediasFactory {
     constructor(media) {
         if (media.type === 'image') {
-            return new Image(media);
+            return new Picture(media);
         } else if (media.type === 'video') {
             return new Video(media);
         } else {

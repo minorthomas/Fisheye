@@ -14,7 +14,7 @@ class Media {
     }
 }
 
-class Image extends Media {
+class Picture extends Media {
     constructor(data) {
         super(data)
         this._image = data.image
@@ -27,7 +27,7 @@ class Image extends Media {
     templateMedia() {
         return `
             <article>
-                <a href="#">
+                <a href="${this.picture}" class="open_lightbox">
                     <img loading="lazy" src="${this.picture}" class="media_source" alt="${this._title}"/>
                 </a>
                 <div class="media_infos">
@@ -67,7 +67,7 @@ class Video extends Media {
     templateMedia() {
         return `
             <article>
-                <a href="#">
+                <a href="${this.video}" class="open_lightbox">
                     <img loading="lazy" src="${this.miniature}" class="media_source" alt="${this._title}"/>
                     <svg class="play_button" viewBox="0 0 459 459" style="enable-background:new 0 0 459 459;">
                         <path d="M229.5,0C102.751,0,0,102.751,0,229.5S102.751,459,229.5,459S459,356.249,459,229.5S356.249,0,229.5,0z M310.292,239.651
