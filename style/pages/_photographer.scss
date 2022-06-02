@@ -41,6 +41,7 @@
 
         button {
             margin: auto;
+            cursor: pointer;
         }
     }
 }
@@ -78,7 +79,8 @@
                     background-color: #901C1C;
                     color: white;
                     padding: 0.9em;
-                    z-index: 2;
+                    z-index: 3;
+                    cursor: pointer;
                 }
 
                 svg {
@@ -88,7 +90,7 @@
                     height: 0.8em;
                     transform: rotate(90deg);
                     fill: white;
-                    z-index: 2;
+                    z-index: 3;
                 }
             }
 
@@ -129,6 +131,7 @@
                     background-color: #901C1C;
                     color: white;
                     padding: 0.9em;
+                    cursor: pointer;
                 }
 
                 button:last-child {
@@ -251,10 +254,9 @@
     align-items: center;
     justify-content: space-between;
     padding: 20px 35px 50px 35px;
-    margin: auto;
     top: 5em;
     left: 35em;
-    z-index: 4;
+    z-index: 6;
 
     #modal_header {
         display: flex;
@@ -338,13 +340,80 @@
     }
 }
 
+// LIGHTBOX
+
+#lightbox_section {
+    position: absolute;
+    top: 0.5em;
+    width: 1253px;
+    height: 984px;
+    background-color: white;
+    z-index: 5;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+
+    #close_lightbox {
+        position: relative;
+        align-self: flex-end;
+        top: 3em;
+        right: 2em;
+
+        svg {
+            cursor: pointer;
+            height: 2.5em;
+            fill: $primary-color;
+        }
+    }
+
+    div {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+
+        #previous_button {
+
+            svg {
+                cursor: pointer;
+                align-self: center;
+                height: 2.5em;
+                fill: $primary-color;
+                transform: rotate(180deg);
+            }
+        }
+
+        img {
+            width: 1050px;
+            height: 800px;
+            object-fit: cover;
+        }
+
+        #next_button {
+
+            svg {
+                cursor: pointer;
+                align-self: center;
+                height: 2.5em;
+                fill: $primary-color;
+            }
+        }
+    }
+
+    p {
+        position: relative;
+        left: 5em;
+        color: $primary-color;
+        font-size: 1.2em;
+    }
+}
+
 // FOOTER
 
 #footer_photographer_page {
     position: fixed;
     bottom: 0;
     right: 3em;
-    z-index: 99;
+    z-index: 4;
 
     #other_section {
         display: flex;

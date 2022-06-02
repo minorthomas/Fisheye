@@ -55,6 +55,11 @@ body header img {
   color: #000000;
 }
 
+button {
+  background-color: transparent;
+  border: none;
+}
+
 .error_section {
   background-color: #f7f7f7;
   display: -webkit-box;
@@ -231,6 +236,7 @@ body header img {
 
 #header_photographer_page #photographer_header button {
   margin: auto;
+  cursor: pointer;
 }
 
 .dropdown_svg {
@@ -272,7 +278,8 @@ body header img {
   background-color: #901C1C;
   color: white;
   padding: 0.9em;
-  z-index: 2;
+  z-index: 3;
+  cursor: pointer;
 }
 
 #main_photographer_page #filter_section #filter_select_dropdown svg {
@@ -283,7 +290,7 @@ body header img {
   -webkit-transform: rotate(90deg);
           transform: rotate(90deg);
   fill: white;
-  z-index: 2;
+  z-index: 3;
 }
 
 #main_photographer_page #filter_section #filter_select button:hover {
@@ -329,6 +336,7 @@ body header img {
   background-color: #901C1C;
   color: white;
   padding: 0.9em;
+  cursor: pointer;
 }
 
 #main_photographer_page #filter_section #filter_select_options button:last-child {
@@ -482,10 +490,9 @@ body header img {
       -ms-flex-pack: justify;
           justify-content: space-between;
   padding: 20px 35px 50px 35px;
-  margin: auto;
   top: 5em;
   left: 35em;
-  z-index: 4;
+  z-index: 6;
 }
 
 #modal_section #modal_header {
@@ -596,11 +603,88 @@ body header img {
   border: solid 0.15em #000000;
 }
 
+#lightbox_section {
+  position: absolute;
+  top: 0.5em;
+  width: 1253px;
+  height: 984px;
+  background-color: white;
+  z-index: 5;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: auto;
+}
+
+#lightbox_section #close_lightbox {
+  position: relative;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+  top: 3em;
+  right: 2em;
+}
+
+#lightbox_section #close_lightbox svg {
+  cursor: pointer;
+  height: 2.5em;
+  fill: #901C1C;
+}
+
+#lightbox_section div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+#lightbox_section div #previous_button svg {
+  cursor: pointer;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  height: 2.5em;
+  fill: #901C1C;
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+
+#lightbox_section div img {
+  width: 1050px;
+  height: 800px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+#lightbox_section div #next_button svg {
+  cursor: pointer;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  height: 2.5em;
+  fill: #901C1C;
+}
+
+#lightbox_section p {
+  position: relative;
+  left: 5em;
+  color: #901C1C;
+  font-size: 1.2em;
+}
+
 #footer_photographer_page {
   position: fixed;
   bottom: 0;
   right: 3em;
-  z-index: 99;
+  z-index: 4;
 }
 
 #footer_photographer_page #other_section {
