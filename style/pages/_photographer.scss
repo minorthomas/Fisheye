@@ -3,6 +3,10 @@
     display: flex;
     flex-direction: column;
 
+    a {
+        align-self: flex-start;
+    }
+
     #photographer_header {
         background-color: #FAFAFA;
         height: 300px;

@@ -21,6 +21,12 @@
   border-radius: 4px;
 }
 
+a {
+  text-decoration: none;
+  color: #000000;
+  display: block;
+}
+
 body {
   margin: 0 18em;
   -webkit-box-sizing: border-box;
@@ -209,6 +215,11 @@ button {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+}
+
+#header_photographer_page a {
+  -ms-flex-item-align: start;
+      align-self: flex-start;
 }
 
 #header_photographer_page #photographer_header {

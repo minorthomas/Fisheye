@@ -21,6 +21,12 @@
     border-radius: 4px;
 }
 
+a {
+    text-decoration: none;
+    color: $black;
+    display: block;
+}
+
 body {
     margin: 0 18em;
     box-sizing: border-box;
