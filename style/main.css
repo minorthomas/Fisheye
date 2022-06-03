@@ -703,6 +703,8 @@ button {
 #lightbox_section div video {
   width: 1050px;
   height: 800px;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 #lightbox_section div #next_button {

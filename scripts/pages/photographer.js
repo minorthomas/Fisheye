@@ -32,6 +32,13 @@ async function selectedPhotographerPage() {
 
     /////////////////////////////////////////////////
 
+    async function displayPageTitle() {
+        const pageTitle = document.querySelector("title");
+        pageTitle.textContent = "Fisheye - " + await selectedPhotographer.name;
+    }
+
+    /////////////////////////////////////////////////
+
     function filterMedias() {
         const filterSelect = document.querySelector("#filter_select")
 
@@ -101,6 +108,7 @@ async function selectedPhotographerPage() {
 
     /////INIT ALL FUNCTION
     displayPhotographerInfos();
+    displayPageTitle();
     filterMedias();
     calculateTotalLike();
     likesMedias();

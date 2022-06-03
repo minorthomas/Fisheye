@@ -67,7 +67,9 @@ class Lightbox {
             const picture = new Image();
             container.innerHTML = "";
             container.appendChild(picture);
-            picture.src = url;
+
+            let newUrl = this.createUrl(this.url); //creer nouvelle url
+            picture.src = newUrl; // add new url dans la source
 
             //add title
             let title = this.createTitle(this.url);
@@ -78,9 +80,18 @@ class Lightbox {
         }
     }
 
+    //create new url
+    createUrl(url) {
+        this.url = url; //get l'url
+        if (url.endsWith(".webp")) { //condition si fini par .webp remplace par vide
+            return url.replace(".webp", "_large.webp"); //replace .webp par _large.webp
+        }
+    }
+
+
     //create title
     createTitle(url) {
-        let array = url.split("/"); //get l'url et retire les /
+        let array = url.split("/"); //get l'url et retire les / et place chaque element dans un tableau
         let title = array[array.length - 1].replaceAll("_", " "); //remplace les _ par des espaces
         if (title.endsWith(".webp")) { //condition si fini par .webp remplace par vide
             return title.replace(".webp", " ");
