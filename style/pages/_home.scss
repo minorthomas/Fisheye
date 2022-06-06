@@ -32,7 +32,7 @@
         padding: 1em;
         display: flex;
         flex-direction: column;
-        transition: 0.3s;
+        transition: 0.2s;
 
         a {
 
@@ -79,17 +79,15 @@
     }
 
     article:hover,
-    article:focus {
+    a:focus {
         background-color: #eeeeee;
         border-radius: 1em;
 
         .photographers_header {
 
             h2 {
-
                 text-decoration: underline;
             }
         }
     }
-
 }

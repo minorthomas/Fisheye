@@ -154,8 +154,8 @@ button {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
 }
 
 #main_index_page article a .photographers_header {
@@ -211,13 +211,13 @@ button {
 }
 
 #main_index_page article:hover,
-#main_index_page article:focus {
+#main_index_page a:focus {
   background-color: #eeeeee;
   border-radius: 1em;
 }
 
 #main_index_page article:hover .photographers_header h2,
-#main_index_page article:focus .photographers_header h2 {
+#main_index_page a:focus .photographers_header h2 {
   text-decoration: underline;
 }
 
