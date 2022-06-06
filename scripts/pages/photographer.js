@@ -21,7 +21,10 @@ async function selectedPhotographerPage() {
             //initialise fonction affichage error dom
             displayPageNotFound();
         } else {
-            const photographerModel = new Photographers(selectedPhotographer); //constructor creer new photographer
+            const photographerModel = new Photographer(selectedPhotographer); //constructor creer new photographer
+
+            sortByPopularity(selectedMedias);
+
             photographerHeader.innerHTML += photographerModel.templateDisplaySelectedPhotographer(); //ajout les infos photographer dans dom
 
             const photographerBottom = document.querySelector("#footer_photographer_page");
@@ -42,7 +45,7 @@ async function selectedPhotographerPage() {
     function filterMedias() {
         const filterSelect = document.querySelector("#filter_select")
 
-        sortByPopularity(selectedMedias); //initialise popularity filter par defaut
+        //initialise popularity filter par defaut
 
         filterSelect.addEventListener("click", (event) => {
             if (event.target.value === "popularity") { //si sur popularity, change dans l'ordre like

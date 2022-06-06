@@ -1,4 +1,4 @@
-class Photographers {
+class Photographer {
     constructor(data) {
         this._name = data.name;
         this._id = data.id;
@@ -24,9 +24,9 @@ class Photographers {
     templateDisplayAllPhotographers() {
         return `
             <article>
-                <a href="photographer.html?id=${this._id}">
+                <a href="photographer.html?id=${this._id}" aria-label="Read more about ${this._name}">
                     <div class="photographers_header">
-                        <img class="profile_picture" src="${this.picture}" alt="${this._name} profile picture"/>  
+                        <img class="profile_picture" src="${this.picture}" alt="${this._name} profile picture"/>
                         <h2>${this._name}</h2>
                     </div>
                     <div class="photographers_footer">

@@ -146,6 +146,7 @@ button {
 }
 
 #main_index_page article {
+  padding: 1em;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -153,9 +154,11 @@ button {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
 }
 
-#main_index_page article .photographers_header {
+#main_index_page article a .photographers_header {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -168,14 +171,14 @@ button {
           align-items: center;
 }
 
-#main_index_page article h2 {
+#main_index_page article a .photographers_header h2 {
   margin: 0.8em 0 0 0;
   color: #D3573C;
   font-size: 2em;
   font-weight: lighter;
 }
 
-#main_index_page .photographers_footer {
+#main_index_page article a .photographers_footer {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -188,23 +191,34 @@ button {
           align-items: center;
 }
 
-#main_index_page .photographers_footer h3 {
+#main_index_page article a .photographers_footer h3 {
   margin: 0.3em 0 0 0;
   font-weight: lighter;
   color: #901C1C;
   font-size: 1em;
 }
 
-#main_index_page .photographers_footer_tagline {
+#main_index_page article a .photographers_footer_tagline {
   color: #000000;
   font-size: 0.8em;
   margin: 0.3em 0 0 0;
 }
 
-#main_index_page .photographers_footer_price {
+#main_index_page article a .photographers_footer_price {
   color: #525252;
   font-size: 0.8em;
   margin: 0.3em 0 0 0;
+}
+
+#main_index_page article:hover,
+#main_index_page article:focus {
+  background-color: #eeeeee;
+  border-radius: 1em;
+}
+
+#main_index_page article:hover .photographers_header h2,
+#main_index_page article:focus .photographers_header h2 {
+  text-decoration: underline;
 }
 
 #header_photographer_page {

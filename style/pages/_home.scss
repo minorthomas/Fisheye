@@ -29,45 +29,67 @@
     margin: 100px 0;
 
     article {
+        padding: 1em;
         display: flex;
         flex-direction: column;
+        transition: 0.3s;
+
+        a {
+
+            .photographers_header {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+
+                h2 {
+                    margin: 0.8em 0 0 0;
+                    color: $tertiary-color;
+                    font-size: 2em;
+                    font-weight: lighter;
+                }
+            }
+
+
+
+            .photographers_footer {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+
+                h3 {
+                    margin: 0.3em 0 0 0;
+                    font-weight: lighter;
+                    color: $primary-color;
+                    font-size: 1em;
+                }
+
+                &_tagline {
+                    color: $black;
+                    font-size: 0.8em;
+                    margin: 0.3em 0 0 0;
+                }
+
+                &_price {
+                    color: $grey;
+                    font-size: 0.8em;
+                    margin: 0.3em 0 0 0;
+                }
+            }
+        }
+    }
+
+    article:hover,
+    article:focus {
+        background-color: #eeeeee;
+        border-radius: 1em;
 
         .photographers_header {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
 
-        h2 {
-            margin: 0.8em 0 0 0;
-            color: $tertiary-color;
-            font-size: 2em;
-            font-weight: lighter;
+            h2 {
+
+                text-decoration: underline;
+            }
         }
     }
 
-    .photographers_footer {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-
-        h3 {
-            margin: 0.3em 0 0 0;
-            font-weight: lighter;
-            color: $primary-color;
-            font-size: 1em;
-        }
-
-        &_tagline {
-            color: $black;
-            font-size: 0.8em;
-            margin: 0.3em 0 0 0;
-        }
-
-        &_price {
-            color: $grey;
-            font-size: 0.8em;
-            margin: 0.3em 0 0 0;
-        }
-    }
 }
