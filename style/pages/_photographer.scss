@@ -25,20 +25,20 @@
             margin-left: 4em;
 
             h1 {
-                color: #D3573C;
+                color: $secondary-color;
                 font-size: 3em;
                 font-weight: lighter;
                 margin: 0;
             }
 
             p:nth-child(2) {
-                color: #901C1C;
+                color: $primary-color;
                 font-size: 1.5em;
                 margin: 0.4em 0 0 0;
             }
 
             p:nth-child(3) {
-                color: #525252;
+                color: $grey;
                 margin: 1em 0 0 0;
             }
         }
@@ -46,6 +46,11 @@
         button {
             margin: auto;
             cursor: pointer;
+        }
+
+        button:focus {
+            background-color: $secondary-color;
+            color: $black;
         }
     }
 }
@@ -80,7 +85,7 @@
                     font-size: 1em;
                     border-radius: 0.3em;
                     border: none;
-                    background-color: #901C1C;
+                    background-color: $primary-color;
                     color: white;
                     padding: 0.9em;
                     z-index: 3;
@@ -98,12 +103,10 @@
                 }
             }
 
-            button:hover {
-                background-color: $secondary-color;
-            }
-
+            button:hover,
             button:focus {
                 background-color: $secondary-color;
+                color: black;
             }
 
             &_options {
@@ -112,7 +115,7 @@
 
                 .line {
                     position: absolute;
-                    border-bottom: 0.1em solid white;
+                    border-bottom: 0.1em solid $white;
                     margin-top: 5px;
                     width: 85%;
                     left: 0.7em;
@@ -132,7 +135,7 @@
                     width: 10em;
                     font-size: 1em;
                     border: none;
-                    background-color: #901C1C;
+                    background-color: $primary-color;
                     color: white;
                     padding: 0.9em;
                     cursor: pointer;
@@ -142,12 +145,10 @@
                     border-radius: 0 0 0.3em 0.3em;
                 }
 
-                button:hover {
-                    background-color: $secondary-color;
-                }
-
+                button:hover,
                 button:focus {
                     background-color: $secondary-color;
+                    color: $black;
                 }
             }
 
@@ -370,6 +371,15 @@
             cursor: pointer;
             height: 2.5em;
             fill: $primary-color;
+            transition: 0.3s;
+        }
+    }
+
+    #close_lightbox:focus,
+    #close_lightbox:hover {
+
+        svg {
+            fill: $secondary-color;
         }
     }
 
@@ -388,6 +398,15 @@
                 height: 2.5em;
                 fill: $primary-color;
                 transform: rotate(180deg);
+                transition: 0.3s;
+            }
+        }
+
+        #previous_button:focus,
+        #previous_button:hover {
+
+            svg {
+                fill: $secondary-color;
             }
         }
 
@@ -411,6 +430,15 @@
                 cursor: pointer;
                 height: 2.5em;
                 fill: $primary-color;
+                transition: 0.3s;
+            }
+        }
+
+        #next_button:focus,
+        #next_button:hover {
+
+            svg {
+                fill: $secondary-color;
             }
         }
     }

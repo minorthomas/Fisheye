@@ -260,7 +260,7 @@ button {
 }
 
 #header_photographer_page #photographer_header div h1 {
-  color: #D3573C;
+  color: #DB8876;
   font-size: 3em;
   font-weight: lighter;
   margin: 0;
@@ -280,6 +280,11 @@ button {
 #header_photographer_page #photographer_header button {
   margin: auto;
   cursor: pointer;
+}
+
+#header_photographer_page #photographer_header button:focus {
+  background-color: #DB8876;
+  color: #000000;
 }
 
 .dropdown_svg {
@@ -336,12 +341,10 @@ button {
   z-index: 3;
 }
 
-#main_photographer_page #filter_section #filter_select button:hover {
-  background-color: #DB8876;
-}
-
+#main_photographer_page #filter_section #filter_select button:hover,
 #main_photographer_page #filter_section #filter_select button:focus {
   background-color: #DB8876;
+  color: black;
 }
 
 #main_photographer_page #filter_section #filter_select_options {
@@ -351,7 +354,7 @@ button {
 
 #main_photographer_page #filter_section #filter_select_options .line {
   position: absolute;
-  border-bottom: 0.1em solid white;
+  border-bottom: 0.1em solid #FFFFFF;
   margin-top: 5px;
   width: 85%;
   left: 0.7em;
@@ -386,12 +389,10 @@ button {
   border-radius: 0 0 0.3em 0.3em;
 }
 
-#main_photographer_page #filter_section #filter_select_options button:hover {
-  background-color: #DB8876;
-}
-
+#main_photographer_page #filter_section #filter_select_options button:hover,
 #main_photographer_page #filter_section #filter_select_options button:focus {
   background-color: #DB8876;
+  color: #000000;
 }
 
 #main_photographer_page #filter_section #filter_select_options:hover {
@@ -675,6 +676,13 @@ button {
   cursor: pointer;
   height: 2.5em;
   fill: #901C1C;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+#lightbox_section #close_lightbox:focus svg,
+#lightbox_section #close_lightbox:hover svg {
+  fill: #DB8876;
 }
 
 #lightbox_section div {
@@ -705,6 +713,13 @@ button {
   fill: #901C1C;
   -webkit-transform: rotate(180deg);
           transform: rotate(180deg);
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+#lightbox_section div #previous_button:focus svg,
+#lightbox_section div #previous_button:hover svg {
+  fill: #DB8876;
 }
 
 #lightbox_section div img {
@@ -732,6 +747,13 @@ button {
   cursor: pointer;
   height: 2.5em;
   fill: #901C1C;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+#lightbox_section div #next_button:focus svg,
+#lightbox_section div #next_button:hover svg {
+  fill: #DB8876;
 }
 
 #lightbox_section p {

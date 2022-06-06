@@ -24,7 +24,7 @@ async function displayNameModal() {
         (photographer) => photographer.id == getIdParam
     );
 
-    const selectedPhotographerName = new Photographers(selectedPhotographer);
+    const selectedPhotographerName = new Photographer(selectedPhotographer);
 
     const headerSelectedPhotographerName = document.querySelector("#modal_header div p");
     headerSelectedPhotographerName.innerHTML = selectedPhotographerName._name;
