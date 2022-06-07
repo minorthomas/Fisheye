@@ -8,7 +8,7 @@
     }
 
     #photographer_header {
-        background-color: #FAFAFA;
+        background-color: $lightgrey;
         height: 300px;
         margin: 2em 0;
         display: grid;
@@ -190,15 +190,55 @@
             position: relative;
             z-index: 2;
 
-            .play_button {
-                position: absolute;
-                left: 7.8em;
-                top: 4.5em;
-                fill: $lightgrey;
-                height: 6em;
-                padding: 0.2em;
-                border: 0.2em solid $secondary-color;
-                border-radius: 50%;
+            a {
+
+                img {
+                    transition: 0.3s;
+                }
+
+                p {
+                    display: none;
+                    position: absolute;
+                    top: 4.5em;
+                    left: 8.2em;
+                    background-color: $secondary-color;
+                    padding: 0.5em;
+                    font-size: 1.1em;
+                    font-weight: bold;
+                    text-align: center;
+                    border-radius: 0.3em;
+                    transition: 0.3s;
+                    z-index: 3;
+                }
+
+                .play_button {
+                    position: absolute;
+                    left: 7.8em;
+                    top: 4.5em;
+                    fill: $lightgrey;
+                    height: 6em;
+                    padding: 0.2em;
+                    border: 0.2em solid $secondary-color;
+                    border-radius: 50%;
+                    transition: 0.3s;
+                }
+            }
+
+            a:hover,
+            a:focus {
+
+                img {
+                    filter: blur(0.2em);
+                }
+
+                p {
+                    display: block;
+                }
+
+                .play_button {
+                    border: 0.2em solid $primary-color;
+                    transform: scale(1.10);
+                }
             }
 
             .open_lightbox {
@@ -246,6 +286,18 @@
                     }
                 }
             }
+
+            div {
+
+                button:hover,
+                button:focus {
+                    color: $secondary-color;
+
+                    svg {
+                        fill: $secondary-color;
+                    }
+                }
+            }
         }
     }
 }
@@ -256,7 +308,7 @@
     display: none;
     position: absolute;
     border-radius: 5px;
-    background-color: #DB8876;
+    background-color: $secondary-color;
     width: 40%;
     flex-direction: column;
     align-items: center;
@@ -355,7 +407,7 @@
     top: 0.5em;
     width: 1253px;
     height: 984px;
-    background-color: white;
+    background-color: $white;
     z-index: 5;
     display: flex;
     flex-direction: column;
@@ -463,8 +515,8 @@
         display: flex;
         width: 18em;
         justify-content: space-around;
-        background-color: #DB8876;
-        color: #000000;
+        background-color: $secondary-color;
+        color: $black;
         border-radius: 0.5em 0.5em 0 0;
         font-weight: bold;
 
@@ -475,7 +527,7 @@
             svg {
                 height: 1em;
                 margin-left: 0.4em;
-                fill: #000000;
+                fill: $black;
             }
         }
     }

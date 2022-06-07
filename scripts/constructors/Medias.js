@@ -28,6 +28,7 @@ class Picture extends Media {
         return `
             <article>
                 <a href="${this.picture}" class="open_lightbox">
+                    <p>OPEN ></p>
                     <img loading="lazy" src="${this.picture}" class="media_source" alt="${this._title}"/>
                 </a>
                 <div class="media_infos">

@@ -444,7 +444,28 @@ button {
   z-index: 2;
 }
 
-#main_photographer_page #medias_section article .play_button {
+#main_photographer_page #medias_section article a img {
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+#main_photographer_page #medias_section article a p {
+  display: none;
+  position: absolute;
+  top: 4.5em;
+  left: 8.2em;
+  background-color: #DB8876;
+  padding: 0.5em;
+  font-size: 1.1em;
+  font-weight: bold;
+  text-align: center;
+  border-radius: 0.3em;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  z-index: 3;
+}
+
+#main_photographer_page #medias_section article a .play_button {
   position: absolute;
   left: 7.8em;
   top: 4.5em;
@@ -453,6 +474,26 @@ button {
   padding: 0.2em;
   border: 0.2em solid #DB8876;
   border-radius: 50%;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+#main_photographer_page #medias_section article a:hover img,
+#main_photographer_page #medias_section article a:focus img {
+  -webkit-filter: blur(0.2em);
+          filter: blur(0.2em);
+}
+
+#main_photographer_page #medias_section article a:hover p,
+#main_photographer_page #medias_section article a:focus p {
+  display: block;
+}
+
+#main_photographer_page #medias_section article a:hover .play_button,
+#main_photographer_page #medias_section article a:focus .play_button {
+  border: 0.2em solid #901C1C;
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
 }
 
 #main_photographer_page #medias_section article .open_lightbox img {
@@ -515,6 +556,16 @@ button {
   fill: #901C1C;
   -webkit-transition: 1s;
   transition: 1s;
+}
+
+#main_photographer_page #medias_section article div button:hover,
+#main_photographer_page #medias_section article div button:focus {
+  color: #DB8876;
+}
+
+#main_photographer_page #medias_section article div button:hover svg,
+#main_photographer_page #medias_section article div button:focus svg {
+  fill: #DB8876;
 }
 
 #modal_section {
@@ -652,7 +703,7 @@ button {
   top: 0.5em;
   width: 1253px;
   height: 984px;
-  background-color: white;
+  background-color: #FFFFFF;
   z-index: 5;
   display: -webkit-box;
   display: -ms-flexbox;
