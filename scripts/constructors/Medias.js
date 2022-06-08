@@ -27,13 +27,13 @@ class Picture extends Media {
     templateMedia() {
         return `
             <article>
-                <a href="${this.picture}" class="open_lightbox">
+                <a tabindex="2" href="${this.picture}" class="open_lightbox">
                     <p>OPEN ></p>
                     <img loading="lazy" src="${this.picture}" class="media_source" alt="${this._title}"/>
                 </a>
                 <div class="media_infos">
                     <h2>${this._title}</h2>
-                    <button id="like${this._id}">
+                    <button tabindex="2" role="checkbox" aria-checked="false" id="like${this._id}">
                         ${this._likes}
                         <svg id="heart${this._id}" viewBox="0 0 302.489 302.489" style="enable-background:new 0 0 302.489 302.489;">
                             <path d="M302.351,98.012c-1.116-20.846-9.942-40.422-24.855-55.122c-15.103-14.887-34.811-23.086-55.491-23.086
@@ -68,7 +68,7 @@ class Video extends Media {
     templateMedia() {
         return `
             <article>
-                <a href="${this.video}" class="open_lightbox">
+                <a tabindex="2" href="${this.video}" class="open_lightbox">
                     <img loading="lazy" src="${this.miniature}" class="media_source" alt="${this._title}"/>
                     <svg class="play_button" viewBox="0 0 459 459" style="enable-background:new 0 0 459 459;">
                         <path d="M229.5,0C102.751,0,0,102.751,0,229.5S102.751,459,229.5,459S459,356.249,459,229.5S356.249,0,229.5,0z M310.292,239.651
@@ -79,7 +79,7 @@ class Video extends Media {
                 </a>
                 <div class="media_infos">
                     <h2 class="media_title">${this._title}</h2>
-                    <button class="media_like" id="like${this._id}">
+                    <button tabindex="2" role="checkbox" aria-checked="false" id="like${this._id}">
                         ${this._likes}
                         <svg class="media_heart" id="heart${this._id}" viewBox="0 0 302.489 302.489" style="enable-background:new 0 0 302.489 302.489;">
                             <path d="M302.351,98.012c-1.116-20.846-9.942-40.422-24.855-55.122c-15.103-14.887-34.811-23.086-55.491-23.086

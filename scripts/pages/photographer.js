@@ -80,7 +80,7 @@ async function selectedPhotographerPage() {
 
     function likesMedias() {
         selectedMedias.forEach((selectedMedia) => {
-            let status = false; //status sur false par defaut === pas de like
+            let checked = false; //status sur false par defaut === pas de like
 
             const likesSection = document.querySelector('#like' + selectedMedia.id);
             const heart = document.querySelector("#heart" + selectedMedia.id);
@@ -88,18 +88,20 @@ async function selectedPhotographerPage() {
             likesSection.addEventListener("click", (event) => {
                 event.preventDefault();
 
-                if (status == false) {
+                if (checked == false) {
                     let incrementLike = selectedMedia.likes += 1;
                     likesSection.firstChild.textContent = incrementLike;
                     heart.style.fill = "#DB8876";
                     likesSection.style.color = "#DB8876";
-                    status = true;
+                    checked = true;
+                    likesSection.setAttribute("aria-checked", "true");
                 } else {
                     let decrementLike = selectedMedia.likes -= 1;
                     likesSection.firstChild.textContent = decrementLike;
-                    status = false;
+                    checked = false;
                     heart.style.fill = "#901C1C";
                     likesSection.style.color = "#901C1C";
+                    likesSection.setAttribute("aria-checked", "false");
                 }
 
                 calculateTotalLike()

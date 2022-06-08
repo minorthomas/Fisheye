@@ -12,7 +12,7 @@
 
 <body>
   <header id="header_photographer_page">
-    <a href="index.html" alt="Fisheye home page">
+    <a tabindex="1" href="index.html" alt="Fisheye home page">
       <img src="assets/images/logo.png" class="logo" alt="Fisheye logo" />
     </a>
     <div id="photographer_header">
@@ -24,7 +24,7 @@
       <label for="filter_select">Trier par</label>
       <div id="filter_select">
         <div id="filter_select_dropdown">
-          <button></button>
+          <button tabindex="2"></button>
           <svg viewBox="0 0 434.002 434.002" style="enable-background:new 0 0 434.002 434.002;">
             <path d="M95.457,434.002l-33.105-45.076l234.094-171.928L62.352,45.077L95.456,0L360.24,194.459
 			      c7.174,5.269,11.41,13.638,11.41,22.539c0,8.9-4.236,17.27-11.41,22.538L95.457,434.002z" />
@@ -52,7 +52,7 @@
         <h2>Contactez-moi</h2>
         <p></p>
       </div>
-      <button onclick="closeModal()">
+      <button tabindex="1" onclick="closeModal()">
         <svg viewBox="0 0 460.775 460.775" style="enable-background:new 0 0 460.775 460.775;">
           <path d="M285.08,230.397L456.218,59.27c6.076-6.077,6.076-15.911,0-21.986L423.511,4.565c-2.913-2.911-6.866-4.55-10.992-4.55
           c-4.127,0-8.08,1.639-10.993,4.55l-171.138,171.14L59.25,4.565c-2.913-2.911-6.866-4.55-10.993-4.55
@@ -67,22 +67,22 @@
     <form>
       <div>
         <label for="firstname">Prénom</label>
-        <input type="text" id="firstname" name="firstname" />
+        <input tabindex="1" type="text" id="firstname" name="firstname" />
       </div>
       <div>
         <label for="lastname">Nom</label>
-        <input type="text" id="lastname" name="lastname" />
+        <input tabindex="1" type="text" id="lastname" name="lastname" />
       </div>
       <div>
         <label for="email">Email</label>
-        <input type="email" id="email" name="email" />
+        <input tabindex="1" type="email" id="email" name="email" />
       </div>
       <div>
         <label for="yourmessage">Votre message</label>
-        <input type="text" id="yourmessage" name="yourmessage" />
+        <input tabindex="1" type="text" id="yourmessage" name="yourmessage" />
       </div>
     </form>
-    <button class="button" id="send_form_button">Envoyer</button>
+    <button tabindex="1" class="button" id="send_form_button">Envoyer</button>
   </div>
 
   <footer id="footer_photographer_page">
