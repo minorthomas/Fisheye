@@ -8,7 +8,7 @@ async function photographersPage() { //function contient getPhotographer & displ
             const photographerModel = new Photographer(photographer); //creer photographer avec le constructor
             photographersSection.innerHTML += photographerModel.templateDisplayAllPhotographers(); //ajoute photographer dans dom
         });
-    };
+    }
 
     displayData() //init la function display data
 }

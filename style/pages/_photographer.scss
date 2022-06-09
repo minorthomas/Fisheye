@@ -56,11 +56,6 @@
 }
 
 // MAIN
-
-.dropdown_svg {
-    height: 1em;
-}
-
 #main_photographer_page {
 
     // SELECT MENU
@@ -209,6 +204,7 @@
                     border-radius: 0.3em;
                     transition: 0.3s;
                     z-index: 3;
+                    animation: fadeOut 0.3s;
                 }
 
                 .play_button {
@@ -233,6 +229,7 @@
 
                 p {
                     display: block;
+                    animation: fadeIn 0.3s;
                 }
 
                 .play_button {
@@ -530,5 +527,17 @@
                 fill: $black;
             }
         }
+    }
+}
+
+// ANIM
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
     }
 }

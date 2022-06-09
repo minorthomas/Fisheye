@@ -31,7 +31,7 @@ async function selectedPhotographerPage() {
 
             photographerBottom.innerHTML = photographerModel.templateDisplayLikeAndPrice();
         }
-    };
+    }
 
     /////////////////////////////////////////////////
 
@@ -67,7 +67,7 @@ async function selectedPhotographerPage() {
 
         let sum = 0;
 
-        for (i = 0; i < selectedMedias.length; i++) {
+        for (let i = 0; i < selectedMedias.length; i++) {
             sum += selectedMedias[i].likes
         }
 

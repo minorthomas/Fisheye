@@ -8,7 +8,7 @@ const optionDate = document.querySelector("#option_date");
 const optionTitle = document.querySelector("#option_title");
 
 function sortByPopularity(selectedMedia) { //function filtre by likes
-    const sortByPopularity = selectedMedia.sort((a, b) => b.likes - a.likes); //compare les likes
+    const sortByPopularity = selectedMedia.sort((mediaOne, mediaTwo) => mediaTwo.likes - mediaOne.likes); //compare les likes
 
     mediasSection.innerHTML = ""; //innerhtml vide dans mediassection
 
@@ -31,11 +31,11 @@ function sortByPopularity(selectedMedia) { //function filtre by likes
 }
 
 function sortByDate(selectedMedia) {
-    const sortByDate = selectedMedia.sort((a, b) => { //compare les dates
-        let dateA = new Date(a.date);
-        let dateB = new Date(b.date);
+    const sortByDate = selectedMedia.sort((mediaOne, mediaTwo) => { //compare les dates
+        let dateMediaOne = new Date(mediaOne.date),
+            dateMediaTwo = new Date(mediaTwo.date);
 
-        return dateB - dateA;
+        return dateMediaTwo - dateMediaOne;
     });
 
     mediasSection.innerHTML = ""; //innerhtml vide dans mediassection
@@ -57,14 +57,14 @@ function sortByDate(selectedMedia) {
 }
 
 function sortByTitle(selectedMedia) {
-    const sortByTitle = selectedMedia.sort((a, b) => { //compare les titres ordre alphabetique
-        let titleA = a.title.toLowerCase(),
-            titleB = b.title.toLowerCase();
+    const sortByTitle = selectedMedia.sort((mediaOne, mediaTwo) => { //compare les titres ordre alphabetique
+        let titleMediaOne = mediaOne.title.toLowerCase(),
+            titleMediaTwo = mediaTwo.title.toLowerCase();
 
-        if (titleA < titleB) {
+        if (titleMediaOne < titleMediaTwo) {
             return -1;
         }
-        if (titleA > titleB) {
+        if (titleMediaOne > titleMediaTwo) {
             return 1;
         }
         return 0;

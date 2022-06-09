@@ -287,10 +287,6 @@ button {
   color: #000000;
 }
 
-.dropdown_svg {
-  height: 1em;
-}
-
 #main_photographer_page #filter_section {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -463,6 +459,8 @@ button {
   -webkit-transition: 0.3s;
   transition: 0.3s;
   z-index: 3;
+  -webkit-animation: fadeOut 0.3s;
+          animation: fadeOut 0.3s;
 }
 
 #main_photographer_page #medias_section article a .play_button {
@@ -487,6 +485,8 @@ button {
 #main_photographer_page #medias_section article a:hover p,
 #main_photographer_page #medias_section article a:focus p {
   display: block;
+  -webkit-animation: fadeIn 0.3s;
+          animation: fadeIn 0.3s;
 }
 
 #main_photographer_page #medias_section article a:hover .play_button,
@@ -847,5 +847,23 @@ button {
   height: 1em;
   margin-left: 0.4em;
   fill: #000000;
+}
+
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 /*# sourceMappingURL=main.css.map */
