@@ -13,6 +13,8 @@ async function selectedPhotographerPage() {
         (media) => media.photographerId == getIdParam
     );
 
+    sortByPopularity(selectedMedias);
+
     async function displayPhotographerInfos() { //display infos photographers
         const photographerHeader = document.querySelector("#photographer_header");//recup element dom (header)
 
@@ -22,8 +24,6 @@ async function selectedPhotographerPage() {
             displayPageNotFound();
         } else {
             const photographerModel = new Photographer(selectedPhotographer); //constructor creer new photographer
-
-            sortByPopularity(selectedMedias);
 
             photographerHeader.innerHTML += photographerModel.templateDisplaySelectedPhotographer(); //ajout les infos photographer dans dom
 
