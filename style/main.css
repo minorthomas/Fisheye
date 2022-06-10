@@ -642,6 +642,11 @@ button {
   fill: #FFFFFF;
 }
 
+#modal_section #modal_header button:hover svg,
+#modal_section #modal_header button:focus svg {
+  fill: #901C1C;
+}
+
 #modal_section form {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -671,12 +676,19 @@ button {
   margin-bottom: 2.5em;
 }
 
-#modal_section form div input {
+#modal_section form div input,
+#modal_section form div textarea {
   width: 100%;
   height: 50px;
   border: none;
   border-radius: 5px;
   font-size: 24px;
+  background-color: #FFFFFF;
+}
+
+#modal_section form div input:focus,
+#modal_section form div textarea:focus {
+  background-color: #e7e7e7;
 }
 
 #modal_section form div label {
