@@ -61,7 +61,7 @@ class Lightbox {
             titleMedia.innerText = title; //ajoute le title dans title media
 
             this.alt = title //creer l'attr alt grace au titre
-            video.setAttribute("alt", this.alt + "video"); //ajoute le titre dans l'attr alt + video
+            video.setAttribute("title", this.alt + "video"); //ajoute le titre dans l'attr alt + video
         } else { //condition si c'est une video type webp
             this.url = url;
             const picture = new Image();
