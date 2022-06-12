@@ -640,6 +640,8 @@ button {
   cursor: pointer;
   height: 3em;
   fill: #FFFFFF;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
 }
 
 #modal_section #modal_header button:hover svg,
@@ -684,6 +686,8 @@ button {
   border-radius: 5px;
   font-size: 24px;
   background-color: #FFFFFF;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
 }
 
 #modal_section form div input:focus,
