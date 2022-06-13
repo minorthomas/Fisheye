@@ -541,6 +541,18 @@
                 fill: $black;
             }
         }
+
+        div:focus {
+            color: $primary-color;
+
+            svg {
+                fill: $primary-color;
+            }
+        }
+
+        p:focus {
+            color: $primary-color;
+        }
     }
 }
 

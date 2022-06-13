@@ -865,6 +865,18 @@ button {
   fill: #000000;
 }
 
+#footer_photographer_page #other_section div:focus {
+  color: #901C1C;
+}
+
+#footer_photographer_page #other_section div:focus svg {
+  fill: #901C1C;
+}
+
+#footer_photographer_page #other_section p:focus {
+  color: #901C1C;
+}
+
 @-webkit-keyframes fadeIn {
   from {
     opacity: 0;

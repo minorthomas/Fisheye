@@ -54,9 +54,9 @@ class Photographer {
     templateDisplayLikeAndPrice() {
         return `
             <div id="other_section">
-                <div>
+                <div tabindex="2" title="The photographer's total likes">
                     <p></p>
-                    <svg viewBox="0 0 302.489 302.489" style="enable-background:new 0 0 302.489 302.489;">
+                    <svg title="heart total fav" viewBox="0 0 302.489 302.489" style="enable-background:new 0 0 302.489 302.489;">
                         <path d="M302.351,98.012c-1.116-20.846-9.942-40.422-24.855-55.122c-15.103-14.887-34.811-23.086-55.491-23.086
                         c-30.776,0-53.082,24.334-65.065,37.408c-1.85,2.019-4.018,4.384-5.527,5.827c-1.208-1.25-2.845-3.114-4.351-4.828
                         c-10.944-12.466-33.72-38.406-66.571-38.406c-20.68,0-40.387,8.199-55.49,23.086C10.087,57.59,1.259,77.165,0.143,98.012
@@ -65,7 +65,7 @@ class Photographer {
                         c28.393-27.99,55.515-58.628,65.956-74.507C293.877,143.372,303.774,124.629,302.351,98.012z"/>
                     </svg>
                 </div>
-                <p>${this.price}</p>
+                <p tabindex="2" title="Price per day">${this.price}</p>
             </div>
         `
     }
