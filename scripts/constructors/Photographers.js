@@ -24,7 +24,7 @@ class Photographer {
     templateDisplayAllPhotographers() {
         return `
             <article>
-                <a href="photographer.html?id=${this._id}" aria-label="Cliquez pour en savoir plus sur ${this._name}">
+                <a href="pages/photographer.html?id=${this._id}" aria-label="Cliquez pour en savoir plus sur ${this._name}">
                     <div class="photographers_header">
                         <img class="profile_picture" src="${this.picture}" alt="${this._name} profile picture"/>
                         <h2>${this._name}</h2>

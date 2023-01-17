@@ -21,7 +21,7 @@ class Picture extends Media {
     }
 
     get picture() {
-        return `assets/medias/${this._photographerId}/${this._image}`;
+        return `../assets/medias/${this._photographerId}/${this._image}`;
     }
 
     templateMedia() {
@@ -58,11 +58,11 @@ class Video extends Media {
     }
 
     get video() {
-        return `assets/medias/${this._photographerId}/${this._video}`;
+        return `../assets/medias/${this._photographerId}/${this._video}`;
     }
 
     get miniature() {
-        return `assets/medias/miniatures/${this._miniature}`;
+        return `../assets/medias/miniatures/${this._miniature}`;
     }
 
     templateMedia() {

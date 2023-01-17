@@ -1,3 +1,10 @@
+@use './utils' as *;
+
+@use './pages/home';
+@use './pages/photographer';
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap');
+
 *::first-letter {
     text-transform: uppercase;
 }
@@ -6,7 +13,7 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: "DM Sans", sans-serif;
+    font-family: 'DM Sans', sans-serif;
 }
 
 ::-webkit-scrollbar {
@@ -85,6 +92,15 @@ body {
     color: $black;
 }
 
+.not_visible {
+    display: none !important;
+}
+
+.checked {
+    color: #DB8876 !important;
+    fill: #DB8876 !important;
+}
+
 // ERROR
 
 .error_section {
@@ -105,13 +121,4 @@ body {
 .error {
     display: block !important;
     margin: 0 auto;
-}
-
-.not_visible {
-    display: none !important;
-}
-
-.checked {
-    color: #DB8876 !important;
-    fill: #DB8876 !important;
 }
