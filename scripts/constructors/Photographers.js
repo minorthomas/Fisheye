@@ -53,7 +53,7 @@ class Photographer {
 
     templateDisplayLikeAndPrice() {
         return `
-            <div id="other_section">
+            <div id="like_section">
                 <div tabindex="2" title="Le total des likes du photographe">
                     <p></p>
                     <svg title="Image de coeur" viewBox="0 0 302.489 302.489" style="enable-background:new 0 0 302.489 302.489;">

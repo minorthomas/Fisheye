@@ -2,7 +2,10 @@
   text-transform: uppercase;
 }
 
-* {
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
   font-family: "DM Sans", sans-serif;
 }
 
@@ -21,15 +24,14 @@
   border-radius: 4px;
 }
 
-a {
-  text-decoration: none;
-  color: #000000;
-  display: block;
-}
-
 body {
-  margin: 0 18em;
-  box-sizing: border-box;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+@media screen and (max-width: 1500px) {
+  body {
+    margin: 0 3em;
+  }
 }
 body a {
   text-decoration: none;
@@ -41,6 +43,12 @@ body header {
 }
 body header img {
   height: 2.6em;
+}
+body button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  display: block;
 }
 
 .profile_picture {
@@ -71,13 +79,6 @@ body header img {
   color: #000000;
 }
 
-button {
-  background-color: transparent;
-  border: none;
-  cursor: pointer;
-  display: block;
-}
-
 .error_section {
   background-color: #f7f7f7;
   display: flex;
@@ -89,11 +90,21 @@ button {
 .error_section p:nth-child(2) {
   font-weight: bold;
   margin: 0;
-}
-.error_section p:nth-child(3) {
-  font-weight: bold;
-  margin-top: 0;
   color: #ff5757;
+}
+
+.error {
+  display: block !important;
+  margin: 0 auto;
+}
+
+.not_visible {
+  display: none !important;
+}
+
+.checked {
+  color: #DB8876 !important;
+  fill: #DB8876 !important;
 }
 
 #header_index_page {
@@ -590,7 +601,7 @@ button {
   right: 3em;
   z-index: 4;
 }
-#footer_photographer_page #other_section {
+#footer_photographer_page #like_section {
   display: flex;
   width: 18em;
   justify-content: space-around;
@@ -598,23 +609,24 @@ button {
   color: #000000;
   border-radius: 0.5em 0.5em 0 0;
   font-weight: bold;
+  padding: 1em 0;
 }
-#footer_photographer_page #other_section div {
+#footer_photographer_page #like_section div {
   display: flex;
   align-items: center;
 }
-#footer_photographer_page #other_section div svg {
+#footer_photographer_page #like_section div svg {
   height: 1em;
   margin-left: 0.4em;
   fill: #000000;
 }
-#footer_photographer_page #other_section div:focus {
+#footer_photographer_page #like_section div:focus {
   color: #901C1C;
 }
-#footer_photographer_page #other_section div:focus svg {
+#footer_photographer_page #like_section div:focus svg {
   fill: #901C1C;
 }
-#footer_photographer_page #other_section p:focus {
+#footer_photographer_page #like_section p:focus {
   color: #901C1C;
 }
 

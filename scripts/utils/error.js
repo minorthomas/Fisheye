@@ -1,22 +1,25 @@
-function displayPageNotFound() {
-    const photographerMain = document.querySelector("main");
+function photographerNotFound() {
+    const main = document.querySelector("main");
+    const error = document.createElement('div');
+    document.querySelector("#photographer_header").classList.add("not_visible");
+    document.querySelector("#filter_section").classList.add("not_visible");
+    document.querySelector("#medias_section").classList.add("not_visible");
+    error.classList.add('error_section');
 
-    //display none all elements
-    document.querySelector("#filter_section").style.display = "none";
-    document.querySelector("#photographer_header").style.display = "none";
-
-    setTimeout(function () {
-        window.location.href = "index.html";
-    }, 3000); //set timeout after error (3s)
-
-    //template de l'erreur
-    const templateDisplayError = `
-        <div class="error_section">
-            <p>404</p>
-            <p>Page not found</p>
-            <p>Auto redirect after 3 seconds</p>
-        </div>
+    const textError = `
+        <p>404</p>
+        <p>Page not found</p>
     `;
 
-    photographerMain.innerHTML = templateDisplayError;
+    error.innerHTML = textError;
+
+    main.append(error);
+}
+
+function mediasNotFound() {
+    const section = document.querySelector('#medias_section');
+    const error = document.createElement('p')
+    error.textContent = 'Aucun media trouvé';
+
+    section.append(error);
 }

@@ -522,7 +522,7 @@
     right: 3em;
     z-index: 4;
 
-    #other_section {
+    #like_section {
         display: flex;
         width: 18em;
         justify-content: space-around;
@@ -530,6 +530,7 @@
         color: $black;
         border-radius: 0.5em 0.5em 0 0;
         font-weight: bold;
+        padding: 1em 0;
 
         div {
             display: flex;

@@ -1,113 +1,113 @@
-const getParams = window.location.search; //recup params dans l'url
+const getParams = window.location.search;
 const getUrlParams = new URLSearchParams(getParams);
-const getIdParam = getUrlParams.get("id"); //recup seulement param id de l'url
+const getIdParam = getUrlParams.get("id");
 
-async function selectedPhotographerPage() {
-    const { photographers, media } = await getPhotographers(); //get photographers et medias
-
+function getPhotographerById(photographers) {
     const selectedPhotographer = photographers.find(
-        (photographer) => photographer.id == getIdParam
+        (photographer) => photographer.id.toString() === getIdParam
     );
+    return selectedPhotographer;
+}
 
-    const selectedMedias = media.filter(
+function getPhotographerMediasById(medias) {
+    const selectedMedias = medias.filter(
         (media) => media.photographerId == getIdParam
     );
+    return selectedMedias;
+}
 
-    sortBy(selectedMedias, 'popularity');
+function displayPhotographerInfos(photographer) {
+    const header = document.querySelector("#photographer_header");
+    const footer = document.querySelector("#footer_photographer_page");
 
-    async function displayPhotographerInfos() { //display infos photographers
-        const photographerHeader = document.querySelector("#photographer_header");//recup element dom (header)
-
-        //condition si aucun photographe
-        if (selectedPhotographer === undefined) {
-            //initialise fonction affichage error dom
-            displayPageNotFound();
-        } else {
-            const photographerModel = new Photographer(selectedPhotographer); //constructor creer new photographer
-
-            photographerHeader.innerHTML += photographerModel.templateDisplaySelectedPhotographer(); //ajout les infos photographer dans dom
-
-            const photographerBottom = document.querySelector("#footer_photographer_page");
-
-            photographerBottom.innerHTML = photographerModel.templateDisplayLikeAndPrice();
-        }
+    if (photographer || photographer != undefined) {
+        const photographerModel = new Photographer(photographer);
+        header.innerHTML =
+            photographerModel.templateDisplaySelectedPhotographer();
+        footer.innerHTML = photographerModel.templateDisplayLikeAndPrice();
+    } else {
+        photographerNotFound();
     }
+}
 
-    /////////////////////////////////////////////////
+function displayPhotographerMedias(medias) {
+    const input = document.querySelector("#filter_select");
+    sortBy(medias, "popularity");
 
-    async function displayPageTitle() {
-        const pageTitle = document.querySelector("title");
-        pageTitle.textContent = "Fisheye - " + await selectedPhotographer.name;
-    }
-
-    /////////////////////////////////////////////////
-
-    function filterMedias() {
-        const filterSelect = document.querySelector("#filter_select")
-
-        filterSelect.addEventListener('click', (event) => {
-            sortBy(selectedMedias, event.target.value)
+    if (medias.length > 0) {
+        input.addEventListener("click", (event) => {
+            sortBy(medias, event.target.value);
             // likesMedias();
             Lightbox.init();
-        })
+        });
+    } else {
+        mediasNotFound();
     }
+}
 
-    /////////////////////////////////////////////////////
+function changePageTitle(photographer) {
+    const pageTitle = document.querySelector("title");
 
-    function calculateTotalLike() {
-        const totalLikesDom = document.querySelector("#other_section div p");
-
-        let sum = 0;
-
-        for (let i = 0; i < selectedMedias.length; i++) {
-            sum += selectedMedias[i].likes
-        }
-
-        totalLikesDom.textContent = sum.toString();
-
-        localStorage.setItem("TotalLike", JSON.stringify(sum));
+    if (photographer || photographer != undefined) {
+        pageTitle.textContent = "Fisheye - " + photographer.name;
+    } else {
+        pageTitle.textContent = "Fisheye";
     }
+}
 
-    ////////////////////////////////////////////////////////
+function calculateTotalLike(medias) {
+    const likes = document.querySelector("#like_section div p");
+    let sum = 0;
 
-    // function likesMedias() {
-    //     selectedMedias.forEach((selectedMedia) => {
-    //         let checked = false; //status sur false par defaut === pas de like
+    medias.forEach((media) => {
+        sum += media.likes;
+    });
+    likes.textContent = sum.toString();
+    localStorage.setItem("Total-Like", JSON.stringify(sum));
+}
 
-    //         const likesSection = document.querySelector('#like' + selectedMedia.id);
-    //         const heart = document.querySelector("#heart" + selectedMedia.id);
+function eventLike(medias) {
+    calculateTotalLike(medias);
+    medias.forEach((media) => {
+        let checked = false;
 
-    //         likesSection.addEventListener("click", (event) => {
-    //             event.preventDefault();
+        const like = document.querySelector("#like" + media.id);
+        const heart = document.querySelector("#heart" + media.id);
 
-    //             if (checked == false) {
-    //                 let incrementLike = selectedMedia.likes += 1;
-    //                 likesSection.firstChild.textContent = incrementLike;
-    //                 heart.style.fill = "#DB8876";
-    //                 likesSection.style.color = "#DB8876";
-    //                 checked = true;
-    //                 likesSection.setAttribute("aria-checked", "true");
-    //             } else {
-    //                 let decrementLike = selectedMedia.likes -= 1;
-    //                 likesSection.firstChild.textContent = decrementLike;
-    //                 checked = false;
-    //                 heart.style.fill = "#901C1C";
-    //                 likesSection.style.color = "#901C1C";
-    //                 likesSection.setAttribute("aria-checked", "false");
-    //             }
+        like.addEventListener("click", (event) => {
+            event.preventDefault();
 
-    //             calculateTotalLike()
-    //         });
-    //     });
-    // }
+            if (checked === false) {
+                let incrementLike = (media.likes += 1);
+                like.firstChild.textContent = incrementLike;
+                heart.classList.add("checked");
+                like.classList.add("checked");
+                checked = true;
+                like.setAttribute("aria-checked", "true");
+            } else {
+                let decrementLike = (media.likes -= 1);
+                like.firstChild.textContent = decrementLike;
+                heart.classList.remove("checked");
+                like.classList.remove("checked");
+                checked = false;
+                like.setAttribute("aria-checked", "false");
+            }
 
-    ////////////////////////////////////////////////
+            calculateTotalLike(medias);
+        });
+    });
+}
 
-    /////INIT ALL FUNCTION
-    displayPhotographerInfos();
-    displayPageTitle();
-    filterMedias();
-    calculateTotalLike();
-    // likesMedias();
+async function photographerPage() {
+    const { photographers, medias } = await getPhotographers();
+    const selectedPhotographer = getPhotographerById(photographers);
+    const selectedMedias = getPhotographerMediasById(medias);
+
+    displayPhotographerInfos(selectedPhotographer);
+    displayPhotographerMedias(selectedMedias);
+    changePageTitle(selectedPhotographer);
+    eventLike(selectedMedias);
     Lightbox.init();
 }
+
+photographerPage();

@@ -37,7 +37,7 @@ function sortByTitle(selectedMedia) {
     return sortedMedia;
 }
 
-function loopMedia(medias) {
+function createMedia(medias) {
     medias.forEach((media) => {
         const factory = new MediasFactory(media);
         mediasSection.innerHTML += factory.templateMedia();
@@ -49,7 +49,7 @@ function sortBy(selectedMedia, by) {
 
     if (by === "popularity") {
         const medias = sortByPopularity(selectedMedia);
-        loopMedia(medias);
+        createMedia(medias);
         localStorage.setItem("Filter", JSON.stringify(medias));
 
         dropdownButton.textContent = "Popularité";
@@ -60,7 +60,7 @@ function sortBy(selectedMedia, by) {
         
     } else if (by === "date") {
         const medias = sortByDate(selectedMedia);
-        loopMedia(medias);
+        createMedia(medias);
         localStorage.setItem("Filter", JSON.stringify(medias));
 
         dropdownButton.textContent = "Date";
@@ -70,7 +70,7 @@ function sortBy(selectedMedia, by) {
 
     } else if (by === "title") {
         const medias = sortByTitle(selectedMedia);
-        loopMedia(medias);
+        createMedia(medias);
         localStorage.setItem("Filter", JSON.stringify(medias));
 
         dropdownButton.textContent = "Titre";
