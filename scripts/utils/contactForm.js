@@ -28,7 +28,6 @@ async function displayNameModal() {
 
     const headerSelectedPhotographerName = document.querySelector("#modal_header div p");
     headerSelectedPhotographerName.innerHTML = selectedPhotographerName._name;
-
 }
 
 function displayValuesInLog() {

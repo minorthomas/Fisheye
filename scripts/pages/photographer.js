@@ -51,7 +51,7 @@ function changePageTitle(photographer) {
     if (photographer || photographer != undefined) {
         pageTitle.textContent = "Fisheye - " + photographer.name;
     } else {
-        pageTitle.textContent = "Fisheye";
+        pageTitle.textContent = "Fisheye - Error 404";
     }
 }
 
