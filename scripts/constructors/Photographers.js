@@ -36,7 +36,7 @@ class Photographer {
                     </div>
                 </a>
             </article>
-        `
+        `;
     }
 
     templateDisplaySelectedPhotographer() {
@@ -48,7 +48,7 @@ class Photographer {
             </div>
             <button aria-label="Ouvrir le formulaire pour contacter ${this._name}" tabindex="1" class="button" onclick="displayModal()">Contactez-moi</button>
             <img class="profile_picture" src="${this.picture}" alt="Photo de profil de ${this._name}"/>
-        `
+        `;
     }
 
     templateDisplayLikeAndPrice() {
@@ -67,6 +67,6 @@ class Photographer {
                 </div>
                 <p tabindex="2" title="Prix par jour">${this.price}</p>
             </div>
-        `
+        `;
     }
 }

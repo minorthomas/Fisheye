@@ -5,11 +5,11 @@ const getIdParam = getUrlParams.get("id"); //recup seulement param id de l'url
 async function selectedPhotographerPage() {
     const { photographers, media } = await getPhotographers(); //get photographers et medias
 
-    const selectedPhotographer = photographers.find( //trouve et verifie si photographer selectionné === id dans url
+    const selectedPhotographer = photographers.find(
         (photographer) => photographer.id == getIdParam
     );
 
-    const selectedMedias = media.filter( //trouve et verifie si media selectionné === id dans url
+    const selectedMedias = media.filter(
         (media) => media.photographerId == getIdParam
     );
 
@@ -111,5 +111,3 @@ async function selectedPhotographerPage() {
     // likesMedias();
     Lightbox.init();
 }
-
-selectedPhotographerPage(); //init la function selectedPhotographerPage

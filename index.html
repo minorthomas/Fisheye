@@ -1,42 +1,40 @@
 <!DOCTYPE html>
 <html>
+    <head>
+        <meta name="viewport" content="width=device-width" />
+        <meta
+            name="description"
+            content="Site web regroupant différents photographes freelance, ayant des styles différents et des tarifs hors du commun"
+        />
+        <meta charset="utf-8" />
+        <link
+            href="https://fonts.googleapis.com/css?family=DM+Sans&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="icon" type="image/png" href="assets/favicon/icon.png" />
+        <link href="style/main.css" rel="stylesheet" type="text/css" />
 
-<head>
-  <meta name="viewport" content="width=device-width">
-  <meta name="description"
-    content="Site web regroupant différents photographes freelance, ayant des styles différents et des tarifs hors du commun">
-  <meta charset="utf-8">
-  <link href="https://fonts.googleapis.com/css?family=DM+Sans&display=swap" rel="stylesheet">
-  <link rel="icon" type="image/png" href="assets/favicon/icon.png" />
-  <link href="style/main.css" rel="stylesheet" type="text/css" />
-  <title>Fisheye</title>
-</head>
+        <script defer src="scripts/Api.js"></script>
+        <script defer src="scripts/constructors/Photographers.js"></script>
+        <script defer src="scripts/pages/home.js"></script>
 
-<body>
+        <title>Fisheye</title>
+    </head>
 
-  <!--TOP PAGE-->
-  <header id="header_index_page">
-    <a href="index.html" aria-label="Fisheye page d'accueil">
-      <img src="assets/images/logo.png" class="logo" alt="Fisheye logo" />
-    </a>
-    <h1>Nos photographes</h1>
-  </header>
+    <body>
+        <!--HEADER-->
+        <header id="header_index_page">
+            <a href="index.html" aria-label="Fisheye home page">
+                <img
+                    src="assets/images/logo.png"
+                    class="logo"
+                    alt="Fisheye logo"
+                />
+            </a>
+            <h1>Nos photographes</h1>
+        </header>
 
-  <!--MAIN-->
-  <main id="main_index_page">
-  </main>
-
-  <!--API-->
-  <script src="scripts/Api.js"></script>
-
-  <!--CONSTRUCTOR-->
-  <script src="scripts/constructors/Photographers.js"></script>
-
-  <!--PAGE-->
-  <script src="scripts/pages/index.js"></script>
-
-
-
-</body>
-
+        <!--MAIN CONTENT-->
+        <main id="main_index_page"></main>
+    </body>
 </html>

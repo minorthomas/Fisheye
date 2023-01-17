@@ -1,115 +1,170 @@
 <!DOCTYPE html>
 <html>
+    <head>
+        <meta name="viewport" content="width=device-width" />
+        <meta charset="utf-8" />
+        <link
+            href="https://fonts.googleapis.com/css?family=DM+Sans&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="icon" type="image/png" href="assets/favicon/icon.png" />
+        <link href="style/main.css" rel="stylesheet" type="text/css" />
 
-<head>
-  <meta name="viewport" content="width=device-width">
-  <meta charset="utf-8">
-  <link href="https://fonts.googleapis.com/css?family=DM+Sans&display=swap" rel="stylesheet">
-  <link rel="icon" type="image/png" href="assets/favicon/icon.png" />
-  <link href="style/main.css" rel="stylesheet" type="text/css" />
-  <title>Fisheye</title>
+        <script defer src="scripts/Api.js"></script>
+        <script defer src="/scripts/factories/MediasFactory.js"></script>
+        <script defer src="/scripts/constructors/Photographers.js"></script>
+        <script defer src="/scripts/constructors/Medias.js"></script>
+        <script defer src="/scripts/pages/photographer.js"></script>
+        <script defer src="/scripts/utils/error.js"></script>
+        <script defer src="/scripts/utils/contactForm.js"></script>
+        <script defer src="/scripts/utils/lightbox.js"></script>
+        <script defer src="/scripts/utils/sortBy.js"></script>
 
-</head>
+        <title>Fisheye</title>
+    </head>
 
-<body>
-  <header id="header_photographer_page">
-    <a tabindex="1" href="index.html" aria-label="Fisheye page d'accueil">
-      <img src="assets/images/logo.png" class="logo" alt="Fisheye logo" />
-    </a>
-    <div id="photographer_header">
-    </div>
-  </header>
+    <body>
+        <header id="header_photographer_page">
+            <a
+                tabindex="1"
+                href="index.html"
+                aria-label="Fisheye page d'accueil"
+            >
+                <img
+                    src="assets/images/logo.png"
+                    class="logo"
+                    alt="Fisheye logo"
+                />
+            </a>
+            <div id="photographer_header"></div>
+        </header>
 
-  <main id="main_photographer_page">
-    <div id="filter_section">
-      <label for="filter_select">Trier par</label>
-      <div id="filter_select">
-        <div title="Bouton de filtres" id="filter_select_dropdown">
-          <button tabindex="2"></button>
-          <svg title="Image de fléche" viewBox="0 0 434.002 434.002" style="enable-background:new 0 0 434.002 434.002;">
-            <path d="M95.457,434.002l-33.105-45.076l234.094-171.928L62.352,45.077L95.456,0L360.24,194.459
-			      c7.174,5.269,11.41,13.638,11.41,22.539c0,8.9-4.236,17.27-11.41,22.538L95.457,434.002z" />
-          </svg>
-        </div>
-        <div id="filter_select_options">
-          <div class="line" id="line_one"></div>
-          <div class="line" id="line_two"></div>
+        <main id="main_photographer_page">
+            <div id="filter_section">
+                <label for="filter_select">Trier par</label>
+                <div id="filter_select">
+                    <div title="Bouton de filtres" id="filter_select_dropdown">
+                        <button tabindex="2"></button>
+                        <svg
+                            title="Image de fléche"
+                            viewBox="0 0 434.002 434.002"
+                            style="enable-background: new 0 0 434.002 434.002"
+                        >
+                            <path
+                                d="M95.457,434.002l-33.105-45.076l234.094-171.928L62.352,45.077L95.456,0L360.24,194.459
+			      c7.174,5.269,11.41,13.638,11.41,22.539c0,8.9-4.236,17.27-11.41,22.538L95.457,434.002z"
+                            />
+                        </svg>
+                    </div>
+                    <div id="filter_select_options">
+                        <div class="line" id="line_one"></div>
+                        <div class="line" id="line_two"></div>
 
-          <button aria-label="Bouton filtre par popularité" class="option_button" id="option_popularity"
-            value="popularity">Popularité</button>
-          <button aria-label="Bouton filtre par date" class="option_button" id="option_date" value="date">Date</button>
-          <button aria-label="Bouton filtre par ordre alphabétique" class="option_button" id="option_title"
-            value="title">Titre</button>
-        </div>
-      </div>
-    </div>
+                        <button
+                            aria-label="Bouton filtre par popularité"
+                            class="option_button"
+                            id="option_popularity"
+                            value="popularity"
+                        >
+                            Popularité
+                        </button>
+                        <button
+                            aria-label="Bouton filtre par date"
+                            class="option_button"
+                            id="option_date"
+                            value="date"
+                        >
+                            Date
+                        </button>
+                        <button
+                            aria-label="Bouton filtre par ordre alphabétique"
+                            class="option_button"
+                            id="option_title"
+                            value="title"
+                        >
+                            Titre
+                        </button>
+                    </div>
+                </div>
+            </div>
 
-    <section id="medias_section">
-    </section>
+            <section id="medias_section"></section>
+        </main>
 
-  </main>
-
-  <div id="modal_section">
-    <div id="modal_header">
-      <div>
-        <h2>Contactez-moi</h2>
-        <p></p>
-      </div>
-      <button aria-label="Bouton fermer formulaire" tabindex="1" onclick="closeModal()">
-        <svg title="Image croix" viewBox="0 0 460.775 460.775" style="enable-background:new 0 0 460.775 460.775;">
-          <path d="M285.08,230.397L456.218,59.27c6.076-6.077,6.076-15.911,0-21.986L423.511,4.565c-2.913-2.911-6.866-4.55-10.992-4.55
+        <div id="modal_section">
+            <div id="modal_header">
+                <div>
+                    <h2>Contactez-moi</h2>
+                    <p></p>
+                </div>
+                <button
+                    aria-label="Bouton fermer formulaire"
+                    tabindex="1"
+                    onclick="closeModal()"
+                >
+                    <svg
+                        title="Image croix"
+                        viewBox="0 0 460.775 460.775"
+                        style="enable-background: new 0 0 460.775 460.775"
+                    >
+                        <path
+                            d="M285.08,230.397L456.218,59.27c6.076-6.077,6.076-15.911,0-21.986L423.511,4.565c-2.913-2.911-6.866-4.55-10.992-4.55
           c-4.127,0-8.08,1.639-10.993,4.55l-171.138,171.14L59.25,4.565c-2.913-2.911-6.866-4.55-10.993-4.55
           c-4.126,0-8.08,1.639-10.992,4.55L4.558,37.284c-6.077,6.075-6.077,15.909,0,21.986l171.138,171.128L4.575,401.505
           c-6.074,6.077-6.074,15.911,0,21.986l32.709,32.719c2.911,2.911,6.865,4.55,10.992,4.55c4.127,0,8.08-1.639,10.994-4.55
           l171.117-171.12l171.118,171.12c2.913,2.911,6.866,4.55,10.993,4.55c4.128,0,8.081-1.639,10.992-4.55l32.709-32.719
-          c6.074-6.075,6.074-15.909,0-21.986L285.08,230.397z" />
-        </svg>
-      </button>
-    </div>
-    <!-- FORM -->
-    <form>
-      <div>
-        <label for="firstname">Prénom</label>
-        <input maxlength="30" tabindex="1" type="text" id="firstname" name="firstname" />
-      </div>
-      <div>
-        <label for="lastname">Nom</label>
-        <input maxlength="30" tabindex="1" type="text" id="lastname" name="lastname" />
-      </div>
-      <div>
-        <label for="email">Email</label>
-        <input tabindex="1" type="email" id="email" name="email" />
-      </div>
-      <div>
-        <label for="yourmessage">Votre message</label>
-        <textarea maxlength="250" tabindex="1" type="text" id="yourmessage" name="yourmessage"></textarea>
-      </div>
-    </form>
-    <button aria-label="Bouton envoi du formulaire" tabindex="1" class="button" id="send_form_button">Envoyer</button>
-  </div>
+          c6.074-6.075,6.074-15.909,0-21.986L285.08,230.397z"
+                        />
+                    </svg>
+                </button>
+            </div>
+            <!-- FORM -->
+            <form>
+                <div>
+                    <label for="firstname">Prénom</label>
+                    <input
+                        maxlength="30"
+                        tabindex="1"
+                        type="text"
+                        id="firstname"
+                        name="firstname"
+                    />
+                </div>
+                <div>
+                    <label for="lastname">Nom</label>
+                    <input
+                        maxlength="30"
+                        tabindex="1"
+                        type="text"
+                        id="lastname"
+                        name="lastname"
+                    />
+                </div>
+                <div>
+                    <label for="email">Email</label>
+                    <input tabindex="1" type="email" id="email" name="email" />
+                </div>
+                <div>
+                    <label for="yourmessage">Votre message</label>
+                    <textarea
+                        maxlength="250"
+                        tabindex="1"
+                        type="text"
+                        id="yourmessage"
+                        name="yourmessage"
+                    ></textarea>
+                </div>
+            </form>
+            <button
+                aria-label="Bouton envoi du formulaire"
+                tabindex="1"
+                class="button"
+                id="send_form_button"
+            >
+                Envoyer
+            </button>
+        </div>
 
-  <footer id="footer_photographer_page">
-  </footer>
-
-  <!--API-->
-  <script src="scripts/Api.js"></script>
-
-  <!--FACTORY-->
-  <script src="/scripts/factories/MediasFactory.js"></script>
-
-  <!--CONSTRUCTOR-->
-  <script src="/scripts/constructors/Photographers.js"></script>
-  <script src="/scripts/constructors/Medias.js"></script>
-
-  <!--PAGE-->
-  <script src="/scripts/pages/photographer.js"></script>
-
-  <!--UTILS-->
-  <script src="/scripts/utils/error.js"></script>
-  <script src="/scripts/utils/contactForm.js"></script>
-  <script src="/scripts/utils/lightbox.js"></script>
-  <script src="/scripts/utils/sortBy.js"></script>
-
-</body>
-
+        <footer id="footer_photographer_page"></footer>
+    </body>
 </html>
