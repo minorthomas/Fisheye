@@ -46,6 +46,7 @@ function displayValuesInLog() {
         if (firstname.value.length == 0 || lastname.value.length == 0 || email.value.length == 0 || message.value.length == 0) {
             console.log("Error, vous devez remplir tous les champs");
         } else {
+            console.clear();
             console.log("Prénom: " + firstname.value);
             console.log("Nom: " + lastname.value);
             console.log("Adresse mail: " + email.value);

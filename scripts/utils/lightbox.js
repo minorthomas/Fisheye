@@ -1,30 +1,33 @@
 class Lightbox {
-
     static init() {
-        const links = Array.from(document.querySelectorAll('a[href$=".webp"], a[href$=".mp4"]')) //recup tous les link avec l'attr href webp et mp4
-        const gallery = links.map(link => link.getAttribute("href")) //recup tous les href des link
+        const links = Array.from(
+            document.querySelectorAll('a[href$=".webp"], a[href$=".mp4"]')
+        ); //get all images with this attribute (mp4 & webp)
+        const gallery = links.map((link) => link.getAttribute("href")); //get links of each images of links array
 
-        links.forEach(link => link.addEventListener("click", event => {
-            event.preventDefault();
+        links.forEach((link) =>
+            link.addEventListener("click", (event) => {
+                event.preventDefault();
 
-            document.querySelector("header").style.display = "none"; //desac header
-            document.querySelector("main").style.display = "none"; //desac main
-            document.querySelector("footer").style.display = "none"; //desac footer
-            window.scrollTo(0, 0);
+                document.querySelector("header").style.display = "none"; //desac header
+                document.querySelector("main").style.display = "none"; //desac main
+                document.querySelector("footer").style.display = "none"; //desac footer
+                window.scrollTo(0, 0);
 
-            new Lightbox(event.currentTarget.getAttribute("href"), gallery); //creer la lightbox dans dom
-        }))
+                new Lightbox(event.currentTarget.getAttribute("href"), gallery); //creer la lightbox dans dom
+            })
+        );
     }
 
     constructor(url, images) {
-        this.element = this.buildDOM(url) //this.element fait ref au html creer en bas
-        this.images = images
+        this.element = this.buildDOM(url);
+        this.images = images;
         this.onKeyUp = this.onKeyUp.bind(this);
 
-        document.addEventListener("keyup", this.onKeyUp)
-        document.body.appendChild(this.element)
+        document.addEventListener("keyup", this.onKeyUp);
+        document.body.appendChild(this.element);
 
-        this.loadImage(url)
+        this.loadImage(url);
     }
 
     // close lightbox
@@ -47,9 +50,10 @@ class Lightbox {
         this.url = null; //set l'url sur null
         this.alt = null; //set alt sur null
         const container = this.element.querySelector("#media_lightbox"); //get media lightbox qui contient le media choisi
-        const titleMedia = document.querySelector("#lightbox_media_title") //get lightbox media title pour ajouter le titre
+        const titleMedia = document.querySelector("#lightbox_media_title"); //get lightbox media title pour ajouter le titre
 
-        if (url.endsWith(".mp4")) { //condition si c'est une video type mp4
+        if (url.endsWith(".mp4")) {
+            //condition si c'est une video type mp4
             this.url = url; //get l'url du media
             const video = document.createElement("video"); //creer l'element pour accueillir le media
             container.innerHTML = ""; //container sur vide pour eviter les doublons
@@ -60,9 +64,10 @@ class Lightbox {
             let title = this.createTitle(this.url); //creer le titre a partir de l'url
             titleMedia.innerText = title; //ajoute le title dans title media
 
-            this.alt = title //creer l'attr alt grace au titre
+            this.alt = title; //creer l'attr alt grace au titre
             video.setAttribute("title", this.alt + "video"); //ajoute le titre dans l'attr alt + video
-        } else { //condition si c'est une video type webp
+        } else {
+            //condition si c'est une video type webp
             this.url = url;
             const picture = new Image();
             container.innerHTML = "";
@@ -75,7 +80,7 @@ class Lightbox {
             let title = this.createTitle(this.url);
             titleMedia.innerText = title;
 
-            this.alt = title
+            this.alt = title;
             picture.setAttribute("alt", this.alt + "picture"); //ajoute le titre dans l'attr alt + picture
         }
     }
@@ -83,19 +88,21 @@ class Lightbox {
     //create new url
     createUrl(url) {
         this.url = url; //get l'url
-        if (url.endsWith(".webp")) { //condition si fini par .webp remplace par vide
+        if (url.endsWith(".webp")) {
+            //condition si fini par .webp remplace par vide
             return url.replace(".webp", "_large.webp"); //replace .webp par _large.webp
         }
     }
-
 
     //create title
     createTitle(url) {
         let array = url.split("/"); //get l'url et retire les / et place chaque element dans un tableau
         let title = array[array.length - 1].replaceAll("_", " "); //remplace les _ par des espaces
-        if (title.endsWith(".webp")) { //condition si fini par .webp remplace par vide
+        if (title.endsWith(".webp")) {
+            //condition si fini par .webp remplace par vide
             return title.replace(".webp", " ");
-        } else { //condition si fini par .mp4 remplace par vide
+        } else {
+            //condition si fini par .mp4 remplace par vide
             return title.replace(".mp4", " ");
         }
     }
@@ -104,11 +111,12 @@ class Lightbox {
     next(event) {
         event.preventDefault();
 
-        let i = this.images.findIndex(image => image === this.url); //get l'index du media actuel
-        if (i === this.images.length - 1) { //condition si arrive a la fin du tableau retourne au premier media
-            i = -1
+        let i = this.images.findIndex((image) => image === this.url); //get l'index du media actuel
+        if (i === this.images.length - 1) {
+            //condition si arrive a la fin du tableau retourne au premier media
+            i = -1;
         }
-        this.loadImage(this.images[i + 1]) //index + 1 après appui
+        this.loadImage(this.images[i + 1]); //index + 1 après appui
     }
 
     //image precedente
@@ -116,30 +124,29 @@ class Lightbox {
     previous(event) {
         event.preventDefault();
 
-        let i = this.images.findIndex(image => image === this.url); //get l'index du media actuel
-        if (i === 0) { //condition si arrive au debut du tableau retourne a la fin du tableau
-            i = this.images.length
+        let i = this.images.findIndex((image) => image === this.url); //get l'index du media actuel
+        if (i === 0) {
+            //condition si arrive au debut du tableau retourne a la fin du tableau
+            i = this.images.length;
         }
-        this.loadImage(this.images[i - 1]) //index - 1 après appui
+        this.loadImage(this.images[i - 1]); //index - 1 après appui
     }
 
-    //bouton d'access
-
+    //accessibility keys
     onKeyUp(event) {
-        if (event.key === "Escape") { //echap ferme lightbox
+        if (event.key === "Escape") {
             this.close(event);
-        } else if (event.key === "ArrowLeft") { //fleche gauche media precedent
+        } else if (event.key === "ArrowLeft") {
             this.previous(event);
-        } else if (event.key === "ArrowRight") { //fleche droite media suivant
+        } else if (event.key === "ArrowRight") {
             this.next(event);
         }
     }
 
-    // create lightbox
-
+    // create lightbox in dom
     buildDOM(url) {
-        const lightboxDom = document.createElement("div"); //creer div 
-        lightboxDom.setAttribute("id", "lightbox_section"); //ajoute attr id avec nom lightbox section
+        const lightboxDom = document.createElement("div");
+        lightboxDom.setAttribute("id", "lightbox_section");
 
         //add l'html ci dessous à lightboxDom
         lightboxDom.innerHTML = `
@@ -170,12 +177,18 @@ class Lightbox {
                 </button> 
             </div>
             <p id="lightbox_media_title"></p>
-        `
+        `;
 
         //event des boutons de la lightbox
-        lightboxDom.querySelector("#close_lightbox").addEventListener('click', this.close.bind(this)) //au clique ferme lightbox
-        lightboxDom.querySelector("#previous_button").addEventListener('click', this.previous.bind(this)) //au clique media precedent
-        lightboxDom.querySelector("#next_button").addEventListener('click', this.next.bind(this)) //au clique media suivant
+        lightboxDom
+            .querySelector("#close_lightbox")
+            .addEventListener("click", this.close.bind(this)); //au clique ferme lightbox
+        lightboxDom
+            .querySelector("#previous_button")
+            .addEventListener("click", this.previous.bind(this)); //au clique media precedent
+        lightboxDom
+            .querySelector("#next_button")
+            .addEventListener("click", this.next.bind(this)); //au clique media suivant
 
         return lightboxDom;
     }

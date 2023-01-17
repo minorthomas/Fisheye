@@ -13,7 +13,7 @@ async function selectedPhotographerPage() {
         (media) => media.photographerId == getIdParam
     );
 
-    sortByPopularity(selectedMedias);
+    sortBy(selectedMedias, 'popularity');
 
     async function displayPhotographerInfos() { //display infos photographers
         const photographerHeader = document.querySelector("#photographer_header");//recup element dom (header)
@@ -45,17 +45,9 @@ async function selectedPhotographerPage() {
     function filterMedias() {
         const filterSelect = document.querySelector("#filter_select")
 
-        //initialise popularity filter par defaut
-
-        filterSelect.addEventListener("click", (event) => {
-            if (event.target.value === "popularity") { //si sur popularity, change dans l'ordre like
-                sortByPopularity(selectedMedias);
-            } else if (event.target.value === "date") { //si sur date, change dans l'ordre: plus recente plus ancienne
-                sortByDate(selectedMedias);
-            } else if (event.target.value === "title") { //si sur title, change ordre alpha
-                sortByTitle(selectedMedias);
-            }
-            likesMedias();
+        filterSelect.addEventListener('click', (event) => {
+            sortBy(selectedMedias, event.target.value)
+            // likesMedias();
             Lightbox.init();
         })
     }
@@ -78,36 +70,36 @@ async function selectedPhotographerPage() {
 
     ////////////////////////////////////////////////////////
 
-    function likesMedias() {
-        selectedMedias.forEach((selectedMedia) => {
-            let checked = false; //status sur false par defaut === pas de like
+    // function likesMedias() {
+    //     selectedMedias.forEach((selectedMedia) => {
+    //         let checked = false; //status sur false par defaut === pas de like
 
-            const likesSection = document.querySelector('#like' + selectedMedia.id);
-            const heart = document.querySelector("#heart" + selectedMedia.id);
+    //         const likesSection = document.querySelector('#like' + selectedMedia.id);
+    //         const heart = document.querySelector("#heart" + selectedMedia.id);
 
-            likesSection.addEventListener("click", (event) => {
-                event.preventDefault();
+    //         likesSection.addEventListener("click", (event) => {
+    //             event.preventDefault();
 
-                if (checked == false) {
-                    let incrementLike = selectedMedia.likes += 1;
-                    likesSection.firstChild.textContent = incrementLike;
-                    heart.style.fill = "#DB8876";
-                    likesSection.style.color = "#DB8876";
-                    checked = true;
-                    likesSection.setAttribute("aria-checked", "true");
-                } else {
-                    let decrementLike = selectedMedia.likes -= 1;
-                    likesSection.firstChild.textContent = decrementLike;
-                    checked = false;
-                    heart.style.fill = "#901C1C";
-                    likesSection.style.color = "#901C1C";
-                    likesSection.setAttribute("aria-checked", "false");
-                }
+    //             if (checked == false) {
+    //                 let incrementLike = selectedMedia.likes += 1;
+    //                 likesSection.firstChild.textContent = incrementLike;
+    //                 heart.style.fill = "#DB8876";
+    //                 likesSection.style.color = "#DB8876";
+    //                 checked = true;
+    //                 likesSection.setAttribute("aria-checked", "true");
+    //             } else {
+    //                 let decrementLike = selectedMedia.likes -= 1;
+    //                 likesSection.firstChild.textContent = decrementLike;
+    //                 checked = false;
+    //                 heart.style.fill = "#901C1C";
+    //                 likesSection.style.color = "#901C1C";
+    //                 likesSection.setAttribute("aria-checked", "false");
+    //             }
 
-                calculateTotalLike()
-            });
-        });
-    }
+    //             calculateTotalLike()
+    //         });
+    //     });
+    // }
 
     ////////////////////////////////////////////////
 
@@ -116,7 +108,7 @@ async function selectedPhotographerPage() {
     displayPageTitle();
     filterMedias();
     calculateTotalLike();
-    likesMedias();
+    // likesMedias();
     Lightbox.init();
 }
 

@@ -1,12 +1,12 @@
 class Media {
     constructor(data) {
-        this._id = data.id
-        this._photographerId = data.photographerId
-        this._title = data.title
-        this._likes = data.likes
-        this._date = data.date
-        this._price = data.price
-        this._type = data.type
+        this._id = data.id;
+        this._photographerId = data.photographerId;
+        this._title = data.title;
+        this._likes = data.likes;
+        this._date = data.date;
+        this._price = data.price;
+        this._type = data.type;
     }
 
     get template() {
@@ -16,12 +16,12 @@ class Media {
 
 class Picture extends Media {
     constructor(data) {
-        super(data)
-        this._image = data.image
+        super(data);
+        this._image = data.image;
     }
 
     get picture() {
-        return `assets/medias/${this._photographerId}/${this._image}`
+        return `assets/medias/${this._photographerId}/${this._image}`;
     }
 
     templateMedia() {
@@ -46,23 +46,23 @@ class Picture extends Media {
                     </button>
                 </div>
             </article>
-        `
+        `;
     }
 }
 
 class Video extends Media {
     constructor(data) {
-        super(data)
-        this._video = data.video
-        this._miniature = data.miniature
+        super(data);
+        this._video = data.video;
+        this._miniature = data.miniature;
     }
 
     get video() {
-        return `assets/medias/${this._photographerId}/${this._video}`
+        return `assets/medias/${this._photographerId}/${this._video}`;
     }
 
     get miniature() {
-        return `assets/medias/miniatures/${this._miniature}`
+        return `assets/medias/miniatures/${this._miniature}`;
     }
 
     templateMedia() {
@@ -92,6 +92,6 @@ class Video extends Media {
                     </button>
                 </div>
             </article>
-        `
+        `;
     }
 }
