@@ -120,5 +120,14 @@ body {
 
 .error {
     display: block !important;
-    margin: 0 auto;
+    margin: 0 auto !important;
+}
+
+.opacity_medium {
+    opacity: 0.5 !important;
+    pointer-events: none;
+}
+
+.display_flex {
+    display: flex !important;
 }

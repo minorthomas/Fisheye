@@ -387,6 +387,8 @@
   font-size: 24px;
   background-color: #FFFFFF;
   transition: 0.2s;
+  padding: 0 0.2em;
+  resize: none;
 }
 #modal_section form div input:focus,
 #modal_section form div textarea:focus {
@@ -645,5 +647,14 @@ body button {
 
 .error {
   display: block !important;
-  margin: 0 auto;
+  margin: 0 auto !important;
+}
+
+.opacity_medium {
+  opacity: 0.5 !important;
+  pointer-events: none;
+}
+
+.display_flex {
+  display: flex !important;
 }/*# sourceMappingURL=global.css.map */
