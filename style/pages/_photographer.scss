@@ -183,20 +183,17 @@
             margin-top: 1em;
             overflow: hidden;
             border-radius: 0.3em;
-            position: relative;
             z-index: 2;
 
             a {
-
-                img {
-                    transition: 0.3s;
-                }
+                position: relative;
 
                 p {
                     display: none;
                     position: absolute;
-                    top: 4.5em;
-                    left: 8.2em;
+                    left: 50%;
+                    top: 50%;
+                    transform: translate(-50%,-50%);
                     background-color: $secondary-color;
                     padding: 0.5em;
                     font-size: 1.1em;
@@ -208,10 +205,15 @@
                     animation: fadeOut 0.3s;
                 }
 
+                img {
+                    transition: 0.3s;
+                }
+
                 .play_button {
                     position: absolute;
-                    left: 7.8em;
-                    top: 4.5em;
+                    left: 50%;
+                    top: 50%;
+                    transform: translate(-50%, -50%);
                     fill: $lightgrey;
                     height: 6em;
                     padding: 0.2em;
@@ -225,7 +227,7 @@
             a:focus {
 
                 img {
-                    filter: blur(0.2em);
+                    filter: blur(0.12em);
                 }
 
                 p {
@@ -235,7 +237,7 @@
 
                 .play_button {
                     border: 0.2em solid $primary-color;
-                    transform: scale(1.10);
+                    fill: $secondary-color;
                 }
             }
 
@@ -334,7 +336,7 @@
                 margin: 0;
             }
 
-            p {
+            h3 {
                 font-size: 3.2em;
                 font-weight: normal;
                 text-align: center;

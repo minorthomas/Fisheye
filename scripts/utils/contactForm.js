@@ -21,18 +21,17 @@ async function displayNameModal() {
     const { photographers } = await getPhotographers();
 
     const selectedPhotographer = photographers.find(
-        (photographer) => photographer.id == getIdParam
+        (photographer) => photographer.id.toString() === getIdParam
     );
 
-    const selectedPhotographerName = new Photographer(selectedPhotographer);
-
-    const headerSelectedPhotographerName = document.querySelector(
-        "#modal_header div p"
+    const modalTitle = document.querySelector(
+        "#modal_header h3"
     );
-    headerSelectedPhotographerName.innerHTML = selectedPhotographerName._name;
+
+    modalTitle.textContent = selectedPhotographer.name;
 }
 
-function displayValuesInLog() {
+function displayValuesInConsole() {
     const sendFormButton = document.querySelector("#send_form_button");
 
     const firstname = document.querySelector("#firstname");
@@ -62,5 +61,5 @@ function displayValuesInLog() {
     });
 }
 
-displayValuesInLog();
+displayValuesInConsole();
 displayNameModal();

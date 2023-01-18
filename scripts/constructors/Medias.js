@@ -26,7 +26,7 @@ class Picture extends Media {
 
     templateMedia() {
         return `
-            <article>
+            <article title='Open lightbox for see ${this._title} picture'>
                 <a tabindex="2" href="${this.picture}" class="open_lightbox">
                     <p>Voir ></p>
                     <img loading="lazy" src="${this.picture}" class="media_source" alt="Type: Image - Titre: ${this._title}"/>
@@ -67,7 +67,7 @@ class Video extends Media {
 
     templateMedia() {
         return `
-            <article>
+            <article title='Open lightbox for see ${this._title} video'>
                 <a tabindex="2" href="${this.video}" class="open_lightbox">
                     <img loading="lazy" src="${this.miniature}" class="media_source" alt="Type: video - Titre: ${this._title}"/>
                     <svg title="Image play la vidéo" class="play_button" viewBox="0 0 459 459" style="enable-background:new 0 0 459 459;">

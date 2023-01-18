@@ -59,8 +59,8 @@
 }
 #main_index_page article:hover,
 #main_index_page a:focus {
-  background-color: #eeeeee;
-  border-radius: 1em;
+  background-color: #f5f5f5;
+  border-radius: 0.5em;
 }
 #main_index_page article:hover .photographers_header h2,
 #main_index_page a:focus .photographers_header h2 {
@@ -216,17 +216,17 @@
   margin-top: 1em;
   overflow: hidden;
   border-radius: 0.3em;
-  position: relative;
   z-index: 2;
 }
-#main_photographer_page #medias_section article a img {
-  transition: 0.3s;
+#main_photographer_page #medias_section article a {
+  position: relative;
 }
 #main_photographer_page #medias_section article a p {
   display: none;
   position: absolute;
-  top: 4.5em;
-  left: 8.2em;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
   background-color: #DB8876;
   padding: 0.5em;
   font-size: 1.1em;
@@ -238,10 +238,14 @@
   -webkit-animation: fadeOut 0.3s;
           animation: fadeOut 0.3s;
 }
+#main_photographer_page #medias_section article a img {
+  transition: 0.3s;
+}
 #main_photographer_page #medias_section article a .play_button {
   position: absolute;
-  left: 7.8em;
-  top: 4.5em;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
   fill: #FAFAFA;
   height: 6em;
   padding: 0.2em;
@@ -251,7 +255,7 @@
 }
 #main_photographer_page #medias_section article a:hover img,
 #main_photographer_page #medias_section article a:focus img {
-  filter: blur(0.2em);
+  filter: blur(0.12em);
 }
 #main_photographer_page #medias_section article a:hover p,
 #main_photographer_page #medias_section article a:focus p {
@@ -262,7 +266,7 @@
 #main_photographer_page #medias_section article a:hover .play_button,
 #main_photographer_page #medias_section article a:focus .play_button {
   border: 0.2em solid #901C1C;
-  transform: scale(1.1);
+  fill: #DB8876;
 }
 #main_photographer_page #medias_section article .open_lightbox img {
   width: 100%;
@@ -343,7 +347,7 @@
   text-align: center;
   margin: 0;
 }
-#modal_section #modal_header div p {
+#modal_section #modal_header div h3 {
   font-size: 3.2em;
   font-weight: normal;
   text-align: center;
