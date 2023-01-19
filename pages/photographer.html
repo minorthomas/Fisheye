@@ -11,10 +11,10 @@
         <script defer src="../scripts/constructors/Photographers.js"></script>
         <script defer src="../scripts/constructors/Medias.js"></script>
         <script defer src="../scripts/pages/photographer.js"></script>
-        <script defer src="../scripts/utils/error.js"></script>
-        <script defer src="../scripts/utils/contactForm.js"></script>
-        <script defer src="../scripts/utils/lightbox.js"></script>
         <script defer src="../scripts/utils/filter.js"></script>
+        <script defer src="../scripts/utils/lightbox.js"></script>
+        <script defer src="../scripts/utils/error.js"></script>
+        <script defer src="../scripts/utils/contact.js"></script>
 
         <title>Fisheye</title>
     </head>
@@ -116,49 +116,46 @@
             </div>
             <!-- FORM -->
             <form>
-                <div>
-                    <label for="firstname">Prénom</label>
-                    <input
-                        maxlength="30"
-                        tabindex="1"
-                        type="text"
-                        id="firstname"
-                        name="firstname"
-                    />
-                </div>
-                <div>
-                    <label for="lastname">Nom</label>
-                    <input
-                        maxlength="30"
-                        tabindex="1"
-                        type="text"
-                        id="lastname"
-                        name="lastname"
-                    />
-                </div>
-                <div>
-                    <label for="email">Email</label>
-                    <input tabindex="1" type="email" id="email" name="email" />
-                </div>
-                <div>
-                    <label for="yourmessage">Votre message</label>
-                    <textarea
-                        maxlength="250"
-                        tabindex="1"
-                        type="text"
-                        id="yourmessage"
-                        name="yourmessage"
-                    ></textarea>
-                </div>
+                <label for="firstname">Prénom</label>
+                <input
+                    maxlength="30"
+                    tabindex="1"
+                    type="text"
+                    id="firstname"
+                    name="firstname"
+                    class="input_form"
+                />
+
+                <label for="lastname">Nom</label>
+                <input
+                    maxlength="30"
+                    tabindex="1"
+                    type="text"
+                    id="lastname"
+                    name="lastname"
+                    class="input_form"
+                />
+
+                <label for="email">Email</label>
+                <input
+                    tabindex="1"
+                    type="email"
+                    id="email"
+                    name="email"
+                    class="input_form"
+                />
+
+                <label for="yourmessage">Votre message</label>
+                <textarea
+                    maxlength="250"
+                    tabindex="1"
+                    type="text"
+                    id="yourmessage"
+                    name="yourmessage"
+                    class="input_form"
+                ></textarea>
+                <input type="submit" id="submit_btn" aria-label="Bouton envoi du formulaire" tabindex="1"/>
             </form>
-            <button
-                aria-label="Bouton envoi du formulaire"
-                tabindex="1"
-                class="button"
-                id="send_form_button"
-            >
-                Envoyer
-            </button>
         </div>
 
         <footer id="footer_photographer_page"></footer>

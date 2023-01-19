@@ -318,17 +318,17 @@
 
 #modal_section {
   display: none;
-  position: absolute;
+  position: fixed;
   border-radius: 5px;
   background-color: #DB8876;
-  width: 40%;
+  max-width: 40em;
   flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  padding: 20px 35px 50px 35px;
-  top: 5em;
-  left: 35em;
+  padding: 1.5em 2em;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
   z-index: 6;
+  gap: 1em;
 }
 #modal_section #modal_header {
   display: flex;
@@ -374,16 +374,14 @@
   width: 100%;
   flex-direction: column;
   align-items: flex-start;
+  gap: 1em;
 }
-#modal_section form div {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  align-items: self-start;
-  margin-bottom: 2.5em;
+#modal_section form label {
+  color: #312e2e;
+  font-size: 24px;
 }
-#modal_section form div input,
-#modal_section form div textarea {
+#modal_section form input,
+#modal_section form textarea {
   width: 100%;
   height: 50px;
   border: none;
@@ -392,24 +390,34 @@
   background-color: #FFFFFF;
   transition: 0.2s;
   padding: 0 0.2em;
-  resize: none;
 }
-#modal_section form div input:focus,
-#modal_section form div textarea:focus {
+#modal_section form input:focus,
+#modal_section form textarea:focus {
   background-color: rgb(231, 231, 231);
 }
-#modal_section form div label {
-  color: #312E2E;
-  font-size: 24px;
-}
-#modal_section form div #yourmessage {
+#modal_section form #yourmessage {
   height: 5em;
+  resize: none;
 }
-#modal_section .button {
+#modal_section form #submit_btn {
+  font-size: 20px;
+  font-weight: lighter;
+  color: white;
+  padding: 11px;
+  width: 170px;
+  height: 70px;
+  border: solid 0.15em transparent;
+  background-color: #901C1C;
+  border-radius: 5px;
+  text-align: center;
+  transition: 0.2s;
   align-self: start;
 }
-#modal_section .button:hover {
+#modal_section form #submit_btn:hover {
   border: solid 0.15em #000000;
+  background-color: #DB8876;
+  color: #000000;
+  cursor: pointer;
 }
 
 #lightbox_section {

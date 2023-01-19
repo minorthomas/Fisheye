@@ -37,7 +37,6 @@ function displayPhotographerMedias(medias) {
     if (medias.length > 0) {
         input.addEventListener("click", (event) => {
             sortBy(medias, event.target.value);
-            // likesMedias();
             Lightbox.init();
         });
     } else {
@@ -99,7 +98,7 @@ function eventLike(medias) {
 }
 
 async function photographerPage() {
-    const { photographers, medias } = await getPhotographers();
+    const { photographers, medias } = await getPhotographers()
     const selectedPhotographer = getPhotographerById(photographers);
     const selectedMedias = getPhotographerMediasById(medias);
 

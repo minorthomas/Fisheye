@@ -1,4 +1,4 @@
-@use '../utils' as *;
+@use "../utils" as *;
 
 #header_photographer_page {
     display: flex;
@@ -58,7 +58,6 @@
 
 // MAIN
 #main_photographer_page {
-
     // SELECT MENU
     #filter_section {
         display: flex;
@@ -70,7 +69,6 @@
         }
 
         #filter_select {
-
             &_dropdown {
                 display: flex;
                 position: relative;
@@ -193,7 +191,7 @@
                     position: absolute;
                     left: 50%;
                     top: 50%;
-                    transform: translate(-50%,-50%);
+                    transform: translate(-50%, -50%);
                     background-color: $secondary-color;
                     padding: 0.5em;
                     font-size: 1.1em;
@@ -225,7 +223,6 @@
 
             a:hover,
             a:focus {
-
                 img {
                     filter: blur(0.12em);
                 }
@@ -242,7 +239,6 @@
             }
 
             .open_lightbox {
-
                 img {
                     width: 100%;
                     height: 240px;
@@ -288,7 +284,6 @@
             }
 
             div {
-
                 button:hover,
                 button:focus {
                     color: $secondary-color;
@@ -306,17 +301,17 @@
 
 #modal_section {
     display: none;
-    position: absolute;
+    position: fixed;
     border-radius: 5px;
     background-color: $secondary-color;
-    width: 40%;
+    max-width: 40em;
     flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    padding: 20px 35px 50px 35px;
-    top: 5em;
-    left: 35em;
+    padding: 1.5em 2em;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
     z-index: 6;
+    gap: 1em;
 
     #modal_header {
         display: flex;
@@ -342,14 +337,13 @@
                 text-align: center;
                 margin: 0;
             }
-
         }
 
         button {
             background-color: transparent;
             border: none;
             align-self: flex-start;
-            margin-top: 1.0em;
+            margin-top: 1em;
 
             svg {
                 cursor: pointer;
@@ -370,50 +364,59 @@
         width: 100%;
         flex-direction: column;
         align-items: flex-start;
+        gap: 1em;
 
-        div {
-            display: flex;
-            flex-direction: column;
+        label {
+            color: #312e2e;
+            font-size: 24px;
+        }
+
+        input,
+        textarea {
             width: 100%;
-            align-items: self-start;
-            margin-bottom: 2.5em;
+            height: 50px;
+            border: none;
+            border-radius: 5px;
+            font-size: 24px;
+            background-color: $white;
+            transition: 0.2s;
+            padding: 0 0.2em;
+        }
 
-            input,
-            textarea {
-                width: 100%;
-                height: 50px;
-                border: none;
-                border-radius: 5px;
-                font-size: 24px;
-                background-color: $white;
-                transition: 0.2s;
-                padding: 0 0.2em;
-                resize: none;
-            }
+        input:focus,
+        textarea:focus {
+            background-color: rgb(231, 231, 231);
+        }
 
-            input:focus,
-            textarea:focus {
-                background-color: rgb(231, 231, 231);
-            }
+        #yourmessage {
+            height: 5em;
+            resize: none;
+        }
 
-            label {
-                color: #312E2E;
-                font-size: 24px;
-            }
-
-            #yourmessage {
-                height: 5em;
-            }
+        #submit_btn {
+            font-size: 20px;
+            font-weight: lighter;
+            color: white;
+            padding: 11px;
+            width: 170px;
+            height: 70px;
+            border: solid 0.15em transparent;
+            background-color: #901C1C;
+            border-radius: 5px;
+            text-align: center;
+            transition: 0.2s;
+            align-self: start;
+        }
+    
+        #submit_btn:hover {
+            border: solid 0.15em $black;
+            background-color: $secondary-color;
+            color: $black;
+            cursor: pointer;
         }
     }
 
-    .button {
-        align-self: start;
-    }
 
-    .button:hover {
-        border: solid 0.15em $black;
-    }
 }
 
 // LIGHTBOX
@@ -445,7 +448,6 @@
 
     #close_lightbox:focus,
     #close_lightbox:hover {
-
         svg {
             fill: $secondary-color;
         }
@@ -472,7 +474,6 @@
 
         #previous_button:focus,
         #previous_button:hover {
-
             svg {
                 fill: $secondary-color;
             }
@@ -504,7 +505,6 @@
 
         #next_button:focus,
         #next_button:hover {
-
             svg {
                 fill: $secondary-color;
             }

@@ -32,34 +32,39 @@ async function displayNameModal() {
 }
 
 function displayValuesInConsole() {
-    const sendFormButton = document.querySelector("#send_form_button");
+    const sendFormButton = document.querySelector("#submit_btn");
 
     const firstname = document.querySelector("#firstname");
     const lastname = document.querySelector("#lastname");
     const email = document.querySelector("#email");
     const message = document.querySelector("#yourmessage");
 
+
+
     sendFormButton.addEventListener("click", (event) => {
         event.preventDefault();
 
         if (
-            firstname.value.length == 0 ||
-            lastname.value.length == 0 ||
-            email.value.length == 0 ||
-            message.value.length == 0
+            firstname.value.length === 0 ||
+            lastname.value.length === 0 ||
+            email.value.length === 0 ||
+            message.value.length === 0
         ) {
             console.log("Error, vous devez remplir tous les champs");
+            return false;
         } else {
             console.clear();
-            console.log("Prénom: " + firstname.value);
-            console.log("Nom: " + lastname.value);
-            console.log("Adresse mail: " + email.value);
-            console.log("Message: " + message.value);
-
+            console.group('Form: User infos');
+            console.log(`Prenom: '${firstname.value}'`);
+            console.log(`Nom: '${lastname.value}'`);
+            console.log(`Adresse mail: '${email.value}'`);
+            console.log(`Message: '${message.value}'`);
+            console.groupEnd();
             closeModal();
+            return true;
         }
     });
 }
 
-displayValuesInConsole();
 displayNameModal();
+displayValuesInConsole();
