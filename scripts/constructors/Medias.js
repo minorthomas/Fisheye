@@ -1,3 +1,6 @@
+/**
+ * @param  {Object} data
+ */
 class Media {
     constructor(data) {
         this._id = data.id;
@@ -14,6 +17,9 @@ class Media {
     }
 }
 
+/**
+ * @param  {Object} data
+ */
 class Picture extends Media {
     constructor(data) {
         super(data);
@@ -50,6 +56,9 @@ class Picture extends Media {
     }
 }
 
+/**
+ * @param  {Object} data
+ */
 class Video extends Media {
     constructor(data) {
         super(data);

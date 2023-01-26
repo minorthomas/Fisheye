@@ -43,7 +43,6 @@ function displayValuesInConsole() {
 
     sendFormButton.addEventListener("click", (event) => {
         event.preventDefault();
-
         if (
             firstname.value.length === 0 ||
             lastname.value.length === 0 ||

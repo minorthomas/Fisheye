@@ -2,6 +2,10 @@ const getParams = window.location.search;
 const getUrlParams = new URLSearchParams(getParams);
 const getIdParam = getUrlParams.get("id");
 
+/**
+ * @param  {array} photographers
+ * @return {object}
+ */
 function getPhotographerById(photographers) {
     const selectedPhotographer = photographers.find(
         (photographer) => photographer.id.toString() === getIdParam
@@ -9,6 +13,10 @@ function getPhotographerById(photographers) {
     return selectedPhotographer;
 }
 
+/**
+ * @param  {array} medias
+ * @return {array}
+ */
 function getPhotographerMediasById(medias) {
     const selectedMedias = medias.filter(
         (media) => media.photographerId == getIdParam
@@ -16,6 +24,10 @@ function getPhotographerMediasById(medias) {
     return selectedMedias;
 }
 
+/**
+ * @param  {object} photographer
+ *  
+ */
 function displayPhotographerInfos(photographer) {
     const header = document.querySelector("#photographer_header");
     const footer = document.querySelector("#footer_photographer_page");
@@ -30,6 +42,10 @@ function displayPhotographerInfos(photographer) {
     }
 }
 
+/**
+ * @param  {array} medias
+ *  
+ */
 function displayPhotographerMedias(medias) {
     const input = document.querySelector("#filter_select");
     sortBy(medias, "popularity");
@@ -44,6 +60,10 @@ function displayPhotographerMedias(medias) {
     }
 }
 
+/**
+ * @param  {object} photographer
+ *  
+ */
 function changePageTitle(photographer) {
     const pageTitle = document.querySelector("title");
 
@@ -54,6 +74,10 @@ function changePageTitle(photographer) {
     }
 }
 
+/**
+ * @param  {array} medias
+ *  
+ */
 function calculateTotalLike(medias) {
     const likes = document.querySelector("#like_section div p");
     let sum = 0;
@@ -65,6 +89,10 @@ function calculateTotalLike(medias) {
     localStorage.setItem("Total-Like", JSON.stringify(sum));
 }
 
+/**
+ * @param  {array} medias
+ *  
+ */
 function eventLike(medias) {
     calculateTotalLike(medias);
     medias.forEach((media) => {

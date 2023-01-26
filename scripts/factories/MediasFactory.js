@@ -1,3 +1,6 @@
+/**
+ * @param  {Object} media
+ */
 class MediasFactory {
     constructor(media) {
         if (media.type === 'image') {
