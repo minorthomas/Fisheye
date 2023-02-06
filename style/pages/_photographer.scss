@@ -58,112 +58,86 @@
 
 // MAIN
 #main_photographer_page {
-    // SELECT MENU
-    #filter_section {
+
+    .dropdown {
         display: flex;
         flex-direction: row;
+        position: relative;
+        align-items: center;
+        gap: 2em;
 
-        label {
-            align-self: center;
-            margin-right: 1em;
-        }
+        &_button {
+            position: relative;
 
-        #filter_select {
-            &_dropdown {
+            button {
                 display: flex;
-                position: relative;
+                background-color: $primary-color;
+                color: $white;
+                width: 10em;
+                padding: 1.2em 0;
+                padding-left: 1em;
+                font-size: 1em;
+                border-radius: 0.3em;
 
-                button {
-                    display: flex;
-                    width: 10em;
-                    font-size: 1em;
-                    border-radius: 0.3em;
-                    border: none;
-                    background-color: $primary-color;
-                    color: white;
-                    padding: 0.9em;
-                    z-index: 3;
-                    cursor: pointer;
-                }
-
-                svg {
-                    position: absolute;
-                    top: 1.15em;
-                    left: 8em;
-                    height: 0.8em;
-                    transform: rotate(90deg);
-                    fill: white;
-                    z-index: 3;
-                }
-            }
-
-            button:hover,
-            button:focus {
-                background-color: $secondary-color;
-                color: black;
-            }
-
-            &_options {
-                display: none;
-                z-index: 3;
-
-                .line {
-                    position: absolute;
-                    border-bottom: 0.1em solid $white;
-                    margin-top: 5px;
-                    width: 85%;
-                    left: 0.7em;
-                }
-
-                #line_one {
-                    top: -0.3em;
-                }
-
-                #line_two {
-                    top: 2.7em;
-                }
-
-                button {
-                    display: flex;
-                    flex-direction: column;
-                    width: 10em;
-                    font-size: 1em;
-                    border: none;
-                    background-color: $primary-color;
-                    color: white;
-                    padding: 0.9em;
-                    cursor: pointer;
-                }
-
-                button:last-child {
-                    border-radius: 0 0 0.3em 0.3em;
-                }
-
-                button:hover,
-                button:focus {
+                &:hover,
+                &:focus {
+                    outline: none;
                     background-color: $secondary-color;
                     color: $black;
                 }
             }
 
-            &_options:hover {
-                display: flex;
-                z-index: 99;
+            svg {
+                position: absolute;
+                right: 1em;
+                top: 1.15em;
+                fill: $white;
+                width: 1em;
+            }
+        }
+        
+        &_list {
+            display: none;
+            flex-direction: column;
+            position: absolute;
+            list-style: none;
+            top: 3.35em;
+            left: 5.85em;
+            background-color: $primary-color;
+            z-index: 99;
+            border-radius: 0 0 0.3em 0.3em;
+
+            hr {
+                width: 8.6em;
+                margin: 0 auto;
+            }
+
+            li {
+
+                button {
+                    display: flex;
+                    color: $white;
+                    width: 10em;
+                    padding: 0.8em 0;
+                    padding-left: 1em;
+                    font-size: 1em;
+
+                    &:hover,
+                    &:focus {
+                        outline: none;
+                        background-color: $secondary-color;
+                        color: $black;
+                    }
+
+                    &:last-child:hover {
+                        border-radius: 0 0 0.3em 0.3em;
+                    }
+                }
             }
         }
 
-        #filter_select:hover #filter_select_options {
-            display: flex;
-            flex-direction: column;
-            position: absolute;
-        }
-
-        #filter_select:hover #filter_select_dropdown button {
-            border-radius: 0.3em 0.3em 0 0;
-        }
-
-        #filter_select:hover #filter_select_dropdown svg {
-            transform: rotate(-90deg);
+        .show {
+            display: block;
         }
     }
 

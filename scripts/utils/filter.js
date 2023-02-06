@@ -1,9 +1,9 @@
 //call elements
 const mediasSection = document.querySelector("#medias_section");
-const dropdownButton = document.querySelector("#filter_select_dropdown button");
-const optionPopularity = document.querySelector("#option_popularity");
-const optionDate = document.querySelector("#option_date");
-const optionTitle = document.querySelector("#option_title");
+const dropdownButton = document.querySelector(".dropdown_button button");
+const popularityOpt = document.querySelector("#popularity");
+const dateOpt = document.querySelector("#date");
+const titleOpt = document.querySelector("#title");
 
 /**
  * @param  {Array} selectedMedia
@@ -46,7 +46,6 @@ function sortByTitle(selectedMedia) {
         }
         return 0;
     });
-    console.log(sortedMedia);
     return sortedMedia;
 }
 
@@ -58,6 +57,10 @@ function createMedia(medias) {
         const factory = new MediasFactory(media);
         mediasSection.innerHTML += factory.templateMedia();
     });
+}
+
+function toggleDropdown() {
+    document.querySelector("#list").classList.toggle("show");
 }
 
 /**
@@ -74,11 +77,10 @@ function sortBy(selectedMedia, by) {
 
         dropdownButton.textContent = "Popularité";
         dropdownButton.value = "popularity";
-        optionPopularity.style.display = "none";
-        optionDate.style.display = "block";
-        optionTitle.style.display = "block";
-        optionDate.style.borderRadius = "0";
-        
+        popularityOpt.style.display = "none";
+        dateOpt.style.display = "flex";
+        titleOpt.style.display = "flex";
+        dateOpt.style.borderRadius = "0";
     } else if (by === "date") {
         const medias = sortByDate(selectedMedia);
         createMedia(medias);
@@ -86,10 +88,9 @@ function sortBy(selectedMedia, by) {
 
         dropdownButton.textContent = "Date";
         dropdownButton.value = "date";
-        optionPopularity.style.display = "block";
-        optionDate.style.display = "none";
-        optionTitle.style.display = "block";
-
+        popularityOpt.style.display = "flex";
+        dateOpt.style.display = "none";
+        titleOpt.style.display = "flex";
     } else if (by === "title") {
         const medias = sortByTitle(selectedMedia);
         createMedia(medias);
@@ -97,9 +98,9 @@ function sortBy(selectedMedia, by) {
 
         dropdownButton.textContent = "Titre";
         dropdownButton.value = "title";
-        optionPopularity.style.display = "block";
-        optionDate.style.display = "block";
-        optionTitle.style.display = "none";
-        optionDate.style.borderRadius = "0 0 0.3em 0.3em";
+        popularityOpt.style.display = "flex";
+        dateOpt.style.display = "flex";
+        titleOpt.style.display = "none";
+        dateOpt.style.borderRadius = "0 0 0.3em 0.3em";
     }
 }

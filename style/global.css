@@ -114,94 +114,71 @@
   color: #000000;
 }
 
-#main_photographer_page #filter_section {
+#main_photographer_page .dropdown {
   display: flex;
   flex-direction: row;
+  position: relative;
+  align-items: center;
+  gap: 2em;
 }
-#main_photographer_page #filter_section label {
-  align-self: center;
-  margin-right: 1em;
-}
-#main_photographer_page #filter_section #filter_select_dropdown {
-  display: flex;
+#main_photographer_page .dropdown_button {
   position: relative;
 }
-#main_photographer_page #filter_section #filter_select_dropdown button {
+#main_photographer_page .dropdown_button button {
   display: flex;
+  background-color: #901C1C;
+  color: #FFFFFF;
   width: 10em;
+  padding: 1.2em 0;
+  padding-left: 1em;
   font-size: 1em;
   border-radius: 0.3em;
-  border: none;
-  background-color: #901C1C;
-  color: white;
-  padding: 0.9em;
-  z-index: 3;
-  cursor: pointer;
 }
-#main_photographer_page #filter_section #filter_select_dropdown svg {
-  position: absolute;
-  top: 1.15em;
-  left: 8em;
-  height: 0.8em;
-  transform: rotate(90deg);
-  fill: white;
-  z-index: 3;
-}
-#main_photographer_page #filter_section #filter_select button:hover,
-#main_photographer_page #filter_section #filter_select button:focus {
-  background-color: #DB8876;
-  color: black;
-}
-#main_photographer_page #filter_section #filter_select_options {
-  display: none;
-  z-index: 3;
-}
-#main_photographer_page #filter_section #filter_select_options .line {
-  position: absolute;
-  border-bottom: 0.1em solid #FFFFFF;
-  margin-top: 5px;
-  width: 85%;
-  left: 0.7em;
-}
-#main_photographer_page #filter_section #filter_select_options #line_one {
-  top: -0.3em;
-}
-#main_photographer_page #filter_section #filter_select_options #line_two {
-  top: 2.7em;
-}
-#main_photographer_page #filter_section #filter_select_options button {
-  display: flex;
-  flex-direction: column;
-  width: 10em;
-  font-size: 1em;
-  border: none;
-  background-color: #901C1C;
-  color: white;
-  padding: 0.9em;
-  cursor: pointer;
-}
-#main_photographer_page #filter_section #filter_select_options button:last-child {
-  border-radius: 0 0 0.3em 0.3em;
-}
-#main_photographer_page #filter_section #filter_select_options button:hover,
-#main_photographer_page #filter_section #filter_select_options button:focus {
+#main_photographer_page .dropdown_button button:hover, #main_photographer_page .dropdown_button button:focus {
+  outline: none;
   background-color: #DB8876;
   color: #000000;
 }
-#main_photographer_page #filter_section #filter_select_options:hover {
-  display: flex;
-  z-index: 99;
+#main_photographer_page .dropdown_button svg {
+  position: absolute;
+  right: 1em;
+  top: 1.15em;
+  fill: #FFFFFF;
+  width: 1em;
 }
-#main_photographer_page #filter_section #filter_select:hover #filter_select_options {
-  display: flex;
+#main_photographer_page .dropdown_list {
+  display: none;
   flex-direction: column;
   position: absolute;
+  list-style: none;
+  top: 3.35em;
+  left: 5.85em;
+  background-color: #901C1C;
+  z-index: 99;
+  border-radius: 0 0 0.3em 0.3em;
 }
-#main_photographer_page #filter_section #filter_select:hover #filter_select_dropdown button {
-  border-radius: 0.3em 0.3em 0 0;
+#main_photographer_page .dropdown_list hr {
+  width: 8.6em;
+  margin: 0 auto;
 }
-#main_photographer_page #filter_section #filter_select:hover #filter_select_dropdown svg {
-  transform: rotate(-90deg);
+#main_photographer_page .dropdown_list li button {
+  display: flex;
+  color: #FFFFFF;
+  width: 10em;
+  padding: 0.8em 0;
+  padding-left: 1em;
+  font-size: 1em;
+}
+#main_photographer_page .dropdown_list li button:hover, #main_photographer_page .dropdown_list li button:focus {
+  outline: none;
+  background-color: #DB8876;
+  color: #000000;
+}
+#main_photographer_page .dropdown_list li button:last-child:hover {
+  border-radius: 0 0 0.3em 0.3em;
+}
+#main_photographer_page .dropdown .show {
+  display: block;
 }
 #main_photographer_page #medias_section {
   display: grid;

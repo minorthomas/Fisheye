@@ -26,7 +26,7 @@ function getPhotographerMediasById(medias) {
 
 /**
  * @param  {object} photographer
- *  
+ *
  */
 function displayPhotographerInfos(photographer) {
     const header = document.querySelector("#photographer_header");
@@ -44,14 +44,14 @@ function displayPhotographerInfos(photographer) {
 
 /**
  * @param  {array} medias
- *  
+ *
  */
 function displayPhotographerMedias(medias) {
-    const input = document.querySelector("#filter_select");
+    const dropdownList = document.querySelector(".dropdown_list");
     sortBy(medias, "popularity");
 
     if (medias.length > 0) {
-        input.addEventListener("click", (event) => {
+        dropdownList.addEventListener("click", (event) => {
             sortBy(medias, event.target.value);
             Lightbox.init();
         });
@@ -62,7 +62,7 @@ function displayPhotographerMedias(medias) {
 
 /**
  * @param  {object} photographer
- *  
+ *
  */
 function changePageTitle(photographer) {
     const pageTitle = document.querySelector("title");
@@ -76,7 +76,7 @@ function changePageTitle(photographer) {
 
 /**
  * @param  {array} medias
- *  
+ *
  */
 function calculateTotalLike(medias) {
     const likes = document.querySelector("#like_section div p");
@@ -91,7 +91,7 @@ function calculateTotalLike(medias) {
 
 /**
  * @param  {array} medias
- *  
+ *
  */
 function eventLike(medias) {
     calculateTotalLike(medias);
@@ -126,7 +126,7 @@ function eventLike(medias) {
 }
 
 async function photographerPage() {
-    const { photographers, medias } = await getPhotographers()
+    const { photographers, medias } = await getPhotographers();
     const selectedPhotographer = getPhotographerById(photographers);
     const selectedMedias = getPhotographerMediasById(medias);
 

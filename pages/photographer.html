@@ -36,11 +36,11 @@
         </header>
 
         <main id="main_photographer_page">
-            <div id="filter_section">
+            <!-- <div id="filter_section">
                 <label for="filter_select">Trier par</label>
-                <div id="filter_select">
+                <div tabindex="2" id="filter_select">
                     <div title="Bouton de filtres" id="filter_select_dropdown">
-                        <button tabindex="2" value="popularity"></button>
+                        <button class="selected_filter" value="popularity"></button>
                         <svg
                             title="Image de fléche"
                             viewBox="0 0 434.002 434.002"
@@ -61,6 +61,7 @@
                             class="option_button"
                             id="option_popularity"
                             value="popularity"
+                            tabindex="2"
                         >
                             Popularité
                         </button>
@@ -69,6 +70,7 @@
                             class="option_button"
                             id="option_date"
                             value="date"
+                            tabindex="2"
                         >
                             Date
                         </button>
@@ -77,12 +79,55 @@
                             class="option_button"
                             id="option_title"
                             value="title"
+                            tabindex="2"
                         >
                             Titre
                         </button>
                     </div>
                 </div>
-            </div>
+            </div> -->
+
+            <nav class="dropdown">
+                <p>Trier par</p>
+                <div class="dropdown_button">
+                    <button
+                        tabindex="1"
+                        onclick="toggleDropdown()"
+                        value="popularity"
+                    >
+                        Popularité
+                    </button>
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        class="dropdown_button_svg"
+                    >
+                        <path
+                            d="M0 7.33l2.829-2.83 9.175 9.339 9.167-9.339 2.829 2.83-11.996 12.17z"
+                        />
+                    </svg>
+                </div>
+
+                <ul id="list" class="dropdown_list">
+                    <li>
+                        <button tabindex="1" id="popularity" value="popularity">
+                            Popularité
+                        </button>
+                    </li>
+                    <li>
+                        <button tabindex="1" id="date" value="date">
+                            Date
+                        </button>
+                    </li>
+                    <li>
+                        <button tabindex="1" id="title" value="title">
+                            Titre
+                        </button>
+                    </li>
+                </ul>
+            </nav>
 
             <section id="medias_section"></section>
         </main>
@@ -154,7 +199,12 @@
                     name="yourmessage"
                     class="input_form"
                 ></textarea>
-                <input type="submit" id="submit_btn" aria-label="Bouton envoi du formulaire" tabindex="1"/>
+                <input
+                    type="submit"
+                    id="submit_btn"
+                    aria-label="Bouton envoi du formulaire"
+                    tabindex="1"
+                />
             </form>
         </div>
 
