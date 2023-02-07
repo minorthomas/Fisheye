@@ -81,6 +81,7 @@ function sortBy(selectedMedia, by) {
         dateOpt.style.display = "flex";
         titleOpt.style.display = "flex";
         dateOpt.style.borderRadius = "0";
+        document.querySelector("#list").classList.remove("show");
     } else if (by === "date") {
         const medias = sortByDate(selectedMedia);
         createMedia(medias);
@@ -91,6 +92,7 @@ function sortBy(selectedMedia, by) {
         popularityOpt.style.display = "flex";
         dateOpt.style.display = "none";
         titleOpt.style.display = "flex";
+        document.querySelector("#list").classList.remove("show");
     } else if (by === "title") {
         const medias = sortByTitle(selectedMedia);
         createMedia(medias);
@@ -102,5 +104,6 @@ function sortBy(selectedMedia, by) {
         dateOpt.style.display = "flex";
         titleOpt.style.display = "none";
         dateOpt.style.borderRadius = "0 0 0.3em 0.3em";
+        document.querySelector("#list").classList.remove("show");
     }
 }
