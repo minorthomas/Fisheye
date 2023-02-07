@@ -150,7 +150,7 @@ class Lightbox {
 
         //add l'html ci dessous à lightboxDom
         lightboxDom.innerHTML = `
-            <button id="close_lightbox">
+            <button type="button" aria-label="Fermer la page des médias" id="close_lightbox">
                 <svg viewBox="0 0 460.775 460.775" style="enable-background:new 0 0 460.775 460.775;">
                     <path d="M285.08,230.397L456.218,59.27c6.076-6.077,6.076-15.911,0-21.986L423.511,4.565c-2.913-2.911-6.866-4.55-10.992-4.55
                     c-4.127,0-8.08,1.639-10.993,4.55l-171.138,171.14L59.25,4.565c-2.913-2.911-6.866-4.55-10.993-4.55
@@ -161,7 +161,7 @@ class Lightbox {
                 </svg>
             </button>
             <div class="lightbox_select">
-                <button id="previous_button">
+                <button type="button" aria-label="Média précédent" id="previous_button">
                     <svg viewBox="0 0 434.002 434.002" style="enable-background:new 0 0 434.002 434.002;">
                         <path d="M95.457,434.002l-33.105-45.076l234.094-171.928L62.352,45.077L95.456,0L360.24,194.459
                         c7.174,5.269,11.41,13.638,11.41,22.539c0,8.9-4.236,17.27-11.41,22.538L95.457,434.002z" />
@@ -169,7 +169,7 @@ class Lightbox {
                 </button>
                 <div id="media_lightbox">
                 </div>
-                <button id="next_button">
+                <button type="button" aria-label="Média Suivant" id="next_button">
                     <svg viewBox="0 0 434.002 434.002" style="enable-background:new 0 0 434.002 434.002;">
                         <path d="M95.457,434.002l-33.105-45.076l234.094-171.928L62.352,45.077L95.456,0L360.24,194.459
                         c7.174,5.269,11.41,13.638,11.41,22.539c0,8.9-4.236,17.27-11.41,22.538L95.457,434.002z" />

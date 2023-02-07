@@ -49,10 +49,12 @@ function displayPhotographerInfos(photographer) {
 function displayPhotographerMedias(medias) {
     const dropdownList = document.querySelector(".dropdown_list");
     sortBy(medias, "popularity");
+    eventLike(medias);
 
     if (medias.length > 0) {
         dropdownList.addEventListener("click", (event) => {
             sortBy(medias, event.target.value);
+            eventLike(medias);
             Lightbox.init();
         });
     } else {
@@ -65,6 +67,20 @@ function displayPhotographerMedias(medias) {
  *
  */
 function changePageTitle(photographer) {
+    const pageDescription = document.head.querySelector("[name=description]");
+
+    if (photographer || photographer != undefined) {
+        pageDescription.content = "Fisheye - Page de " + photographer.name;
+    } else {
+        pageDescription.content = "Fisheye - Error 404";
+    }
+}
+
+/**
+ * @param  {object} photographer
+ *
+ */
+function changeMetaDescription(photographer) {
     const pageTitle = document.querySelector("title");
 
     if (photographer || photographer != undefined) {
@@ -133,7 +149,7 @@ async function photographerPage() {
     displayPhotographerInfos(selectedPhotographer);
     displayPhotographerMedias(selectedMedias);
     changePageTitle(selectedPhotographer);
-    eventLike(selectedMedias);
+    changeMetaDescription(selectedPhotographer);
     Lightbox.init();
 }
 

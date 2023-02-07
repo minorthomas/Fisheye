@@ -26,8 +26,8 @@ class Photographer {
 
     templateDisplayAllPhotographers() {
         return `
-            <article title='Link to ${this._name} page'>
-                <a href="pages/photographer.html?id=${this._id}" aria-label="Cliquez pour en savoir plus sur ${this._name}">
+            <article title='Lien vers la page de ${this._name}'>
+                <a href="pages/photographer.html?id=${this._id}" aria-label="En savoir plus sur ${this._name}">
                     <div class="photographers_header">
                         <img class="profile_picture" src="${this.picture}" alt="${this._name} profile picture"/>
                         <h2>${this._name}</h2>
@@ -49,7 +49,7 @@ class Photographer {
                 <p>${this.localisation}</p>
                 <p>${this._tagline}</p>
             </div>
-            <button aria-label="Ouvrir le formulaire pour contacter ${this._name}" tabindex="1" class="button" onclick="displayModal()">Contactez-moi</button>
+            <button aria-label="Bouton ouvrir formulaire de contact pour ${this._name}" tabindex="1" class="button" onclick="displayModal()">Contactez-moi</button>
             <img class="profile_picture" src="${this.picture}" alt="Photo de profil de ${this._name}"/>
         `;
     }
@@ -57,7 +57,7 @@ class Photographer {
     templateDisplayLikeAndPrice() {
         return `
             <div id="like_section">
-                <div tabindex="2" title="Le total des likes du photographe">
+                <div tabindex="2" title="Nombre total de j'aime de ${this._name}">
                     <p></p>
                     <svg title="Image de coeur" viewBox="0 0 302.489 302.489" style="enable-background:new 0 0 302.489 302.489;">
                         <path d="M302.351,98.012c-1.116-20.846-9.942-40.422-24.855-55.122c-15.103-14.887-34.811-23.086-55.491-23.086

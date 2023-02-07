@@ -1,7 +1,8 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
     <head>
         <meta name="viewport" content="width=device-width" />
+        <meta name="description" content="" />
         <meta charset="utf-8" />
         <link rel="icon" type="image/png" href="../assets/favicon/icon.png" />
         <link href="../style/global.css" rel="stylesheet" type="text/css" />
@@ -24,7 +25,7 @@
             <a
                 tabindex="1"
                 href="../index.html"
-                aria-label="Fisheye page d'accueil"
+                aria-label="Lien vers la page d'accueil"
             >
                 <img
                     src="../assets/images/logo.png"
@@ -32,7 +33,7 @@
                     alt="Fisheye logo"
                 />
             </a>
-            <div id="photographer_header"></div>
+            <section id="photographer_header"></section>
         </header>
 
         <main id="main_photographer_page">
@@ -44,6 +45,7 @@
                             tabindex="1"
                             onclick="toggleDropdown()"
                             value="popularity"
+                            type="button"
                         >
                             Popularité
                         </button>
@@ -61,19 +63,19 @@
                     </div>
                     <ul id="list" class="dropdown_list">
                         <li>
-                            <button tabindex="1" id="popularity" value="popularity">
+                            <button aria-label='Trier les médias par popularité' type="button" tabindex="1" id="popularity" value="popularity">
                                 Popularité
                             </button>
                         </li>
                         <hr class="first_separation">
                         <li>
-                            <button tabindex="1" id="date" value="date">
+                            <button aria-label='Trier les médias par date' type="button" tabindex="1" id="date" value="date">
                                 Date
                             </button>
                         </li>
                         <hr class="second_separation">
                         <li>
-                            <button tabindex="1" id="title" value="title">
+                            <button aria-label='Trier les médias par titre' type="button" tabindex="1" id="title" value="title">
                                 Titre
                             </button>
                         </li>
@@ -84,14 +86,14 @@
             <section id="medias_section"></section>
         </main>
 
-        <div id="modal_section">
+        <section id="modal_section">
             <div id="modal_header">
                 <div>
                     <h2>Contactez-moi</h2>
                     <h3></h3>
                 </div>
                 <button
-                    aria-label="Bouton fermer formulaire"
+                    aria-label="Fermer le formulaire"
                     tabindex="1"
                     onclick="closeModal()"
                 >
@@ -154,11 +156,11 @@
                 <input
                     type="submit"
                     id="submit_btn"
-                    aria-label="Bouton envoi du formulaire"
+                    aria-label="Bouton d'envoi du formulaire"
                     tabindex="1"
                 />
             </form>
-        </div>
+        </section>
 
         <footer id="footer_photographer_page"></footer>
     </body>
