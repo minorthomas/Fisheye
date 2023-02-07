@@ -26,7 +26,7 @@ class Photographer {
 
     templateDisplayAllPhotographers() {
         return `
-            <article title='Lien vers la page de ${this._name}'>
+            <article aria-label="Redirection vers ${this._name}">
                 <a href="pages/photographer.html?id=${this._id}" aria-label="En savoir plus sur ${this._name}">
                     <div class="photographers_header">
                         <img class="profile_picture" src="${this.picture}" alt="${this._name} profile picture"/>
@@ -49,15 +49,15 @@ class Photographer {
                 <p>${this.localisation}</p>
                 <p>${this._tagline}</p>
             </div>
-            <button aria-label="Bouton ouvrir formulaire de contact pour ${this._name}" tabindex="1" class="button" onclick="displayModal()">Contactez-moi</button>
+            <button aria-label="Formulaire pour contacter ${this._name}" tabindex="1" class="button" onclick="displayModal()">Contactez-moi</button>
             <img class="profile_picture" src="${this.picture}" alt="Photo de profil de ${this._name}"/>
         `;
     }
 
     templateDisplayLikeAndPrice() {
         return `
-            <div id="like_section">
-                <div tabindex="2" title="Nombre total de j'aime de ${this._name}">
+            <div aria-label="Total de j'aime et prix par jour de ${this._name}" id="like_section">
+                <div tabindex="2" aria-label="Nombre total de j'aime de ${this._name}">
                     <p></p>
                     <svg title="Image de coeur" viewBox="0 0 302.489 302.489" style="enable-background:new 0 0 302.489 302.489;">
                         <path d="M302.351,98.012c-1.116-20.846-9.942-40.422-24.855-55.122c-15.103-14.887-34.811-23.086-55.491-23.086
@@ -68,7 +68,7 @@ class Photographer {
                         c28.393-27.99,55.515-58.628,65.956-74.507C293.877,143.372,303.774,124.629,302.351,98.012z"/>
                     </svg>
                 </div>
-                <p tabindex="2" title="Prix par jour">${this.price}</p>
+                <p tabindex="2" aria-label="Prix par jour">${this.price}</p>
             </div>
         `;
     }
