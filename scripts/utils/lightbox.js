@@ -145,7 +145,7 @@ class Lightbox {
 
     // create lightbox in dom
     buildDOM(url) {
-        const lightboxDom = document.createElement("div");
+        const lightboxDom = document.createElement("section");
         lightboxDom.setAttribute("id", "lightbox_section");
 
         //add l'html ci dessous à lightboxDom
@@ -176,7 +176,7 @@ class Lightbox {
                     </svg>
                 </button> 
             </div>
-            <p id="lightbox_media_title"></p>
+            <h3 id="lightbox_media_title"></h3>
         `;
 
         //event des boutons de la lightbox
