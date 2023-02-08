@@ -32,14 +32,14 @@ class Picture extends Media {
 
     templateMedia() {
         return `
-            <article aria-label="Ouvrir l'image avec comme titre: ${this._title}">
-                <a tabindex="2" href="${this.picture}" class="open_lightbox">
+            <article>
+                <a tabindex="2" aria-label="Ouvrir l'image avec comme titre: ${this._title}" href="${this.picture}" class="open_lightbox">
                     <p>Voir ></p>
                     <img loading="lazy" src="${this.picture}" class="media_source" alt="Type: Image - Titre: ${this._title}"/>
                 </a>
                 <div class="media_infos">
                     <h2>${this._title}</h2>
-                    <button type="button" aria-label="Bouton j'aime cette image. Nombre de j'aime sur cette image: ${this._likes}" tabindex="2" role="checkbox" aria-checked="false" id="like${this._id}">
+                    <button type="button" aria-label="Bouton j'aime cette image. ${this._likes} j'aimes" tabindex="2" role="checkbox" aria-checked="false" id="like${this._id}">
                         ${this._likes}
                         <svg title="Image coeur" id="heart${this._id}" viewBox="0 0 302.489 302.489" style="enable-background:new 0 0 302.489 302.489;">
                             <path d="M302.351,98.012c-1.116-20.846-9.942-40.422-24.855-55.122c-15.103-14.887-34.811-23.086-55.491-23.086
@@ -76,8 +76,8 @@ class Video extends Media {
 
     templateMedia() {
         return `
-            <article aria-label="Ouvrir la vidéo avec comme titre: ${this._title}">
-                <a tabindex="2" href="${this.video}" class="open_lightbox">
+            <article>
+                <a tabindex="2" aria-label="Ouvrir la vidéo avec comme titre: ${this._title}" href="${this.video}" class="open_lightbox">
                     <img loading="lazy" src="${this.miniature}" class="media_source" alt="Type: video - Titre: ${this._title}"/>
                     <svg title="Image play la vidéo" class="play_button" viewBox="0 0 459 459" style="enable-background:new 0 0 459 459;">
                         <path d="M229.5,0C102.751,0,0,102.751,0,229.5S102.751,459,229.5,459S459,356.249,459,229.5S356.249,0,229.5,0z M310.292,239.651
@@ -88,7 +88,7 @@ class Video extends Media {
                 </a>
                 <div class="media_infos">
                     <h2 class="media_title">${this._title}</h2>
-                    <button aria-label="Bouton j'aime cette vidéo. Nombre de j'aime sur cette vidéo: ${this._likes}" tabindex="2" role="checkbox" aria-checked="false" id="like${this._id}">
+                    <button aria-label="Bouton j'aime cette vidéo. ${this._likes} j'aimes" tabindex="2" role="checkbox" aria-checked="false" id="like${this._id}">
                         ${this._likes}
                         <svg title="Image coeur" class="media_heart" id="heart${this._id}" viewBox="0 0 302.489 302.489" style="enable-background:new 0 0 302.489 302.489;">
                             <path d="M302.351,98.012c-1.116-20.846-9.942-40.422-24.855-55.122c-15.103-14.887-34.811-23.086-55.491-23.086
