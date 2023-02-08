@@ -147,6 +147,7 @@ class Lightbox {
     buildDOM(url) {
         const lightboxDom = document.createElement("section");
         lightboxDom.setAttribute("id", "lightbox_section");
+        lightboxDom.setAttribute("aria-modal", "true");
 
         //add l'html ci dessous à lightboxDom
         lightboxDom.innerHTML = `
