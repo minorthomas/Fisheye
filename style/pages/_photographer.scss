@@ -114,6 +114,7 @@
                     width: 8.6em;
                     margin: 0 auto;
                     left: 0.6em;
+                    color: $white;
                 }
 
                 .first_separation {
@@ -500,9 +501,8 @@
         }
     }
 
-    p {
-        position: relative;
-        left: 5em;
+    h3 {
+        padding: 0.3em 0 0 5.3em;
         color: $primary-color;
         font-size: 1.2em;
     }

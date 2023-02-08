@@ -164,6 +164,7 @@
   width: 8.6em;
   margin: 0 auto;
   left: 0.6em;
+  color: #FFFFFF;
 }
 #main_photographer_page #navigation .dropdown_list .first_separation {
   top: -0.05em;
@@ -222,8 +223,7 @@
   border-radius: 0.3em;
   transition: 0.3s;
   z-index: 3;
-  -webkit-animation: fadeOut 0.3s;
-          animation: fadeOut 0.3s;
+  animation: fadeOut 0.3s;
 }
 #main_photographer_page #medias_section article a img {
   transition: 0.3s;
@@ -247,8 +247,7 @@
 #main_photographer_page #medias_section article a:hover p,
 #main_photographer_page #medias_section article a:focus p {
   display: block;
-  -webkit-animation: fadeIn 0.3s;
-          animation: fadeIn 0.3s;
+  animation: fadeIn 0.3s;
 }
 #main_photographer_page #medias_section article a:hover .play_button,
 #main_photographer_page #medias_section article a:focus .play_button {
@@ -481,9 +480,8 @@
 #lightbox_section div #next_button:hover svg {
   fill: #DB8876;
 }
-#lightbox_section p {
-  position: relative;
-  left: 5em;
+#lightbox_section h3 {
+  padding: 0.3em 0 0 5.3em;
   color: #901C1C;
   font-size: 1.2em;
 }
@@ -521,15 +519,6 @@
 }
 #footer_photographer_page #like_section p:focus {
   color: #901C1C;
-}
-
-@-webkit-keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
 }
 
 @keyframes fadeIn {
